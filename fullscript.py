@@ -20,6 +20,7 @@ def listen1():
         print("got it")
     return audio
 
+
 def voice(audio1):
     r = sr.Recognizer()
     text1 = r.recognize_google(audio1)
@@ -28,15 +29,13 @@ def voice(audio1):
         writer = csv.writer(file)
         writer.writerow(['command'])
         writer.writerow([text1])
-    #return text1
+
 
 def write_file_2():
-    
     data1 = ['command','response']
     data2 = ['how are you', 'i am grand']
     data3 = ['what is your name', 'my name is cobot']
     data4 = ['hello','hi there']
-
     
     with open('file2.csv','w',encoding='UTF8') as f:
         writer = csv.writer(f)
@@ -45,12 +44,6 @@ def write_file_2():
         writer.writerow(data3)
         writer.writerow(data4)
         
-    
-    testing = pd.read_csv('file1.csv')
-    actions = pd.read_csv('file2.csv')
-    
-    print_reply(testing,actions)
-    return testing,actions
 
 def print_reply(testing,actions,axis=1):
     index = 0
@@ -61,12 +54,14 @@ def print_reply(testing,actions,axis=1):
                 print(actions.response[index])
             index = index + 1
         index =0
- 
-    
-
 
 audio = listen1()
 
 voice(audio)
 
 write_file_2()
+
+testing = pd.read_csv('file1.csv')
+actions = pd.read_csv('file2.csv')
+
+print_reply(testing,actions)
