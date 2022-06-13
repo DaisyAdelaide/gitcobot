@@ -2,9 +2,17 @@ import speech_recognition as sr
 import pandas as pd
 import csv
 import numpy
+import gpiozero
+import time
 
 testing = []
 actions = []
+
+led1 = gpiozero.LED(6)
+led2 = gpiozero.LED(13)
+led3 = gpiozero.LED(19)
+led4 = gpiozero.LED(26)
+
 
 f = open("file2.csv", "w")
 f.truncate()
@@ -33,9 +41,10 @@ def voice(audio1):
 
 def write_file_2():
     data1 = ['command','response']
-    data2 = ['how are you', 'i am grand']
-    data3 = ['what is your name', 'my name is cobot']
-    data4 = ['hello','hi there']
+    data2 = ['turn on yellow', 'i like yellow']
+    data3 = ['turn on red', 'you said red!']
+    data4 = ['turn on blue','blue is my favourite']
+    data5 = ['turn on green','green is nice']
     
     with open('file2.csv','w',encoding='UTF8') as f:
         writer = csv.writer(f)
@@ -43,6 +52,7 @@ def write_file_2():
         writer.writerow(data2)
         writer.writerow(data3)
         writer.writerow(data4)
+        writer.writerow(data5)
         
 
 def print_reply(testing,actions,axis=1):
@@ -52,8 +62,22 @@ def print_reply(testing,actions,axis=1):
             print('*')
             if command == action:
                 print(actions.response[index])
+                if index == 0:
+                    led1.on()
+                    time.sleep(2)
+                if index == 1:
+                    led2.on()
+                    time.sleep(2)
+                if index == 2:
+                    led3.on()
+                    time.sleep(2)
+                if index == 3:
+                    led4.on()
+                    time.sleep(2)
+                    
+                
             index = index + 1
-        index =0
+        index = 0
 
 audio = listen1()
 
