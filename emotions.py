@@ -93,7 +93,7 @@ def run():
     print_reply(testing,actions)
     
     
-app = App(title = 'Cobot', width = 120, height = 200, layout = 'grid')
+app = App(title = 'Cobot', width = 800, height = 800, layout = 'grid')
 picture = Picture(app, image = 'normal.gif', grid = [0,0])
 
 button = PushButton(app, command = run, grid = [0,1])
