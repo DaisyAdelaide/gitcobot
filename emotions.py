@@ -14,12 +14,9 @@ led2 = gpiozero.LED(13)
 led3 = gpiozero.LED(19)
 led4 = gpiozero.LED(26)
 
-
 f = open("file2.csv", "w")
 f.truncate()
 f.close()
-
-
 
 def listen1():
     with sr.Microphone(device_index = 1) as source:
@@ -30,7 +27,6 @@ def listen1():
         print("got it")
     return audio
 
-
 def voice(audio1):
     r = sr.Recognizer()
     text1 = r.recognize_google(audio1)
@@ -39,7 +35,6 @@ def voice(audio1):
         writer = csv.writer(file)
         writer.writerow(['command'])
         writer.writerow([text1])
-
 
 def write_file_2():
     data1 = ['command','response']
@@ -55,8 +50,7 @@ def write_file_2():
         writer.writerow(data3)
         writer.writerow(data4)
         writer.writerow(data5)
-        
-
+  
 def print_reply(testing,actions,axis=1):
     index = 0
     for command in testing.command:
@@ -77,8 +71,7 @@ def print_reply(testing,actions,axis=1):
                 if index == 3:
                     led4.on()
                     time.sleep(2)
-                    
-                
+               
             index = index + 1
         index = 0
 
@@ -95,10 +88,8 @@ def run():
 
     print_reply(testing,actions)
     
-    
 app = App(title = 'Cobot')
 picture = Picture(app, image = 'black.png')
 button = PushButton(app, command = run)
-
 
 app.display()
