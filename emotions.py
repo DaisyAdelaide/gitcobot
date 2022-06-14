@@ -5,6 +5,7 @@ import numpy
 import gpiozero
 import time
 from guizero import App,Picture, PushButton
+from PIL import Image
 
 testing = []
 actions = []
@@ -41,7 +42,7 @@ def write_file_2():
     data2 = ['turn on yellow', 'i like yellow']
     data3 = ['turn on red', 'you said red!']
     data4 = ['turn on blue','blue is my favourite']
-    data5 = ['turn on green','green is nice']
+    data5 = ['turn on Green','Green is nice']
     
     with open('file2.csv','w',encoding='UTF8') as f:
         writer = csv.writer(f)
@@ -60,23 +61,26 @@ def print_reply(testing,actions,axis=1):
                 print(actions.response[index])
                 if index == 0:
                     led1.on()
+                    picture = Picture(app, image = 'yellowcheeks.gif',grid = [0,0])
                     time.sleep(2)
                 if index == 1:
-                    led2.on()
+                    led2.on()                    
+                    picture = Picture(app, image = 'redbrows.gif',grid = [0,0])
                     time.sleep(2)
                 if index == 2:
                     led3.on()
-                    picture = Picture(app, image = 'blue.png')
+                    picture = Picture(app, image = 'bluenose.gif',grid = [0,0])
                     time.sleep(2)
                 if index == 3:
                     led4.on()
+                    picture = Picture(app, image = 'greeneyes.gif',grid = [0,0])
                     time.sleep(2)
                
             index = index + 1
         index = 0
 
 def run():
-
+    
     audio = listen1()
 
     voice(audio)
@@ -88,8 +92,10 @@ def run():
 
     print_reply(testing,actions)
     
-app = App(title = 'Cobot')
-picture = Picture(app, image = 'black.png')
-button = PushButton(app, command = run)
+    
+app = App(title = 'Cobot', width = 120, height = 200, layout = 'grid')
+picture = Picture(app, image = 'normal.gif', grid = [0,0])
+
+button = PushButton(app, command = run, grid = [0,1])
 
 app.display()
