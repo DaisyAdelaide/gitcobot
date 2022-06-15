@@ -1,16 +1,16 @@
-import os     
+#import os     
 import time   
-os.system ("sudo pigpiod") 
+#os.system ("sudo pigpiod") 
 time.sleep(1) 
 import pigpio 
 
 ESC=4  #Connect the ESC in this GPIO pin 
 
-pi = pigpio.pi();
-pi.set_servo_pulsewidth(ESC, 0) 
+pi = pigpio.pi()
+#pi.set_servo_pulsewidth(ESC, 0) 
 
-max_value = 2000 #change this if your ESC's max value is different or leave it be
-min_value = 700  #change this if your ESC's min value is different or leave it be
+max_value = 2200 #change this if your ESC's max value is different or leave it be
+min_value = 900  #change this if your ESC's min value is different or leave it be
 print ("For first time launch, select calibrate")
 print ("Type the exact word for the function you want")
 print ("calibrate OR manual OR control OR arm OR stop")
@@ -18,7 +18,7 @@ print ("calibrate OR manual OR control OR arm OR stop")
 def manual_drive(): #You will use this function to program your ESC if required
     print ("You have selected manual option so give a value between 0 and you max value")    
     while True:
-        inp = raw_input()
+        inp = input()
         if inp == "stop":
             stop()
             break
@@ -57,36 +57,11 @@ def calibrate():   #This is the auto calibration procedure of a normal ESC
 def control(): 
     print ("I'm Starting the motor, I hope its calibrated and armed, if not restart by giving 'x'")
     time.sleep(1)
-    speed = 900    # change your speed if you want to.... it should be between 700 - 2000
+    speed = 970    # change your speed if you want to.... it should be between 700 - 2000
     print ("Controls - a to decrease speed & d to increase speed OR q to decrease a lot of speed & e to increase a lot of speed")
     while True:
         pi.set_servo_pulsewidth(ESC, speed)
-        inp = input()
-        
-        if inp == "q":
-            speed -= 100    # decrementing the speed like hell
-            print ("speed = {speed}".format(speed=speed)) 
-        elif inp == "e":    
-            speed += 100    # incrementing the speed like hell
-            print ("speed = {speed}".format(speed=speed)) 
-        elif inp == "d":
-            speed += 10     # incrementing the speed 
-            print ("speed = {speed}".format(speed=speed)) 
-        elif inp == "a":
-            speed -= 10     # decrementing the speed
-            print ("speed = {speed}".format(speed=speed)) 
-        elif inp == "stop":
-            stop()          #going for the stop function
-            break
-        elif inp == "manual":
-            manual_drive()
-            break
-        elif inp == "arm":
-            arm()
-            break
-        else:
-            print ("WHAT DID I SAID!! Press a,q,d or e")
-            
+    
 def arm(): #This is the arming procedure of an ESC 
     print ("Connect the battery and press Enter")
     inp = input()    
