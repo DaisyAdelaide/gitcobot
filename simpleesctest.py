@@ -14,10 +14,10 @@ pi.set_servo_pulsewidth(ESC_GPIO, 900)
 sleep(4)
 
 print('ready')
-
-speed = 1100
+sleep(4)
+speed = 1050
 pi.set_servo_pulsewidth(ESC_GPIO, speed)
 sleep(5)
 
 pi.set_servo_pulsewidth(ESC_GPIO, 0)
-pi.stop()
+sleep(4)
