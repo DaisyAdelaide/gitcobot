@@ -8,16 +8,16 @@ pi = pigpio.pi()
 ESC_GPIO = 4
 print('start')
 
-pi.set_servo_pulsewidth(ESC_GPIO, 2200)
-sleep(4)
-pi.set_servo_pulsewidth(ESC_GPIO, 900)
-sleep(4)
+#pi.set_servo_pulsewidth(ESC_GPIO, 2200)
+#sleep(4)
+#pi.set_servo_pulsewidth(ESC_GPIO, 900)
+#sleep(4)
 
 print('ready')
-sleep(4)
-speed = 1050
+sleep(2)
+speed = 1100
 pi.set_servo_pulsewidth(ESC_GPIO, speed)
-sleep(5)
+sleep(10)
 
-pi.set_servo_pulsewidth(ESC_GPIO, 0)
+pi.set_servo_pulsewidth(ESC_GPIO, 500)
 sleep(4)

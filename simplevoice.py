@@ -20,9 +20,9 @@ def voice(audio1):
     print ("you said: " + text1)
     
     if (text1 == 'start driving'):
-        speed = 1100
+        speed = 1050
         pi.set_servo_pulsewidth(ESC_GPIO, speed)
-        sleep(5)
+        sleep(15)
         pi.set_servo_pulsewidth(ESC_GPIO, 500)
         pi.stop()
 
