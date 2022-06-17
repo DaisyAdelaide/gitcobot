@@ -8,6 +8,7 @@ from guizero import App, Picture, PushButton, Text
 from time import sleep
 import pigpio
 import RPi.GPIO as GPIO
+import os
 
 testing = []
 actions = []
@@ -25,11 +26,12 @@ ESC_GPIO = 4
 pi = pigpio.pi()
 
 def arm():
-    pi.set_servo_pulsewidth(ESC_GPIO, 2500)
+    pi.set_servo_pulsewidth(ESC_GPIO, 2200)
     sleep(4)
     pi.set_servo_pulsewidth(ESC_GPIO, 900)
     sleep(4)
     pi.set_servo_pulsewidth(ESC_GPIO, 500)
+    armbutton.hide()
     
 def listen1():
     with sr.Microphone(device_index = 1) as source:
@@ -39,6 +41,7 @@ def listen1():
         led3.on()
         audio = r.listen(source)
         print("got it")
+        led3.off()
     return audio
 
 def voice(audio1):
@@ -46,7 +49,7 @@ def voice(audio1):
     text1 = r.recognize_google(audio1)
     print ("you said: " + text1)
     heard = ("I heard... " + text1)
-    text = Text(app, text = heard, grid = [1,0])
+    text = Text(app, text = heard, grid = [0,1])
     with open ("file1.csv","w",encoding='UTF8') as file:
         writer = csv.writer(file)
         writer.writerow(['command'])
@@ -58,7 +61,7 @@ def write_file_2():
     data3 = ['turn on red', 'you said red!']
     data4 = ['turn on blue','blue is my favourite']
     data5 = ['turn on Green','Green is nice']
-    data6 = ['start driving','drive!']
+    data6 = ['start driving','I drove!']
     
     with open('file2.csv','w',encoding='UTF8') as f:
         writer = csv.writer(f)
@@ -71,11 +74,14 @@ def write_file_2():
   
 def print_reply(testing,actions,axis=1):
     index = 0
+    reply = 0
     for command in testing.command:
         for action in actions.command:
             print('*')
             if command == action:
+                reply += 1
                 print(actions.response[index])
+                text = Text(app, text = actions.response[index], grid = [0,2])
                 if index == 0:
                     led1.on()
                     picture = Picture(app, image = 'yellowcheeks.gif',grid = [0,0])
@@ -90,15 +96,19 @@ def print_reply(testing,actions,axis=1):
                     picture = Picture(app, image = 'greeneyes.gif',grid = [0,0])
                 if index == 4:
                     drive()
+                            
             index = index + 1
+        if reply == 0:
+            text = Text(app, text = 'I don\'t know that phrase.', grid = [0,2])
+            picture = Picture(app, image = 'confused.gif',grid = [0,0])
+        
         index = 0
     
 def drive():
     speed = 1100
     pi.set_servo_pulsewidth(ESC_GPIO, speed)
-    sleep(10)
+    sleep(15)
     pi.set_servo_pulsewidth(ESC_GPIO, 500)
-    pi.stop()
     picture = Picture(app, image = 'happy.gif',grid = [0,0])    
 
 def record():
@@ -110,15 +120,17 @@ def record():
     testing = pd.read_csv('file1.csv')
     actions = pd.read_csv('file2.csv')
     print_reply(testing,actions)
-    led3.off()
-
-#if 1st running since motors were powered
-#arm()
     
-app = App(title = 'Cobot', width = 850, height = 700, layout = 'grid')
+def initial():
+    #for final product, when starting pi only once for use
+    os.system('sudo pigpiod')
+    
+app = App(title = 'Cobot', width = 850, height = 750, layout = 'grid')
 
 picture = Picture(app, image = 'normal.gif', grid = [0,0])
-record = PushButton(app, command = record, text = 'record', grid = [0,1])
-
+record = PushButton(app, command = record, text = 'record', grid = [1,1])
+drivebutton = PushButton(app, command = drive, text = 'drive', grid = [1,2])
+armbutton = PushButton(app, command = arm, text = 'arm', grid = [1,3])
+#buttonone = PushButton(app, command = initial, text = 'stepone', grid = [0,4])
 
 app.display()
