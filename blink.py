@@ -4,14 +4,12 @@ import gpiozero
 
 import functions
 
-
 class Button:
     def __init__(self, text, width, height, pos):
         self.top_rect = pygame.Rect(pos,(width,height))
         self.top_color = (100,120,100)
         self.text_surf = gui_font.render(text, 0,(210,255,100))
         self.text_rect = self.text_surf.get_rect(center = self.top_rect.center)
-        self.clicked = False
         
     def draw(self):
         action = False
@@ -19,13 +17,9 @@ class Button:
         mouse_pos = pygame.mouse.get_pos()
         
         if self.top_rect.collidepoint(mouse_pos):
-            if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
-                self.clicked = True
+            if pygame.mouse.get_pressed()[0] == 1:
                 action = True
-                
-        if pygame.mouse.get_pressed()[0] == 0:
-            self.clicked == False
-        
+
         pygame.draw.rect(screen,self.top_color, self.top_rect, 16)
         screen.blit(self.text_surf, self.text_rect)
         

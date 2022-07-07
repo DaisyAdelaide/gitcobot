@@ -10,6 +10,7 @@ import pigpio
 import RPi.GPIO as GPIO
 import os
 
+
 testing = []
 actions = []
 
@@ -24,6 +25,7 @@ f.close()
 
 ESC_GPIO = 4
 pi = pigpio.pi()
+
 
 def arm():
     print('start')
@@ -115,7 +117,9 @@ def drive():
     
 
 def record():
+
     write_file_2()
+
     
     audio = listen1()
     voice(audio)
