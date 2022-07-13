@@ -5,12 +5,13 @@ import serial
 import pandas as pd
 import csv
 import functions
+import RPi.GPIO as GPIO
 
 class Button:
     def __init__(self, text, width, height, pos):
         self.top_rect = pygame.Rect(pos,(width,height))
-        self.top_color = (100,120,100)
-        self.text_surf = gui_font.render(text, 0,(210,255,100))
+        self.top_color = (0,120,70)
+        self.text_surf = gui_font.render(text, 0,(210,255,50))
         self.text_rect = self.text_surf.get_rect(center = self.top_rect.center)
         
     def draw(self):
@@ -22,7 +23,7 @@ class Button:
             if pygame.mouse.get_pressed()[0] == 1:
                 action = True
 
-        pygame.draw.rect(screen,self.top_color, self.top_rect, 16)
+        pygame.draw.rect(screen,self.top_color, self.top_rect, 10)
         screen.blit(self.text_surf, self.text_rect)
         
         return action
@@ -30,14 +31,23 @@ class Button:
 def define():
     global one, two, three, four, five, six, seven, eight, smile
     one = pygame.image.load('1.JPG').convert_alpha()
+    one = pygame.transform.scale(one,(548,380))
     two = pygame.image.load('2.JPG').convert_alpha()
+    two = pygame.transform.scale(two,(548,380))
     three = pygame.image.load('3.JPG').convert_alpha()
+    three = pygame.transform.scale(three,(548,380))
     four = pygame.image.load('4.JPG').convert_alpha()
+    four = pygame.transform.scale(four,(548,380))
     five = pygame.image.load('5.JPG').convert_alpha()
+    five = pygame.transform.scale(five,(548,380))
     six = pygame.image.load('6.JPG').convert_alpha()
+    six = pygame.transform.scale(six,(548,380))
     seven = pygame.image.load('7.JPG').convert_alpha()
+    seven = pygame.transform.scale(seven,(548,380))
     eight = pygame.image.load('8.JPG').convert_alpha()
+    eight = pygame.transform.scale(eight,(548,380))
     smile = pygame.image.load('smile.JPG').convert_alpha()
+    smile = pygame.transform.scale(smile,(217, 150))
 
 def blink_func():
     global player_surf, index, blink
@@ -56,8 +66,16 @@ def blink_func():
 
     player_surf = blinking[index]
 
+button = 17
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(button, GPIO.IN)
+
 pygame.init()
-screen = pygame.display.set_mode((1000,800))
+screen = pygame.display.set_mode((800,480),pygame.FULLSCREEN)
+
+color = (255, 255, 255)
+
 clock = pygame.time.Clock()
 
 define()
@@ -69,9 +87,9 @@ seconds = 0
 
 gui_font = pygame.font.Font(None,30)
 
-record_button = Button('Record', 200, 40, (720,200))
-drive_button = Button('STOP', 200, 40, (720,400))
-arm_button = Button('Arm', 200, 40, (720,600))
+record_button = Button('Record', 100, 30, (620,100))
+drive_button = Button('STOP', 100, 30, (620,200))
+arm_button = Button('Arm', 100, 30, (620,300))
 
 player_surf = blinking[index]
 
@@ -89,26 +107,36 @@ while True:
             writer = csv.writer(file)
             writer.writerow([line])
     
+    if GPIO.input(button) == 1:
+        print('Bop')
+        pygame.quit()
+        sys.exit()
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 sys.exit()
+                
     
-    if record_button.draw():
-        functions.record()
+#    if record_button.draw():
+#        functions.record()
         
-    if drive_button.draw():
-        functions.drive()
+#    if drive_button.draw():
+#        functions.drive()
     
-    if arm_button.draw():
-        functions.arm()
+#    if arm_button.draw():
+#        functions.arm()
     
     if seconds < 14:
         blink_func()
-
-    screen.blit(smile, (0,300))
-    screen.blit(player_surf, (0,0))
+    
+    screen.fill(color)
+    screen.blit(smile, (286,300))
+    screen.blit(player_surf, (126,0))
 
     pygame.display.update()
     clock.tick(20)

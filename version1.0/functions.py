@@ -7,7 +7,6 @@ import time
 from guizero import App, Picture, PushButton, Text
 from time import sleep
 import pigpio
-import RPi.GPIO as GPIO
 import os
 import sendmessage
 
@@ -29,13 +28,7 @@ pi = pigpio.pi()
 
 
 def arm():
-    print('start')
-    pi.set_servo_pulsewidth(ESC_GPIO, 2200)
-    sleep(4)
-    pi.set_servo_pulsewidth(ESC_GPIO, 900)
-    sleep(4)
-    pi.set_servo_pulsewidth(ESC_GPIO, 500)
-    sleep(2)
+    sendmessage.arm()
     
 def listen1():
     with sr.Microphone(device_index = 1) as source:
