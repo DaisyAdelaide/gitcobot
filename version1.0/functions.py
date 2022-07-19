@@ -110,11 +110,14 @@ def record():
     audio = listen1()
 
     text123 = voice(audio)
-    return text123
     
     testing = pd.read_csv('file1.csv')
     actions = pd.read_csv('file2.csv')
     answer = print_reply(testing,actions)
+
+    response = text123 + answer
+
+    return(response)
 
     
 def initial():
