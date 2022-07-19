@@ -105,8 +105,6 @@ def getText():
     else:
         return 'Error'
 
-
-   
 button = 17
 button2 = 27
 button3 = 22
@@ -118,7 +116,7 @@ GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
-screen = pygame.display.set_mode((800,480))
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 
 color = (255, 255, 255)
 

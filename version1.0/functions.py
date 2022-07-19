@@ -55,7 +55,7 @@ def voice(audio1):
 
 def write_file_2():
     data1 = ['command','response']
-    data2 = ['turn on yellow', 'i like yellow']
+    data2 = ['how are you', 'I am grand']
     data3 = ['turn on red', 'you said red!']
     data4 = ['turn on blue','blue is my favourite']
     data5 = ['turn on Green','Green is nice']
@@ -93,10 +93,11 @@ def print_reply(testing,actions,axis=1):
                     print('3')
                 if index == 4:
                     drive()
-                            
+            else:
+                print('repeat')
+                return 'I did not understand'                 
             index = index + 1
-        if reply == 0:
-            print('repeat')        
+
         index = 0
     
 def drive():
@@ -115,7 +116,7 @@ def record():
     actions = pd.read_csv('file2.csv')
     answer = print_reply(testing,actions)
 
-    response = text123 + answer
+    response = 'I heard ' + text123 + ',' + answer
 
     return(response)
 
