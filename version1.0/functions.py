@@ -44,6 +44,7 @@ def listen1():
 def voice(audio1):
     r = sr.Recognizer()
     text1 = r.recognize_google(audio1)
+    return str(text1)
     print ("you said: " + text1)
     heard = ("I heard... " + text1)
     with open ("file1.csv","w",encoding='UTF8') as file:
@@ -77,7 +78,7 @@ def print_reply(testing,actions,axis=1):
             print('*')
             if command == action:
                 reply += 1
-                print(actions.response[index])
+                return actions.response[index]
                 if index == 0:
                     led1.on()
                     print('0')
@@ -105,14 +106,16 @@ def drive():
 def record():
 
     write_file_2()
-
     
     audio = listen1()
-    voice(audio)
+
+    text123 = voice(audio)
+    return text123
     
     testing = pd.read_csv('file1.csv')
     actions = pd.read_csv('file2.csv')
-    print_reply(testing,actions)
+    answer = print_reply(testing,actions)
+
     
 def initial():
     #for final product, when starting pi only once for use

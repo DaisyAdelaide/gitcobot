@@ -3,8 +3,9 @@ import sys
 import gpiozero
 import serial
 import pandas as pd
-import csv
+import csv 
 import functions
+import chat
 import RPi.GPIO as GPIO
 
 class Button:
@@ -66,13 +67,58 @@ def blink_func():
 
     player_surf = blinking[index]
 
+def chatbot():
+    start = 0
+
+    while GPIO.input(button2) == 0:
+        
+        if GPIO.input(button3) == 1 and start == 0:
+            text = functions.record()
+            text = str(text)
+            start = 1
+            
+        if start == 0:
+            text = 'Press green to talk to me !'
+            
+        black = (0, 0, 0)
+        white = (255, 255, 255)
+        font = pygame.font.Font('freesansbold.ttf', 32)
+        #text = getText()
+        textSurface = font.render(text, True, white, black)
+        textRect = textSurface.get_rect()
+        
+        screen.fill(black)
+        screen.blit(textSurface, textRect)
+        pygame.display.update()
+        clock.tick(20)
+
+def getText():
+    global stage
+    
+    if stage == 0:
+        return 'Hi there, I am cobot ! Press green to say something!'
+    
+    if stage == 1:
+        
+        return text
+    
+    else:
+        return 'Error'
+
+
+   
 button = 17
+button2 = 27
+button3 = 22
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(button, GPIO.IN)
+
+GPIO.setup(button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
-screen = pygame.display.set_mode((800,480),pygame.FULLSCREEN)
+screen = pygame.display.set_mode((800,480))
 
 color = (255, 255, 255)
 
@@ -87,7 +133,7 @@ seconds = 0
 
 gui_font = pygame.font.Font(None,30)
 
-record_button = Button('Record', 100, 30, (620,100))
+record_button = Button('Record', 100, 30, (0,0))
 drive_button = Button('STOP', 100, 30, (620,200))
 arm_button = Button('Arm', 100, 30, (620,300))
 
@@ -100,6 +146,10 @@ f = open("SpeedData.csv", "w")
 f.truncate()
 f.close()
 
+count = 0
+global stage
+stage = 0
+
 while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('utf-8').rstrip()
@@ -108,10 +158,10 @@ while True:
             writer.writerow([line])
     
     if GPIO.input(button) == 1:
-        print('Bop')
-        pygame.quit()
-        sys.exit()
-    
+        print(count)
+        count +=1
+        chatbot()
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -121,7 +171,6 @@ while True:
                 pygame.quit()
                 sys.exit()
                 
-    
 #    if record_button.draw():
 #        functions.record()
         
