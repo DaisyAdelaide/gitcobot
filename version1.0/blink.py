@@ -31,6 +31,8 @@ class Button:
                          
 def define():
     global one, two, three, four, five, six, seven, eight, smile
+    global shrink, shrink1, shrink2, shrink3, shrink4
+
     one = pygame.image.load('1O.jpg').convert_alpha()
     one = pygame.transform.scale(one,(548,380))
     two = pygame.image.load('2O.jpg').convert_alpha()
@@ -49,6 +51,35 @@ def define():
     eight = pygame.transform.scale(eight,(548,380))
     smile = pygame.image.load('smileO.jpg').convert_alpha()
     smile = pygame.transform.scale(smile,(217, 150))
+    shrink1 = pygame.image.load('shrink1.jpg').convert_alpha()
+    shrink1 = pygame.transform.scale(shrink1,(548,380))
+    shrink2 = pygame.image.load('shrink2.jpg').convert_alpha()
+    shrink2 = pygame.transform.scale(shrink2,(548,380))
+    shrink3 = pygame.image.load('shrink3.jpg').convert_alpha()
+    shrink3 = pygame.transform.scale(shrink3,(548,380))
+    shrink4 = pygame.image.load('shrink4.jpg').convert_alpha()
+    shrink4 = pygame.transform.scale(shrink4,(548,380))
+
+
+def shrink():
+    global player_surf, shrink_index
+
+    if shrink_index < 3 and shrink_blink == 0:
+        shrink_index += 1
+
+    if shrink_index > 0 and shrink_blink ==1:
+        shrink_index -= 1
+
+    if shrink_index == 0:
+        shrink_blink = 0
+        shrinking = 0
+
+    if shrink_index == 3:
+        shrink_blink = 1
+
+    shrink_index += 1
+    player_surf = shrink[shrink_index]
+
 
 def blink_func():
     global player_surf, index, blink
@@ -153,9 +184,13 @@ clock = pygame.time.Clock()
 define()
 
 blinking = [one,two,three,four,five,six,seven,eight]
+shrink = [shrink1, shrink2, shrink3, shrink4]
+shrink_blink = 0
 index = 0
 blink = 0
+shrink_index = 0
 seconds = 0
+shrinking = 0
 
 gui_font = pygame.font.Font(None,30)
 
@@ -188,6 +223,10 @@ while True:
         count +=1
         chatbot()
 
+    if GPIO.input(button2) == 1:
+        shrink()
+        shrinking = 1
+
     if GPIO.input(button4) == 1:
         pygame.quit()
         sys.exit()
@@ -201,7 +240,7 @@ while True:
                 pygame.quit()
                 sys.exit()
     
-    if seconds < 14:
+    if seconds < 14 and shrinking == 0:
         blink_func()
     
     screen.fill(orange)
