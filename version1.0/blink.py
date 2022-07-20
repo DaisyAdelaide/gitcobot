@@ -92,12 +92,10 @@ def chatbot():
 
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
-
-        rect = rect(800, 400, 400, 450)
         textRect.center = (400, 450)
         
         #screen.fill(black)
-        pygame.draw.rect(screen, white, rect)
+        pygame.draw.rect(screen, white, pygame.Rect(400, 800, 400, 450))
         screen.blit(textSurface, textRect)
         pygame.display.update()
         clock.tick(20)
