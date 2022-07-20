@@ -71,6 +71,10 @@ def chatbot():
     start = 0
 
     while GPIO.input(button2) == 0:
+
+        if GPIO.input(button4) == 1:
+            pygame.quit()
+            sys.exit()
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
@@ -112,12 +116,14 @@ def getText(start):
 button = 17
 button2 = 27
 button3 = 22
+button4 = 10
 
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
 #screen = pygame.display.set_mode((800,480))
@@ -165,7 +171,9 @@ while True:
         count +=1
         chatbot()
 
-
+    if GPIO.input(button4) == 1:
+        pygame.quit()
+        sys.exit()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
