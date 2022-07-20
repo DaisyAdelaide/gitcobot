@@ -75,7 +75,18 @@ def chatbot():
         black = (0, 0, 0)
         white = (255, 255, 255)
         font = pygame.font.Font('freesansbold.ttf', 32)
-        text = getText(start)
+        #text = getText(start)
+
+    if start == 0:
+        text = 'Press green to talk to me !'
+
+    if GPIO.input(button3) == 1:
+        print('pressed')
+        text = functions.record()
+        text = str(text)
+        start = 1
+        return text
+
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
         
@@ -109,7 +120,8 @@ GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
-screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((800,480))
+#screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 
 color = (255, 255, 255)
 
