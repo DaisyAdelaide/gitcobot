@@ -31,7 +31,7 @@ class Button:
                          
 def define():
     global one, two, three, four, five, six, seven, eight, smile
-    one = pygame.image.load('1O.JPG').convert_alpha()
+    one = pygame.image.load('2O.JPG').convert_alpha()
     one = pygame.transform.scale(one,(548,380))
     two = pygame.image.load('2O.JPG').convert_alpha()
     two = pygame.transform.scale(two,(548,380))
