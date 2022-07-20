@@ -23,7 +23,6 @@ def get_intent(text):
 					'Colour': r'.*\s*colour.*',
 					'Food': r'.*\s*food.*',
 					'no_match_intent': r''
-					
 
 					}
 
@@ -68,7 +67,7 @@ def Animal():
 	responses = ('I like frogs')
 	return responses
 
-def Animal():
+def Colour():
 	responses = ('Orange ! I like to eat oranges too')
 	return responses
 
