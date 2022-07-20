@@ -85,7 +85,6 @@ def chatbot():
             text = functions.record()
             text = str(text)
             start = 1
-            return text
 
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
