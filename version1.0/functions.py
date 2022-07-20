@@ -19,9 +19,9 @@ led2 = gpiozero.LED(13)
 led3 = gpiozero.LED(19)
 led4 = gpiozero.LED(26)
 
-f = open("file2.csv", "w")
-f.truncate()
-f.close()
+#f = open("file2.csv", "w")
+#f.truncate()
+#f.close()
 
 ESC_GPIO = 4
 pi = pigpio.pi()
@@ -106,7 +106,7 @@ def drive():
 
 def record():
 
-    write_file_2()
+    #write_file_2()
     
     audio = listen1()
 

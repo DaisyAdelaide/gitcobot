@@ -71,19 +71,11 @@ def chatbot():
     start = 0
 
     while GPIO.input(button2) == 0:
-        
-        if GPIO.input(button3) == 1 and start == 0:
-            text = functions.record()
-            text = str(text)
-            start = 1
-            
-        if start == 0:
-            text = 'Press green to talk to me !'
-            
+                   
         black = (0, 0, 0)
         white = (255, 255, 255)
         font = pygame.font.Font('freesansbold.ttf', 32)
-        #text = getText()
+        text = getText()
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
         
@@ -93,17 +85,17 @@ def chatbot():
         clock.tick(20)
 
 def getText():
-    global stage
-    
-    if stage == 0:
-        return 'Hi there, I am cobot ! Press green to say something!'
-    
-    if stage == 1:
-        
+    if start == 0:
+        text = 'Press green to talk to me !'
+        return text 
+
+    if GPIO.input(button3) == 1:
+        text = functions.record()
+        text = str(text)
+        start = 1
         return text
+            
     
-    else:
-        return 'Error'
 
 button = 17
 button2 = 27
