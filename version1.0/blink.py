@@ -75,7 +75,7 @@ def chatbot():
         black = (0, 0, 0)
         white = (255, 255, 255)
         font = pygame.font.Font('freesansbold.ttf', 32)
-        text = getText()
+        text = getText(start)
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
         
@@ -84,7 +84,7 @@ def chatbot():
         pygame.display.update()
         clock.tick(20)
 
-def getText():
+def getText(start):
     if start == 0:
         text = 'Press green to talk to me !'
         return text 
