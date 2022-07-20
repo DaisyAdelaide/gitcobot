@@ -16,10 +16,12 @@ def get_intent(text):
 	input_phrase = {
 					'Greeting': r'hi\s',
 					'Greeting': r'hello\s',
+					
+					'Animal': r'\sanimal\s',
+					'Country': r'\scountry\s?',
+
 					'DescribeSelf': r'what is\s',
 					'How': r'how\s',
-					'Animal': r'\sanimal\s',
-					'Country': r'\scountry\s',
 					'no_match_intent': r''
 					
 
