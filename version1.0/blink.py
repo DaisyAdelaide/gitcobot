@@ -31,23 +31,23 @@ class Button:
                          
 def define():
     global one, two, three, four, five, six, seven, eight, smile
-    one = pygame.image.load('2O.JPG').convert_alpha()
+    one = pygame.image.load('1O.jpg').convert_alpha()
     one = pygame.transform.scale(one,(548,380))
-    two = pygame.image.load('2O.JPG').convert_alpha()
+    two = pygame.image.load('2O.jpg').convert_alpha()
     two = pygame.transform.scale(two,(548,380))
-    three = pygame.image.load('3O.JPG').convert_alpha()
+    three = pygame.image.load('3O.jpg').convert_alpha()
     three = pygame.transform.scale(three,(548,380))
-    four = pygame.image.load('4O.JPG').convert_alpha()
+    four = pygame.image.load('4O.jpg').convert_alpha()
     four = pygame.transform.scale(four,(548,380))
-    five = pygame.image.load('5O.JPG').convert_alpha()
+    five = pygame.image.load('5O.jpg').convert_alpha()
     five = pygame.transform.scale(five,(548,380))
-    six = pygame.image.load('6O.JPG').convert_alpha()
+    six = pygame.image.load('6O.jpg').convert_alpha()
     six = pygame.transform.scale(six,(548,380))
-    seven = pygame.image.load('7O.JPG').convert_alpha()
+    seven = pygame.image.load('7O.jpg').convert_alpha()
     seven = pygame.transform.scale(seven,(548,380))
-    eight = pygame.image.load('8O.JPG').convert_alpha()
+    eight = pygame.image.load('8O.jpg').convert_alpha()
     eight = pygame.transform.scale(eight,(548,380))
-    smile = pygame.image.load('smileO.JPG').convert_alpha()
+    smile = pygame.image.load('smileO.jpg').convert_alpha()
     smile = pygame.transform.scale(smile,(217, 150))
 
 def blink_func():
