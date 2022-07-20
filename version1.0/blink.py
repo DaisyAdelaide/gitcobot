@@ -74,7 +74,7 @@ def chatbot():
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
-        font = pygame.font.Font('freesansbold.ttf', 32)
+        font = pygame.font.Font('freesansbold.ttf', 26)
         #text = getText(start)
 
         if start == 0:
