@@ -91,9 +91,6 @@ def chatbot():
             text = functions.record()
             text = str(text)
             start = 1
-            with open ("SpeechData.csv","a",encoding='UTF8') as file:
-                writer = csv.writer(file)
-                writer.writerow(text)
     
 
         if seconds2 < 14:
