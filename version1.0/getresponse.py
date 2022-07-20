@@ -21,6 +21,7 @@ def get_intent(text):
 					'How': r'how\s',
 					'Animal':  r'.*\s*animal.*',
 					'Colour': r'.*\s*colour.*',
+					'Food': r'.*\s*food.*',
 					'no_match_intent': r''
 					
 
@@ -43,6 +44,8 @@ def get_intent(text):
 			return Animal()
 		if found_match and intent == 'Colour':
 			return Animal()
+		if found_match and intent == 'Food':
+			return Food()
 
 
 def no_match_intent():
@@ -67,6 +70,10 @@ def Animal():
 
 def Animal():
 	responses = ('Orange ! I like to eat oranges too')
+	return responses
+
+def Animal():
+	responses = ('Oranges ! What about you ?')
 	return responses
 
 get_response('whats yiur animal favourite')
