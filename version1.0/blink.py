@@ -165,9 +165,7 @@ while True:
         count +=1
         chatbot()
 
-    if GPIO.input(button3) == 1:
-        pygame.quit()
-        sys.exit()
+
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
