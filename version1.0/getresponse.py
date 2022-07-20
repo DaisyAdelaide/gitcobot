@@ -17,7 +17,7 @@ def get_intent(text):
 					'Greeting': r'hi\s',
 					'Greeting': r'hello\s',
 					
-					'Animal': r'\sanimal\s',
+					'Animal': r'\sanimal',
 					'Country': r'\scountry',
 
 					'DescribeSelf': r'what is\s',
@@ -42,7 +42,7 @@ def get_intent(text):
 			responses = ('I am great', 'Doing well and you?', 'Thanks for asking! Good!')
 		if found_match and intent == 'Animal':
 			responses = ('I love frogs!', 'Frogs are my favourite')
-		if found_match and intent == 'Animal':
+		if found_match and intent == 'Country':
 			responses = ('Ireland!', 'Ireland is the best country!')
 
 	return random.choice(responses)
