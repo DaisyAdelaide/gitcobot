@@ -79,25 +79,13 @@ def print_reply(testing,actions,axis=1):
             if command == action:
                 reply += 1
                 return actions.response[index]
-                if index == 0:
-                    led1.on()
-                    print('0')
-                if index == 1:
-                    led2.on()                    
-                    print('1')
-                if index == 2:
-                    led3.on()
-                    print('2')
-                if index == 3:
-                    led4.on()
-                    print('3')
-                if index == 4:
-                    drive()
-            else:
+            
+            if index == 2:
                 print('repeat')
-                return 'I did not understand'                 
-            index = index + 1
+                return 'I do not know the answer' 
 
+            index = index + 1                
+        
         index = 0
     
 def drive():
