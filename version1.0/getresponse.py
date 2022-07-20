@@ -42,7 +42,7 @@ def get_intent(text):
 		if found_match and intent == 'Animal':
 			return Animal()
 		if found_match and intent == 'Colour':
-			return Animal()
+			return Colour()
 		if found_match and intent == 'Food':
 			return Food()
 
