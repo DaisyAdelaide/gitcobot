@@ -90,6 +90,7 @@ def getText(start):
         return text 
 
     if GPIO.input(button3) == 1:
+        print('pressed')
         text = functions.record()
         text = str(text)
         start = 1
