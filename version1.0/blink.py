@@ -74,7 +74,7 @@ def chatbot():
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
-        font = pygame.font.Font('freesansbold.ttf', 26)
+        font = pygame.font.Font('freesansbold.ttf', 20)
         #text = getText(start)
 
         if start == 0:
@@ -88,7 +88,7 @@ def chatbot():
 
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
-        textRect.center = (300, 450)
+        textRect.center = (400, 450)
         
         #screen.fill(black)
         screen.blit(textSurface, textRect)
