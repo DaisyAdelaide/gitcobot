@@ -88,6 +88,7 @@ def chatbot():
 
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
+        textRect.center = (200, 300)
         
         #screen.fill(black)
         screen.blit(textSurface, textRect, (0, 350))
