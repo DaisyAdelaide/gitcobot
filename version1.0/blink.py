@@ -98,9 +98,7 @@ def chatbot():
         screen.blit(smile, (286,300))
         screen.blit(player_surf, (126,0))
 
-        pygame.display.update()
-        clock.tick(20)
-        seconds += 1
+        seconds2 += 1
 
         if seconds2 == 80:
             seconds2 = 0 
