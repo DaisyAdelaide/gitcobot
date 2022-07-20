@@ -72,7 +72,7 @@ def Animal():
 	responses = ('Orange ! I like to eat oranges too')
 	return responses
 
-def Animal():
+def Food():
 	responses = ('Oranges ! What about you ?')
 	return responses
 
