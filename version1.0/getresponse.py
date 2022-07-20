@@ -20,6 +20,7 @@ def get_intent(text):
 					'DescribeSelf': r'.*\s*name.*',
 					'How': r'how\s',
 					'Animal':  r'.*\s*animal.*',
+					'Colour': r'.*\s*colour.*',
 					'no_match_intent': r''
 					
 
@@ -39,6 +40,8 @@ def get_intent(text):
 		if found_match and intent == 'How':
 			return How()
 		if found_match and intent == 'Animal':
+			return Animal()
+		if found_match and intent == 'Colour':
 			return Animal()
 
 
@@ -60,6 +63,10 @@ def How():
 
 def Animal():
 	responses = ('I like frogs')
+	return responses
+
+def Animal():
+	responses = ('Orange ! I like to eat oranges too')
 	return responses
 
 get_response('whats yiur animal favourite')

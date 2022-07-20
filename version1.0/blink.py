@@ -69,6 +69,7 @@ def blink_func():
 
 def chatbot():
     start = 0
+    seconds2 = 0
 
     while GPIO.input(button2) == 0:
 
@@ -89,6 +90,20 @@ def chatbot():
             text = functions.record()
             text = str(text)
             start = 1
+
+        if seconds2 < 14:
+            blink_func()
+        
+        screen.fill(color)
+        screen.blit(smile, (286,300))
+        screen.blit(player_surf, (126,0))
+
+        pygame.display.update()
+        clock.tick(20)
+        seconds += 1
+
+        if seconds2 == 80:
+            seconds2 = 0 
 
         textSurface = font.render(text, True, black, white)
         textRect = textSurface.get_rect()
