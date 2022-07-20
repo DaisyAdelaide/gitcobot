@@ -79,6 +79,7 @@ def chatbot():
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
+        orange = (255, 127, 39)
         font = pygame.font.Font('freesansbold.ttf', 20)
         #text = getText(start)
 
@@ -94,7 +95,7 @@ def chatbot():
         if seconds2 < 14:
             blink_func()
         
-        screen.fill(color)
+        screen.fill(orange)
         screen.blit(smile, (286,300))
         screen.blit(player_surf, (126,0))
 
@@ -103,12 +104,12 @@ def chatbot():
         if seconds2 == 80:
             seconds2 = 0 
 
-        textSurface = font.render(text, True, black, white)
+        textSurface = font.render(text, True, white, orange)
         textRect = textSurface.get_rect()
         textRect.center = (400, 450)
         
         #screen.fill(black)
-        pygame.draw.rect(screen, white, pygame.Rect(0, 440, 800, 200))
+        pygame.draw.rect(screen, orange, pygame.Rect(0, 440, 800, 200))
         screen.blit(textSurface, textRect)
         pygame.display.update()
         clock.tick(20)
@@ -144,6 +145,7 @@ pygame.init()
 screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 
 color = (255, 255, 255)
+orange = (255, 127, 39)
 
 clock = pygame.time.Clock()
 
@@ -201,7 +203,7 @@ while True:
     if seconds < 14:
         blink_func()
     
-    screen.fill(color)
+    screen.fill(orange)
     screen.blit(smile, (286,300))
     screen.blit(player_surf, (126,0))
 
