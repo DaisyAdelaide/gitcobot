@@ -9,6 +9,7 @@ from time import sleep
 import pigpio
 import os
 import sendmessage
+import getresponse
 
 
 testing = []
@@ -48,7 +49,7 @@ def voice(audio1):
     print ("you said: " + text1)
     heard = ("I heard... " + text1)
     with open ("file1.csv","w",encoding='UTF8') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file) 
         writer.writerow(['command'])
         writer.writerow([text1])
     return str(text1)
@@ -101,10 +102,10 @@ def record():
 
     text123 = voice(audio)
     
-    testing = pd.read_csv('file1.csv')
-    actions = pd.read_csv('file2.csv')
-    answer = print_reply(testing,actions)
-
+    #testing = pd.read_csv('file1.csv')
+    #actions = pd.read_csv('file2.csv')
+    #answer = print_reply(testing,actions)
+    answer = getresponse.get_response(text123)
     response = 'I heard ' + text123 + ',' + answer
 
     return(response)
