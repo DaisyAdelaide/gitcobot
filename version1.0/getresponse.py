@@ -9,7 +9,7 @@ def get_response(text):
 		return 'exit'
 
 	reply = get_intent(text)
-	print (reply)
+	return (reply)
 
 
 def get_intent(text):
