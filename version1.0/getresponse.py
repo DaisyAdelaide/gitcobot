@@ -18,7 +18,7 @@ def get_intent(text):
 					'Greeting': r'hello\s',
 					
 					'Animal': r'\sanimal\s',
-					'Country': r'\scountry\s?',
+					'Country': r'\scountry',
 
 					'DescribeSelf': r'what is\s',
 					'How': r'how\s',
