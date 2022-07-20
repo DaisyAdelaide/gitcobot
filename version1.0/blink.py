@@ -77,15 +77,15 @@ def chatbot():
         font = pygame.font.Font('freesansbold.ttf', 32)
         #text = getText(start)
 
-    if start == 0:
-        text = 'Press green to talk to me !'
+        if start == 0:
+            text = 'Press green to talk to me !'
 
-    if GPIO.input(button3) == 1:
-        print('pressed')
-        text = functions.record()
-        text = str(text)
-        start = 1
-        return text
+        if GPIO.input(button3) == 1:
+            print('pressed')
+            text = functions.record()
+            text = str(text)
+            start = 1
+            return text
 
         textSurface = font.render(text, True, white, black)
         textRect = textSurface.get_rect()
