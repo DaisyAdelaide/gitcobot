@@ -3,7 +3,6 @@ import pandas as pd
 import csv
 import numpy
 import gpiozero
-from gpiozero import LED
 import time
 from guizero import App, Picture, PushButton, Text
 from time import sleep
@@ -18,7 +17,7 @@ actions = []
 
 led1 = gpiozero.LED(6)
 led2 = gpiozero.LED(13)
-led3 = LED(19)
+led3 = gpiozero.LED(19)
 led4 = gpiozero.LED(26)
 
 #f = open("file2.csv", "w")
