@@ -5,7 +5,6 @@ import serial
 import pandas as pd
 import csv 
 import functions
-import chat
 import RPi.GPIO as GPIO
 
 class Button:
