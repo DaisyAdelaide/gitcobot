@@ -61,7 +61,7 @@ def define():
 
 
 def shrinkfunc():
-    global player_surf, shrink_index
+    global player_surf, shrink_index, shrink_blink, shrinking
 
     if shrink_index < 3 and shrink_blink == 0:
         shrink_index += 1
