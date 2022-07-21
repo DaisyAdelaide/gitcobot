@@ -4,7 +4,7 @@ import random
 global name_index 
 name_index = 0 
 
-def get_response(text, name_index):
+def get_response(text):
 	negative_responses = ()
 	random_questions = ()
 
