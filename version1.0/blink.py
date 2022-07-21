@@ -134,11 +134,6 @@ def chatbot():
         screen.blit(mouth, (286,300))
         screen.blit(player_surf, (126,0))
 
-        seconds2 += 1
-
-        if seconds2 == 80:
-            seconds2 = 0 
-
         textSurface = font.render(text, True, white, orange)
         textRect = textSurface.get_rect()
         textRect.center = (400, 450)
@@ -148,6 +143,11 @@ def chatbot():
         screen.blit(textSurface, textRect)
         pygame.display.update()
         clock.tick(20)
+
+        seconds2 += 1
+
+        if seconds2 == 80:
+            seconds2 = 0 
 
     seconds = 60
     index = 0 
