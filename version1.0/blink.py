@@ -61,7 +61,7 @@ def define():
 
 
 def shrinkfunc():
-    global player_surf, shrink_index, shrink_blink, shrinking
+    global player_surf, shrink_index, shrink_blink
 
     if shrink_index < 3 and shrink_blink == 0:
         shrink_index += 1
@@ -71,7 +71,6 @@ def shrinkfunc():
 
     if shrink_index == 0:
         shrink_blink = 0
-        shrinking = 0
 
     if shrink_index == 3:
         shrink_blink = 1
@@ -221,10 +220,6 @@ while True:
         count +=1
         chatbot()
 
-    if GPIO.input(button2) == 1:
-        shrinkfunc()
-        shrinking = 1
-
     if GPIO.input(button4) == 1:
         pygame.quit()
         sys.exit()
@@ -238,8 +233,11 @@ while True:
                 pygame.quit()
                 sys.exit()
     
-    if seconds < 14 and shrinking == 0:
+    if seconds < 14 :
         blink_func()
+
+    if GPIO.input(button2) == 1:
+        shrinkfunc()
     
     screen.fill(orange)
     screen.blit(smile, (286,300))
