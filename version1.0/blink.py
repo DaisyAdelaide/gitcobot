@@ -253,3 +253,4 @@ while True:
         seconds = 0 
         
 
+##stays in shrinking loop, fix this 
