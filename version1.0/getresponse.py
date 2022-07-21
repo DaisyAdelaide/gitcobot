@@ -1,6 +1,6 @@
 import re
 import random
-from __main__ import *
+from blink.py import *
 
 def get_response(text):
 
