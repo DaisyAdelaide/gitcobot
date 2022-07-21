@@ -29,7 +29,7 @@ class Button:
         return action
                          
 def define():
-    global one, two, three, four, five, six, seven, eight, smile
+    global one, two, three, four, five, six, seven, eight, smile, shock, mouth
     global shrink, shrink1, shrink2, shrink3, shrink4
 
     one = pygame.image.load('1O.jpg').convert_alpha()
@@ -58,10 +58,14 @@ def define():
     shrink3 = pygame.transform.scale(shrink3,(548,380))
     shrink4 = pygame.image.load('shrink4.jpg').convert_alpha()
     shrink4 = pygame.transform.scale(shrink4,(548,380))
+    shock = pygame.image.load('OO.jpg').convert_alpha()
+    shock = pygame.transform.scale(shock,(217, 150))
 
 
 def shrinkfunc():
-    global player_surf, shrink_index, shrink_blink
+    global player_surf, shrink_index, shrink_blink, mouth
+
+    mouth = shock
 
     if shrink_index < 3 and shrink_blink == 0:
         shrink_index += 1
@@ -125,7 +129,7 @@ def chatbot():
             blink_func()
         
         screen.fill(orange)
-        screen.blit(smile, (286,300))
+        screen.blit(mouth, (286,300))
         screen.blit(player_surf, (126,0))
 
         seconds2 += 1
@@ -180,6 +184,7 @@ clock = pygame.time.Clock()
 
 define()
 
+mouth = smile
 blinking = [one,two,three,four,five,six,seven,eight]
 shrink = [shrink1, shrink2, shrink3, shrink4]
 shrink_blink = 0
@@ -244,11 +249,12 @@ while True:
         player_surf = blinking[0]
         seconds = 70
         shrinking = 0
+        mouth = smile
         
 
     
     screen.fill(orange)
-    screen.blit(smile, (286,300))
+    screen.blit(mouth, (286,300))
     screen.blit(player_surf, (126,0))
 
     pygame.display.update()
