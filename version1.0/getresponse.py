@@ -1,10 +1,9 @@
 import re
 import random
-from blink.py import *
+
+name_index = 0
 
 def get_response(text):
-
-
 
 	negative_responses = ()
 	random_questions = ()
