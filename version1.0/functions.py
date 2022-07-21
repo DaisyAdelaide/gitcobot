@@ -40,7 +40,7 @@ def listen1():
     
 def voice(audio1):
     r = sr.Recognizer()
-    text1 = r.recognize_google(audio1, language = en-IE)
+    text1 = r.recognize_google(audio1, language = 'en-IE')
 
     with open ("SpeechData.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file)
