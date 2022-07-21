@@ -1,9 +1,10 @@
 import re
 import random
+from __main__ import *
 
 def get_response(text):
 
-	from __main__ import *
+
 
 	negative_responses = ()
 	random_questions = ()
