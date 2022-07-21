@@ -11,7 +11,7 @@ def get_response(text):
 	if text in negative_responses:
 		return 'exit'
 
-	if name_index == 1:
+	if name_index == 1 and text != 'I didnt catch that!':
 		return name(text)
 
 	if text == 'I didnt catch that!':
