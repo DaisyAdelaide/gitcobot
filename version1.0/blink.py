@@ -102,6 +102,7 @@ def blink_func():
 def chatbot():
     start = 0
     seconds2 = 0
+    index = 1
 
     while GPIO.input(button2) == 0:
 
