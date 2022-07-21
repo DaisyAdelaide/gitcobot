@@ -60,7 +60,7 @@ def define():
     shrink4 = pygame.transform.scale(shrink4,(548,380))
 
 
-def shrink():
+def shrinkfunc():
     global player_surf, shrink_index
 
     if shrink_index < 3 and shrink_blink == 0:
@@ -223,7 +223,7 @@ while True:
         chatbot()
 
     if GPIO.input(button2) == 1:
-        shrink()
+        shrinkfunc()
         shrinking = 1
 
     if GPIO.input(button4) == 1:
