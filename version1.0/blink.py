@@ -236,7 +236,7 @@ while True:
     if seconds < 14 :
         blink_func()
 
-    if GPIO.input(button2) == 1:
+    if GPIO.input(button3) == 1:
         shrinkfunc()
     
     screen.fill(orange)
