@@ -166,6 +166,8 @@ button2 = 27
 button3 = 22
 button4 = 10
 
+global name_index 
+name_index = 0 
 
 
 GPIO.setmode(GPIO.BCM)
