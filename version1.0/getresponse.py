@@ -14,6 +14,9 @@ def get_response(text):
 	if name_index == 1:
 		return name(text)
 
+	if text == 'I didnt catch that!':
+		return 'I didnt catch that, try again!'
+
 	reply = get_intent(text)
 	print(reply)
 	return (reply)
