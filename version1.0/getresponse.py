@@ -1,12 +1,15 @@
 import re
 import random
 
-def get_response(text):
+def get_response(text, name_index):
 	negative_responses = ()
 	random_questions = ()
 
 	if text in negative_responses:
 		return 'exit'
+
+	if name_index == 1:
+		return name(text, name_index)
 
 	reply = get_intent(text)
 	print(reply)
@@ -15,7 +18,7 @@ def get_response(text):
 
 def get_intent(text):
 	input_phrase = {
-					'Greeting': r'.*\s*Hi.*',
+					'name': r'.*\s*Hi.*',
 					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*name.*',
 					'How': r'how\s',
@@ -49,6 +52,16 @@ def get_intent(text):
 		if found_match and intent == 'What':
 			return What()
 
+
+def name(text, name_index):
+	if name_index == 0:
+		responses = ('What is your name?')
+		name_index = 1
+		return responses
+	if name_index == 1:
+		name_greet = 'Hi ' + text + ' , nice to meet you!'
+		responses = name_greet
+		return responses
 
 def no_match_intent():
 	responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
