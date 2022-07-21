@@ -19,7 +19,7 @@ def get_response(text, name_index):
 def get_intent(text):
 	input_phrase = {
 					'name': r'.*\s*Hi.*',
-					'Greeting': r'.*\s*hello.*',
+					'name': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*name.*',
 					'How': r'how\s',
 					'Animal':  r'.*\s*animal.*',
