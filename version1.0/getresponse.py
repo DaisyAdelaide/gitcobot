@@ -1,6 +1,9 @@
 import re
 import random
 
+global name_index 
+name_index = 0 
+
 def get_response(text, name_index):
 	negative_responses = ()
 	random_questions = ()
@@ -9,14 +12,14 @@ def get_response(text, name_index):
 		return 'exit'
 
 	if name_index == 1:
-		return name(text, name_index)
+		return name(text)
 
-	reply = get_intent(text, name_index)
+	reply = get_intent(text)
 	print(reply)
 	return (reply)
 
 
-def get_intent(text, name_index):
+def get_intent(text):
 	input_phrase = {
 					'name': r'.*\s*Hi.*',
 					'Greeting': r'.*\s*hello.*',
@@ -38,7 +41,7 @@ def get_intent(text, name_index):
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent()
 		if found_match and intent == 'Greeting':
-			return name(text, name_index)
+			return name(text)
 		if found_match and intent == 'DescribeSelf':
 			return DescribeSelf()
 		if found_match and intent == 'How':
@@ -53,7 +56,7 @@ def get_intent(text, name_index):
 			return What()
 
 
-def name(text, name_index):
+def name(text):
 	if name_index == 0:
 		responses = ('What is your name?')
 		name_index = 1

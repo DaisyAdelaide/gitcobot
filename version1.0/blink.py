@@ -102,7 +102,6 @@ def blink_func():
 def chatbot():
     start = 0
     seconds2 = 0
-    global name_index
 
     while GPIO.input(button2) == 0:
 
@@ -121,7 +120,7 @@ def chatbot():
 
         if GPIO.input(button3) == 1:
             print('pressed')
-            text = functions.record(name_index)
+            text = functions.record()
             text = str(text)
             start = 1
     
@@ -167,7 +166,7 @@ button2 = 27
 button3 = 22
 button4 = 10
 
-name_index = 0
+
 
 GPIO.setmode(GPIO.BCM)
 

@@ -98,7 +98,7 @@ def drive():
     sendmessage.stop()
     
 
-def record(name_index):
+def record():
 
     #write_file_2()
     
@@ -109,7 +109,7 @@ def record(name_index):
     #testing = pd.read_csv('file1.csv')
     #actions = pd.read_csv('file2.csv')
     #answer = print_reply(testing,actions)
-    answer = getresponse.get_response(text123, name_index)
+    answer = getresponse.get_response(text123)
     response = 'I heard ' + text123 + ', ' + answer
 
     return(response)
