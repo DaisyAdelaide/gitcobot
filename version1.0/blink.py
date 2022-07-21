@@ -100,7 +100,7 @@ def blink_func():
     player_surf = blinking[index]
 
 def chatbot():
-    global seconds2
+    global seconds2, index, player_surf
     seconds2 = 30
     start = 0
     index = 0
