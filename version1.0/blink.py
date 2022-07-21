@@ -149,9 +149,6 @@ def chatbot():
         if seconds2 == 80:
             seconds2 = 0 
 
-    seconds = 60
-    index = 0 
-    player_surf = blinking[index]
 
 def getText(start):
     if start == 0:
@@ -260,8 +257,13 @@ while True:
         seconds = 50
         shrinking = 0
         mouth = smile
-        
-    
+
+    if GPIO.input(button2) == 0:
+        player_surf = blinking[0]
+        index = 0
+        seconds = 50
+
+
     screen.fill(orange)
     screen.blit(mouth, (286,300))
     screen.blit(player_surf, (126,0))
