@@ -19,7 +19,7 @@ def get_response(text, name_index):
 def get_intent(text):
 	input_phrase = {
 					'name': r'.*\s*Hi.*',
-					'name': r'.*\s*hello.*',
+					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*name.*',
 					'How': r'how\s',
 					'Animal':  r'.*\s*animal.*',
@@ -38,7 +38,7 @@ def get_intent(text):
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent()
 		if found_match and intent == 'Greeting':
-			return Greet()
+			return name()
 		if found_match and intent == 'DescribeSelf':
 			return DescribeSelf()
 		if found_match and intent == 'How':
