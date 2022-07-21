@@ -100,6 +100,7 @@ def blink_func():
     player_surf = blinking[index]
 
 def chatbot():
+    global seconds2
     start = 0
 
     while GPIO.input(button2) == 0:
@@ -192,6 +193,7 @@ index = 0
 blink = 0
 shrink_index = 0
 seconds = 0
+seconds2 = 0
 shrinking = 0
 
 gui_font = pygame.font.Font(None,30)
