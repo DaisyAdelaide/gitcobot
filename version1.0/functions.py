@@ -20,10 +20,6 @@ led2 = gpiozero.LED(13)
 led3 = gpiozero.LED(19)
 led4 = gpiozero.LED(26)
 
-#f = open("file2.csv", "w")
-#f.truncate()
-#f.close()
-
 ESC_GPIO = 4
 pi = pigpio.pi()
 
@@ -44,7 +40,7 @@ def listen1():
     
 def voice(audio1):
     r = sr.Recognizer()
-    text1 = r.recognize_google(audio1)
+    text1 = r.recognize_google(audio1, language = 'pt', show_all=True)
 
     with open ("SpeechData.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file)
