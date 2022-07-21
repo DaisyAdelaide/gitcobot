@@ -238,7 +238,7 @@ while True:
 
     if GPIO.input(button3) == 1:
         shrinkfunc()
-        seconds = 0
+        seconds -=1
     
     screen.fill(orange)
     screen.blit(smile, (286,300))
