@@ -258,7 +258,7 @@ while True:
         shrinking = 0
         mouth = smile
 
-    if GPIO.input(button2) == 0:
+    if GPIO.input(button2) == 1:
         player_surf = blinking[0]
         index = 0
         seconds = 50
