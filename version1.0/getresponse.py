@@ -1,10 +1,10 @@
 import re
 import random
 
-global name_index 
-name_index = 0 
-
 def get_response(text):
+
+	from __main__ import *
+
 	negative_responses = ()
 	random_questions = ()
 
@@ -57,6 +57,7 @@ def get_intent(text):
 
 
 def name(text):
+	global name_index
 	if name_index == 0:
 		responses = ('What is your name?')
 		name_index = 1
