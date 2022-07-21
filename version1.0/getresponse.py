@@ -95,4 +95,4 @@ def What():
 	responses = ('What was the question?')
 	return responses
 
-get_response('whats yiur animal favourite')
+#get_response('whats yiur animal favourite')
