@@ -109,7 +109,10 @@ def record():
     #actions = pd.read_csv('file2.csv')
     #answer = print_reply(testing,actions)
     answer = getresponse.get_response(text123)
-    response = 'I heard ' + text123 + ', ' + answer
+    if answer == 'I didnt catch that, try again!':
+        response = 'I didnt catch that, try again!'
+    else:
+        response = 'I heard ' + text123 + ', ' + answer
 
     return(response)
 
