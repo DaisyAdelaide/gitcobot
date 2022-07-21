@@ -65,6 +65,7 @@ def name(text):
 	if name_index == 1:
 		name_greet = 'Hi ' + text + ' , nice to meet you!'
 		responses = name_greet
+		name_index = 0
 		return responses
 
 def no_match_intent():
