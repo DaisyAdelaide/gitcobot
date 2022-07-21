@@ -242,7 +242,7 @@ while True:
 
     if GPIO.input(button3) == 0 and shrinking == 1:
         player_surf = blinking[0]
-        seconds = 15
+        seconds = 70
         shrinking = 0
         
 
