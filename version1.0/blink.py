@@ -101,9 +101,6 @@ def blink_func():
 
 def chatbot():
     start = 0
-    player_surf = blinking[0]
-    index = 0
-    seconds2 = 70
 
     while GPIO.input(button2) == 0:
 
