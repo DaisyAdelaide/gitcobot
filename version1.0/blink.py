@@ -76,7 +76,6 @@ def shrinkfunc():
     if shrink_index == 3:
         shrink_blink = 1
 
-    shrink_index += 1
     player_surf = shrink[shrink_index]
 
 
