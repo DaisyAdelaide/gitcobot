@@ -28,6 +28,10 @@ def get_response(text):
 
 	reply = get_intent(text)
 	print(reply)
+	with open ("SpeechData.csv","a",encoding='UTF8') as file:
+        writer = csv.writer(file)
+        writer.writerow([text])
+        writer.writerow()
 	return (reply)
 
 
@@ -102,7 +106,7 @@ def kill():
 	return 'I cant I am a robot! Ha!'
 
 def Goodbye():
-	responses = ('Nice Chatting!', 'Bye !', 'See ya!')
+	responses = ('Nice Chatting!', 'Bye !', 'See ya!', 'Talk soon')
 	return random.choice(responses)
 
 def name(text):
@@ -135,7 +139,8 @@ def DescribeSelf(text):
 		with open('NameSuggestions.csv','a',encoding='UTF8') as file:
 			writer = csv.writer(file)
 			writer.writerow([text])
-		suggestion = 'Ooh, I like ' + text + ''
+		opinion = ('Ooh, I like ', 'Hmm not sure about ', 'I dont know how to feel about ')
+		suggestion = random.choice(opinion) + text + ''
 		responses = suggestion
 		pickname_index = 0
 		return responses
