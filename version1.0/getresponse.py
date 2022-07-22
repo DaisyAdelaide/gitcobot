@@ -5,7 +5,8 @@ import csv
 
 name_index = 0
 pickname_index = 0
-leaving = ('bye', 'I\'m leaving', 'bye bye', 'see ya later')
+leaving = ('bye', 'I\'m leaving', 'bye-bye', 'see ya later', 'see you later')
+bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus')
 
 def get_response(text):
 
@@ -31,11 +32,16 @@ def get_response(text):
 
 
 def get_intent(text):
-	global leaving
+	global leaving, bad_words
 	if text in leaving:
 		return Goodbye()
+	if text in bad_words:
+		return BAD()
+	if text == 'kill yourself':
+		return kill()
 	input_phrase = {
 					'Greeting': r'.*\s*Hi.*',
+					'Feeling': r'.*\s*feel.*',
 					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*name.*',
 					'How': r'.*\s*how.*',
@@ -59,6 +65,8 @@ def get_intent(text):
 			return no_match_intent()
 		if found_match and intent == 'Greeting':
 			return name(text)
+		if found_match and intent == 'Feeling':
+			return Feeling()
 		if found_match and intent == 'DescribeSelf':
 			return DescribeSelf(text)
 		if found_match and intent == 'How':
@@ -75,9 +83,20 @@ def get_intent(text):
 			return What()
 		if found_match and intent == 'Home':
 			return Home()
-			
+def Feeling():
+	responses = ('I do have feelings!', 'I have lots of feelings', 'Im feeling very annoyed right now', 'That is just rude', 'You dont have feelings!')
+	return random.choice(responses)
+
+def BAD():
+	responses = ('Dont use that word.', 'That is very mean', 'Thats not very nice', 'No you are!','I am telling on you','Do you want to get in trouble',)
+	return random.choice(responses)
+
+def kill():
+	return 'I cant I am a robot! Ha!'
+
 def Goodbye():
-	return 'Bye!!'
+	responses = ('Nice Chatting!', 'Bye !', 'See ya!')
+	return random.choice(responses)
 
 def name(text):
 	global name_index
