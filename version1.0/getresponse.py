@@ -97,7 +97,7 @@ def DescribeSelf(text):
 		return responses
 	if name_index == 1:
 		with open ("NameSuggestions.csv","a",encoding='UTF8') as file:
-        	writer = csv.writer(file)
+			writer = csv.writer(file)
         	writer.writerow([text])
 		name_greet = 'Ooh, I like ' + text 
 		responses = name_greet
