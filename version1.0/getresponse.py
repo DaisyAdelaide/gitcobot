@@ -10,6 +10,7 @@ def get_response(text):
 
 	negative_responses = ()
 	random_questions = ()
+	leaving = ('bye', 'I\'m leaving', 'bye bye', 'see ya later')
 
 	if text in negative_responses:
 		return 'exit'
@@ -29,8 +30,11 @@ def get_response(text):
 
 
 def get_intent(text):
+	global leaving
+	if text in leaving:
+		return Goodbye()
 	input_phrase = {
-					'name': r'.*\s*Hi.*',
+					'Greeting': r'.*\s*Hi.*',
 					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*name.*',
 					'How': r'.*\s*how.*',
@@ -64,15 +68,15 @@ def get_intent(text):
 			return Colour()
 		if found_match and intent == 'Food':
 			return Food()
-		if found_match and intent == 'What':
-			return What()
 		if found_match and intent == 'Robot':
 			return Robot()
+		if found_match and intent == 'What':
+			return What()
 		if found_match and intent == 'Home':
 			return Home()
 			
-
-
+def Goodbye():
+	return 'Bye!!'
 
 def name(text):
 	global name_index
@@ -121,6 +125,7 @@ def Colour():
 	responses = ('Orange ! I like to eat oranges too')
 	return responses
 
+
 def Food():
 	responses = ('Oranges ! What about you ?')
 	return responses
@@ -130,7 +135,7 @@ def What():
 	return responses
 
 def Robot():
-	responses = ('I am not a robot!', 'I like to think I am a person', 'Personally, I consider myself a frog','shhhhhh it is a secret')
+	responses = ('I am not a robot!', 'I like to think I am a person', 'Personally, I consider myself a human','shhhhhh it is a secret')
 	return random.choice(responses)
 
 def Home():
