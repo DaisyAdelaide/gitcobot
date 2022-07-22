@@ -27,11 +27,14 @@ def get_intent(text):
 					'name': r'.*\s*Hi.*',
 					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*name.*',
-					'How': r'how\s',
+					'How': r'.*\s*how.*',
 					'Animal':  r'.*\s*animal.*',
 					'Colour': r'.*\s*colour.*',
 					'Food': r'.*\s*food.*',
 					'What': r'.*\s*what.*',
+					'Robot': r'.*\s*robot.*',
+					'Home': r'.*\s*where.*',
+					'Home': r'.*\s*from.*',
 					'no_match_intent': r''
 
 					}
@@ -57,6 +60,12 @@ def get_intent(text):
 			return Food()
 		if found_match and intent == 'What':
 			return What()
+		if found_match and intent == 'Robot':
+			return Robot()
+		if found_match and intent == 'Home':
+			return 
+			Home()
+
 
 
 def name(text):
@@ -102,5 +111,13 @@ def Food():
 def What():
 	responses = ('What was the question?')
 	return responses
+
+def Robot():
+	responses = ('I am not a robot!', 'I like to think I am a person', 'Personally, I consider myself a frog','shhhhhh it is a secret')
+	return random.choice(responses)
+
+def Home():
+	responses = ('I am from planet Zen!', 'I am an alien robot from space!')
+	return random.choice(responses)
 
 #get_response('whats yiur animal favourite')
