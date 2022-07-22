@@ -32,8 +32,9 @@ def get_response(text):
 
 
 def get_intent(text):
-	global leaving, bad_words
-	if text in bad_words:
+	global leaving
+	global bad_words
+	if text in leaving:
 		return Goodbye()
 	elif text in bad_words:
 		return BAD()
