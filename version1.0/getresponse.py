@@ -67,8 +67,8 @@ def get_intent(text):
 		if found_match and intent == 'Robot':
 			return Robot()
 		if found_match and intent == 'Home':
-			return 
-			Home()
+			return Home()
+			
 
 
 
@@ -99,9 +99,7 @@ def DescribeSelf(text):
 		pickname_index = 1
 		return responses
 	if name_index == 1:
-		with open('NameSuggestions.csv','a',encoding='UTF8') as file:
-			writer = csv.writer(file)
-			writer.writerow([text])
+		
 		name_greet = 'Ooh, I like ' + text 
 		responses = name_greet
 		pickname_index = 0
