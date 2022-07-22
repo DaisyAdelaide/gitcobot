@@ -34,11 +34,14 @@ def get_response(text):
 def get_intent(text):
 	global leaving
 	global bad_words
-
+if any("abc" in s for s in xs):
+	for word in bad_words:
+		if any(word in )
+	if any(bad)
 	if text in bad_words:
 		return BAD()
 	if text in leaving:
-		return BAD()
+		return leaving()
 	
 	if text == 'kill yourself':
 		return kill()
@@ -88,7 +91,7 @@ def get_intent(text):
 		if found_match and intent == 'Home':
 			return Home()
 def Feeling():
-	responses = ('I do have feelings!', 'I have lots of feelings', 'Im feeling very annoyed right now', 'That is just rude', 'You dont have feelings!')
+	responses = ('I do have feelings!', 'I have lots of feelings', 'Im feeling very annoyed right now', 'You dont have feelings!')
 	return random.choice(responses)
 
 def BAD():
