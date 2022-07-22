@@ -38,7 +38,7 @@ def get_intent(text):
 	if text in bad_words:
 		return BAD()
 	if text in leaving:
-		return Goodbye()
+		return BAD()
 	
 	if text == 'kill yourself':
 		return kill()
