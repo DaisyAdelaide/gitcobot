@@ -34,12 +34,15 @@ def get_response(text):
 def get_intent(text):
 	global leaving
 	global bad_words
+
+	if text in bad_words:
+		return BAD()
 	if text in leaving:
 		return Goodbye()
-	elif text in bad_words:
-		return BAD()
-	elif text == 'kill yourself':
+	
+	if text == 'kill yourself':
 		return kill()
+
 	input_phrase = {
 					'Greeting': r'.*\s*Hi.*',
 					'Feeling': r'.*\s*feel.*',
