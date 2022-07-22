@@ -31,7 +31,7 @@ def get_response(text):
 	with open ("SpeechData.csv","a",encoding='UTF8') as file:
 		writer = csv.writer(file)
 		writer.writerow([reply])
-		writer.writerow(' ')
+		writer.writerow('/n')
 	return (reply)
 
 
