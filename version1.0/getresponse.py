@@ -28,11 +28,6 @@ def get_response(text):
 
 	reply = get_intent(text)
 	print(reply)
-	with open ("SpeechData.csv","a",encoding='UTF8') as file:
-		writer = csv.writer(file)
-		writer.writerow([reply])
-		writer.writerow('/n')
-	return (reply)
 
 
 def get_intent(text):
