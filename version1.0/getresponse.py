@@ -34,12 +34,11 @@ def get_response(text):
 def get_intent(text):
 	global leaving
 	global bad_words
-if any("abc" in s for s in xs):
+
 	for word in bad_words:
-		if any(word in )
-	if any(bad)
-	if text in bad_words:
-		return BAD()
+		if any(word in part for part in text):
+			return BAD()
+
 	if text in leaving:
 		return leaving()
 	
