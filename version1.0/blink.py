@@ -16,7 +16,7 @@ class Button:
         
     def draw(self):
         action = False
-          
+                        
         mouse_pos = pygame.mouse.get_pos()
         
         if self.top_rect.collidepoint(mouse_pos):
