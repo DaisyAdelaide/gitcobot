@@ -169,8 +169,6 @@ button2 = 27
 button3 = 22
 button4 = 10
 
-name_index = 0
-
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
