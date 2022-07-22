@@ -96,7 +96,7 @@ def DescribeSelf(text):
 	global pickname_index
 	if pickname_index == 0:
 		responses = ('I dont have a name ! Suggest one!')
-		name_index = 1
+		pickname_index = 1
 		return responses
 	if name_index == 1:
 		with open('NameSuggestions.csv','a',encoding='UTF8') as file:
