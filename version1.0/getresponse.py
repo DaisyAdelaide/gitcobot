@@ -35,9 +35,9 @@ def get_intent(text):
 	global leaving, bad_words
 	if text in leaving:
 		return Goodbye()
-	if text in bad_words:
+	else if text in bad_words:
 		return BAD()
-	if text == 'kill yourself':
+	else if text == 'kill yourself':
 		return kill()
 	input_phrase = {
 					'Greeting': r'.*\s*Hi.*',
