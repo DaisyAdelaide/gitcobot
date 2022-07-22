@@ -109,11 +109,16 @@ def record():
     #actions = pd.read_csv('file2.csv')
     #answer = print_reply(testing,actions)
     answer = getresponse.get_response(text123)
+
     if answer == 'I didnt catch that, try again!':
         response = 'I didnt catch that, try again!'
     else:
         response = 'I heard ' + text123 + ', ' + answer
 
+    with open ("SpeechData.csv","a",encoding='UTF8') as file:
+        writer = csv.writer(file)
+        writer.writerow([response])
+        writer.writerow(' ')
     return(response)
 
     
