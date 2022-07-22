@@ -29,9 +29,9 @@ def get_response(text):
 	reply = get_intent(text)
 	print(reply)
 	with open ("SpeechData.csv","a",encoding='UTF8') as file:
-        writer = csv.writer(file)
-        writer.writerow([text])
-        writer.writerow()
+		writer = csv.writer(file)
+		writer.writerow([text])
+		writer.writerow()
 	return (reply)
 
 
