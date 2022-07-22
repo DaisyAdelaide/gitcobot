@@ -36,7 +36,7 @@ def get_intent(text):
 	global bad_words
 
 	for word in bad_words:
-		if any(word in part for part in text):
+		if any(word in part for part in text.split()):
 			return BAD()
 
 	if text in leaving:
