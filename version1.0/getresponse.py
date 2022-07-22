@@ -28,6 +28,7 @@ def get_response(text):
 
 	reply = get_intent(text)
 	print(reply)
+	return reply
 
 
 def get_intent(text):
