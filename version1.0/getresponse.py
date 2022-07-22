@@ -15,6 +15,9 @@ def get_response(text):
 	if name_index == 1 and text != 'I didnt catch that!':
 		return name(text)
 
+	if pickname_index == 1 and text != 'I didnt catch that!':
+		return DescribeSelf(text)
+
 	if text == 'I didnt catch that!':
 		return 'I didnt catch that, try again!'
 
