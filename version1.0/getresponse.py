@@ -5,12 +5,13 @@ import csv
 
 name_index = 0
 pickname_index = 0
+leaving = ('bye', 'I\'m leaving', 'bye bye', 'see ya later')
 
 def get_response(text):
 
 	negative_responses = ()
 	random_questions = ()
-	leaving = ('bye', 'I\'m leaving', 'bye bye', 'see ya later')
+
 
 	if text in negative_responses:
 		return 'exit'
