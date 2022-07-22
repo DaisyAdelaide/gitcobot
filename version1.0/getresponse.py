@@ -50,7 +50,7 @@ def get_intent(text):
 		if found_match and intent == 'Greeting':
 			return name(text)
 		if found_match and intent == 'DescribeSelf':
-			return DescribeSelf()
+			return DescribeSelf(text)
 		if found_match and intent == 'How':
 			return How()
 		if found_match and intent == 'Animal':
