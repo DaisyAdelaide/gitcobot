@@ -1,5 +1,7 @@
 import re
 import random
+import pandas as pd
+import csv 
 
 name_index = 0
 pickname_index = 0
