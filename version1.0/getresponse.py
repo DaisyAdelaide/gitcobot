@@ -2,6 +2,7 @@ import re
 import random
 
 name_index = 0
+pickname_index = 0
 
 def get_response(text):
 
@@ -88,9 +89,20 @@ def Greet():
 	responses = ('Hi there', 'Hi !', 'Hello')
 	return random.choice(responses)
 
-def DescribeSelf():
-	responses = ('I am the Cobot, no name yet !')
-	return responses
+def DescribeSelf(text):
+	global pickname_index
+	if pickname_index == 0:
+		responses = ('I dont have a name ! Suggest one!')
+		name_index = 1
+		return responses
+	if name_index == 1:
+		with open ("NameSuggestions.csv","a",encoding='UTF8') as file:
+        	writer = csv.writer(file)
+        	writer.writerow([text])
+		name_greet = 'Ooh, I like ' + text 
+		responses = name_greet
+		pickname_index = 0
+		return responses
 
 def How():
 	responses = ('I am great', 'Doing well and you?', 'Thanks for asking! Good!')
