@@ -39,8 +39,9 @@ def get_intent(text):
 		if any(word in part for part in text.split()):
 			return BAD()
 
-	if text in leaving:
-		return leaving()
+	for word in leaving:
+		if any(word in part for part in text.split()):
+			return Goodbye()
 	
 	if text == 'kill yourself':
 		return kill()
