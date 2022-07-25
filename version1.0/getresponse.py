@@ -50,6 +50,8 @@ def get_intent(text):
 					'Feeling': r'.*\s*feel.*',
 					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*your name.*',
+					'Age': r'.*\s*how old.*',
+					'Age': r'.*\s*age.*',
 					'How': r'.*\s*how.*',
 					'Animal':  r'.*\s*animal.*',
 					'Colour': r'.*\s*colour.*',
@@ -58,8 +60,6 @@ def get_intent(text):
 					'Robot': r'.*\s*robot.*',
 					'Home': r'.*\s*where.*',
 					'Home': r'.*\s*from.*',
-					'Age': r'.*\s*how old.*',
-					'Age': r'.*\s*age.*',
 					'no_match_intent': r''
 
 					}
