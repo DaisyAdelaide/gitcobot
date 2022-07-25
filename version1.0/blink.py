@@ -105,24 +105,12 @@ def chatbot():
     index = 0
     blinktime = 80
     player_surf = blinking[index]
-    shrinking2 = 0 
 
     while GPIO.input(button2) == 0:
 
         if GPIO.input(button4) == 1:
             pygame.quit()
             sys.exit()
-
-    if GPIO.input(button) == 1:
-        shrinkfunc()
-        shrinking2 = 1
-
-    if GPIO.input(button) == 0 and shrinking2 == 1:
-        player_surf = blinking[0]
-        index = 0
-        seconds2 = 50
-        shrinking2 = 0
-        mouth = smile
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
