@@ -104,7 +104,7 @@ def chatbot():
     start = 0
     index = 0
     blinktime = 80
-    player_surf = blinking[index]
+    player_surf = shrink[shrink_index]
 
     while GPIO.input(button2) == 0:
 
