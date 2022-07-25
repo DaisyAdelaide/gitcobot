@@ -112,7 +112,8 @@ def name(text):
 		name_index = 1
 		return responses
 	if name_index == 1:
-		name_greet = 'Hi ' + text + ' , nice to meet you!'
+		isolate = text.split(' ')
+		name_greet = 'Hi ' + str(isolate[-1]) + ' , nice to meet you!'
 		responses = name_greet
 		name_index = 0
 		return responses
@@ -170,4 +171,5 @@ def Home():
 	responses = ('I am from planet Zen!', 'I am an alien robot from space!')
 	return random.choice(responses)
 
-#get_response('whats yiur animal favourite')
+
+#get_response('Daisy')
