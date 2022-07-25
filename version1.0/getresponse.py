@@ -50,8 +50,7 @@ def get_intent(text):
 					'Feeling': r'.*\s*feel.*',
 					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*your name.*',
-
-					'Age': r'.*\s*age.*',
+					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
 					'How': r'.*\s*how.*',
 					'Animal':  r'.*\s*animal.*',
@@ -73,6 +72,8 @@ def get_intent(text):
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent()
 		if found_match and intent == 'Age':
+			return Age()
+		if found_match and intent == 'Age2':
 			return Age()
 		if found_match and intent == 'Greeting':
 			return name(text)
