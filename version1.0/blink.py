@@ -104,7 +104,7 @@ def chatbot():
     start = 0
     index = 0
     blinktime = 80
-    player_surf = shrink[shrink_index]
+    player_surf = blinking[index]
 
     while GPIO.input(button2) == 0:
 
@@ -127,8 +127,8 @@ def chatbot():
             text = str(text)
             start = 1
     
-        if seconds2 < 8:
-            shrinkfunc()
+        if seconds2 < 14:
+            blink_func()
         
         screen.fill(orange)
         screen.blit(mouth, (286,300))
