@@ -104,6 +104,7 @@ def chatbot():
     seconds2 = 30
     start = 0
     index = 0
+    blinktime = 80
     player_surf = blinking[index]
 
     while GPIO.input(button2) == 0:
@@ -146,8 +147,9 @@ def chatbot():
 
         seconds2 += 1
 
-        if seconds2 == 80:
+        if seconds2 == blinktime:
             seconds2 = 0 
+            blinktime = random.randint(10,100)
 
 
 def getText(start):
