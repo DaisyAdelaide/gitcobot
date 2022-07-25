@@ -10,9 +10,7 @@ import pigpio
 import os
 import sendmessage
 import getresponse
-import pyttsx3, time 
 
-engine = pyttsx3.init() 
 
 testing = []
 actions = []
@@ -121,9 +119,6 @@ def record():
         writer = csv.writer(file)
         writer.writerow([response])
         writer.writerow(' ')
-
-    engine.say("Hello I am the cobot") 
-    engine.runAndWait()
     return(response)
 
     
