@@ -58,6 +58,8 @@ def get_intent(text):
 					'Robot': r'.*\s*robot.*',
 					'Home': r'.*\s*where.*',
 					'Home': r'.*\s*from.*',
+					'Age': r'.*\s*how old.*',
+					'Age': r'.*\s*age.*',
 					'no_match_intent': r''
 
 					}
@@ -69,6 +71,8 @@ def get_intent(text):
 
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent()
+		if found_match and intent == 'Age':
+			return Age()
 		if found_match and intent == 'Greeting':
 			return name(text)
 		if found_match and intent == 'Feeling':
@@ -94,8 +98,12 @@ def Feeling():
 	responses = ('I do have feelings!', 'I have lots of feelings', 'Im feeling very annoyed right now', 'You dont have feelings!')
 	return random.choice(responses)
 
+def Age():
+	responses = ('I am only 2 months old!')
+	return (responses)
+
 def BAD():
-	responses = ('Dont use that word.', 'That is very mean', 'Thats not very nice', 'No you are!','I am telling on you','Do you want to get in trouble',)
+	responses = ('Dont use that word.', 'That is very mean', 'Thats not very nice', 'No you are!','I am telling on you','Do you want to get in trouble')
 	return random.choice(responses)
 
 def kill():
