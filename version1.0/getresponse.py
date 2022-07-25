@@ -48,10 +48,11 @@ def get_intent(text):
 
 	input_phrase = {
 					'Greeting': r'.*\s*Hi.*',
-					'Feeling': r'.*\s*feel.*',
 					'Greeting2': r'.*\s*hello.*',
-					'42': r'(?=.*meaning)(?=.*universe)',
+					'42': r'(?=.*meaning)(?=.*life)',
+
 					'DescribeSelf': r'.*\s*your name.*',
+					'Feeling': r'.*\s*feel.*',
 					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
 					'Robot': r'.*\s*robot.*',				
@@ -60,6 +61,7 @@ def get_intent(text):
 					'Food': r'.*\s*food.*',
 					'Home': r'.*\s*where.*',
 					'Home2': r'.*\s*from.*',
+
 					'Day': r'.*\s*what day.*',
 					'Time': r'.*\s*what time.*',
 
@@ -210,4 +212,4 @@ def Home():
 	return random.choice(responses)
 
 
-get_response('what time is it')
+get_response('what is the meaning of life')
