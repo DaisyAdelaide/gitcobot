@@ -148,7 +148,7 @@ def chatbot():
 
         if seconds2 == blinktime:
             seconds2 = 0 
-            blinktime = random.randint(15,90)
+            blinktime = random.randint(15,100)
 
 def getText(start):
     if start == 0:
