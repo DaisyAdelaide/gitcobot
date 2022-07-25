@@ -62,7 +62,6 @@ def define():
     shock = pygame.image.load('OO.jpg').convert_alpha()
     shock = pygame.transform.scale(shock,(217, 150))
 
-
 def shrinkfunc():
     global player_surf, shrink_index, shrink_blink, mouth
 
@@ -81,7 +80,6 @@ def shrinkfunc():
         shrink_blink = 1
 
     player_surf = shrink[shrink_index]
-
 
 def blink_func():
     global player_surf, index, blink
@@ -152,7 +150,6 @@ def chatbot():
             seconds2 = 0 
             blinktime = random.randint(15,90)
 
-
 def getText(start):
     if start == 0:
         text = 'Press green to talk to me !'
@@ -165,8 +162,6 @@ def getText(start):
         start = 1
         return text
             
-    
-
 button = 17
 button2 = 27
 button3 = 22

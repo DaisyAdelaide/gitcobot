@@ -30,7 +30,6 @@ def get_response(text):
 	print(reply)
 	return reply
 
-
 def get_intent(text):
 	global leaving
 	global bad_words
@@ -90,6 +89,7 @@ def get_intent(text):
 			return What()
 		if found_match and intent == 'Home':
 			return Home()
+
 def Feeling():
 	responses = ('I do have feelings!', 'I have lots of feelings', 'Im feeling very annoyed right now', 'You dont have feelings!')
 	return random.choice(responses)
@@ -153,7 +153,6 @@ def Animal():
 def Colour():
 	responses = ('Orange ! I like to eat oranges too')
 	return responses
-
 
 def Food():
 	responses = ('Oranges ! What about you ?')
