@@ -48,7 +48,7 @@ def get_intent(text):
 	input_phrase = {
 					'Greeting': r'.*\s*Hi.*',
 					'Feeling': r'.*\s*feel.*',
-					'Greeting': r'.*\s*hello.*',
+					'Greeting2': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*your name.*',
 					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
@@ -59,7 +59,7 @@ def get_intent(text):
 					'What': r'.*\s*what.*',
 					'Robot': r'.*\s*robot.*',
 					'Home': r'.*\s*where.*',
-					'Home': r'.*\s*from.*',
+					'Home2': r'.*\s*from.*',
 					'no_match_intent': r''
 
 					}
@@ -76,6 +76,8 @@ def get_intent(text):
 		if found_match and intent == 'Age2':
 			return Age()
 		if found_match and intent == 'Greeting':
+			return name(text)
+		if found_match and intent == 'Greeting2':
 			return name(text)
 		if found_match and intent == 'Feeling':
 			return Feeling()
@@ -94,6 +96,8 @@ def get_intent(text):
 		if found_match and intent == 'What':
 			return What()
 		if found_match and intent == 'Home':
+			return Home()
+		if found_match and intent == 'Home2':
 			return Home()
 
 def Feeling():
