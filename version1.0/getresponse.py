@@ -61,6 +61,9 @@ def get_intent(text):
 					'Home': r'.*\s*where.*',
 					'Home2': r'.*\s*from.*',
 					'Day': r'.*\s*what day.*',
+					'Time': r'.*\s*what time.*',
+
+
 					'What': r'.*\s*what.*',
 					'How': r'.*\s*how.*',
 					'no_match_intent': r''
@@ -78,6 +81,8 @@ def get_intent(text):
 			return Age()
 		if found_match and intent == 'Day':
 			return Day()
+		if found_match and intent == 'Time':
+			return Time()
 		if found_match and intent == '42':
 			return FortyTwo()
 		if found_match and intent == 'Age2':
@@ -118,6 +123,11 @@ def Day():
 	dt = datetime.now()
 	day = dt.strftime('%A')
 	return ('It is ' + day)
+
+def Time():
+	now = datetime.now()
+	current_time = now.strftime("%H:%M")
+	return('It is ' + current_time)
 
 def Age():
 	responses = ('I am only 2 months old!')
@@ -200,4 +210,4 @@ def Home():
 	return random.choice(responses)
 
 
-get_response('what day is it')
+get_response('what time is it')
