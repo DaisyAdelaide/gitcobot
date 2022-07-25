@@ -127,8 +127,8 @@ def chatbot():
             text = str(text)
             start = 1
     
-        if seconds2 < 14:
-            blink_func()
+        if seconds2 < 8:
+            shrinkfunc()
         
         screen.fill(orange)
         screen.blit(mouth, (286,300))
@@ -212,10 +212,6 @@ f.truncate()
 f.close()
 
 count = 0
-global stage
-stage = 0
-
-blinktime0 = 80
 
 while True:
     if ser.in_waiting > 0:
@@ -272,5 +268,4 @@ while True:
 
     if seconds == 80:
         seconds = 0 
-        blinktime0 = random.randint(15,90)
         
