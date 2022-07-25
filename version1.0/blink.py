@@ -212,6 +212,7 @@ f.truncate()
 f.close()
 
 count = 0
+blinktime2 = 80
 
 while True:
     if ser.in_waiting > 0:
@@ -251,6 +252,7 @@ while True:
         seconds = 50
         shrinking = 0
         mouth = smile
+        blinktime2 = 80
 
     if GPIO.input(button2) == 1:
         player_surf = blinking[0]
@@ -266,6 +268,7 @@ while True:
     clock.tick(20)
     seconds += 1
 
-    if seconds == 80:
+    if seconds == blinktime2:
         seconds = 0 
+        blinktime2 = random.randint(15,100)
         
