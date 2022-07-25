@@ -71,8 +71,7 @@ def get_intent(text):
 
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent()
-		if found_match and intent == 'Age':
-			return Age()
+		
 		if found_match and intent == 'Greeting':
 			return name(text)
 		if found_match and intent == 'Feeling':
@@ -81,6 +80,8 @@ def get_intent(text):
 			return DescribeSelf(text)
 		if found_match and intent == 'How':
 			return How()
+		if found_match and intent == 'Age':
+			return Age()
 		if found_match and intent == 'Animal':
 			return Animal()
 		if found_match and intent == 'Colour':
