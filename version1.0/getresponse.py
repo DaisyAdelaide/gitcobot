@@ -50,7 +50,7 @@ def get_intent(text):
 					'Feeling': r'.*\s*feel.*',
 					'Greeting': r'.*\s*hello.*',
 					'DescribeSelf': r'.*\s*your name.*',
-					'Age': r'.*\s*how old.*',
+					'Age': r'.*\s*old.*',
 					'Age': r'.*\s*age.*',
 					'How': r'.*\s*how.*',
 					'Animal':  r'.*\s*animal.*',
