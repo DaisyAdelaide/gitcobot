@@ -6,6 +6,7 @@ import pandas as pd
 import csv 
 import functions
 import RPi.GPIO as GPIO
+import random
 
 class Button:
     def __init__(self, text, width, height, pos):
