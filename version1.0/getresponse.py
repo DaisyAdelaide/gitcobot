@@ -50,7 +50,7 @@ def get_intent(text):
 					'Greeting': r'.*\s*Hi.*',
 					'Feeling': r'.*\s*feel.*',
 					'Greeting': r'.*\s*hello.*',
-					'DescribeSelf': r'.*\s*name.*',
+					'DescribeSelf': r'.*\s*your name.*',
 					'How': r'.*\s*how.*',
 					'Animal':  r'.*\s*animal.*',
 					'Colour': r'.*\s*colour.*',
@@ -136,7 +136,7 @@ def DescribeSelf(text):
 		with open('NameSuggestions.csv','a',encoding='UTF8') as file:
 			writer = csv.writer(file)
 			writer.writerow([text])
-		opinion = ('Ooh, I like ', 'Hmm not sure about ', 'I dont know how to feel about ')
+		opinion = ('Ooh, I like ', 'Hmm not sure about ', 'I dont know how I feel about ')
 		suggestion = random.choice(opinion) + text + ''
 		responses = suggestion
 		pickname_index = 0
