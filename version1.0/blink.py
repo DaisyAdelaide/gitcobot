@@ -270,7 +270,7 @@ while True:
     clock.tick(20)
     seconds += 1
 
-    if seconds == blinktime0:
+    if seconds == 80:
         seconds = 0 
         blinktime0 = random.randint(15,90)
         
