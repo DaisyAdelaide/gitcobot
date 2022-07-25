@@ -220,6 +220,8 @@ count = 0
 global stage
 stage = 0
 
+blinktime0 = 80
+
 while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('utf-8').rstrip()
@@ -273,6 +275,7 @@ while True:
     clock.tick(20)
     seconds += 1
 
-    if seconds == 60:
+    if seconds == blinktime0:
         seconds = 0 
+        blinktime0 = random.randint(15,90)
         
