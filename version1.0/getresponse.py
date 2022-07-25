@@ -2,6 +2,7 @@ import re
 import random
 import pandas as pd
 import csv 
+from datetime import datetime
 
 name_index = 0
 pickname_index = 0
@@ -49,17 +50,19 @@ def get_intent(text):
 					'Greeting': r'.*\s*Hi.*',
 					'Feeling': r'.*\s*feel.*',
 					'Greeting2': r'.*\s*hello.*',
+					'42': r'(?=.*meaning)(?=.*universe)',
 					'DescribeSelf': r'.*\s*your name.*',
 					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
-					'How': r'.*\s*how.*',
+					'Robot': r'.*\s*robot.*',				
 					'Animal':  r'.*\s*animal.*',
 					'Colour': r'.*\s*colour.*',
 					'Food': r'.*\s*food.*',
-					'What': r'.*\s*what.*',
-					'Robot': r'.*\s*robot.*',
 					'Home': r'.*\s*where.*',
 					'Home2': r'.*\s*from.*',
+					'Day': r'.*\s*what day.*',
+					'What': r'.*\s*what.*',
+					'How': r'.*\s*how.*',
 					'no_match_intent': r''
 
 					}
@@ -73,6 +76,10 @@ def get_intent(text):
 			return no_match_intent()
 		if found_match and intent == 'Age':
 			return Age()
+		if found_match and intent == 'Day':
+			return Day()
+		if found_match and intent == '42':
+			return FortyTwo()
 		if found_match and intent == 'Age2':
 			return Age()
 		if found_match and intent == 'Greeting':
@@ -103,6 +110,14 @@ def get_intent(text):
 def Feeling():
 	responses = ('I do have feelings!', 'I have lots of feelings', 'Im feeling very annoyed right now', 'You dont have feelings!')
 	return random.choice(responses)
+
+def FortyTwo():
+	return ('42')
+
+def Day():
+	dt = datetime.now()
+	day = dt.strftime('%A')
+	return ('It is ' + day)
 
 def Age():
 	responses = ('I am only 2 months old!')
@@ -185,4 +200,4 @@ def Home():
 	return random.choice(responses)
 
 
-#get_response('Daisy')
+get_response('what day is it')
