@@ -21,7 +21,7 @@ led3 = gpiozero.LED(19)
 led4 = gpiozero.LED(26)
 
 ESC_GPIO = 4
-pi = pigpio.pi()
+#pi = pigpio.pi()
 
 
 def arm():
