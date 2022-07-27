@@ -56,7 +56,7 @@ def voice(audio1):
         writer.writerow([text1])
     return str(text1)
     
-
+ 
 def write_file_2():
     data1 = ['command','response']
     data2 = ['how are you', 'I am grand']
