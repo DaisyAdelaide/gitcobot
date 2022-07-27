@@ -212,6 +212,7 @@ def Joke():
 			'Microchips'
 			)
 		joke_number += 1
+		joke_index = 0
 		if joke_number > 9:
 			joke_number = 0
 		return responses[joke_number-1]
