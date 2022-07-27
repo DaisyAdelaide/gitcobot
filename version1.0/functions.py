@@ -23,7 +23,6 @@ led4 = gpiozero.LED(26)
 ESC_GPIO = 4
 #pi = pigpio.pi()
 
-
 def arm():
     sendmessage.arm()
     
@@ -113,7 +112,8 @@ def record():
     if answer == 'I didnt catch that, try again!':
         response = 'I didnt catch that, try again!'
     else:
-        response = 'I heard ' + text123 + ', ' + answer
+        response = answer
+#        response = 'I heard ' + text123 + ', ' + answer
 
     with open ("SpeechData.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file)
@@ -123,7 +123,7 @@ def record():
 
     
 def initial():
-    #for final product, when starting pi only once for use
+    #for final product, when starting pi only once for use, dont need at the moment
     os.system('sudo pigpiod')
 
 def light_blue():

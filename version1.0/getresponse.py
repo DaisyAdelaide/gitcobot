@@ -6,6 +6,8 @@ from datetime import datetime
 
 name_index = 0
 pickname_index = 0
+joke_index = 0
+joke_number
 leaving = ('bye', 'I\'m leaving', 'bye-bye', 'see ya later', 'see you later')
 bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus')
 
@@ -20,6 +22,9 @@ def get_response(text):
 
 	if name_index == 1 and text != 'I didnt catch that!':
 		return name(text)
+
+	if joke_index == 1 and text != 'I didnt catch that!':
+		return Joke()
 
 	if pickname_index == 1 and text != 'I didnt catch that!':
 		return DescribeSelf(text)
@@ -56,15 +61,16 @@ def get_intent(text):
 					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
 					'Robot': r'.*\s*robot.*',				
-					'Animal':  r'.*\s*animal.*',
-					'Colour': r'.*\s*colour.*',
-					'Food': r'.*\s*food.*',
+
 					'Home': r'.*\s*where.*',
 					'Home2': r'.*\s*from.*',
 
+					'Favourite': r'.*\s*favourite.*',
+
+					'Joke': r'.*\s*joke.*',
+
 					'Day': r'.*\s*what day.*',
 					'Time': r'.*\s*what time.*',
-
 
 					'What': r'.*\s*what.*',
 					'How': r'.*\s*how.*',
@@ -77,6 +83,10 @@ def get_intent(text):
 		regex_pattern = value
 		found_match = re.match(regex_pattern, text)
 
+		if found_match and intent == 'Favourite':
+			return Favourite(text)
+		if found_match and intent == 'Joke':
+			return Joke()
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent()
 		if found_match and intent == 'Age':
@@ -99,12 +109,6 @@ def get_intent(text):
 			return DescribeSelf(text)
 		if found_match and intent == 'How':
 			return How()
-		if found_match and intent == 'Animal':
-			return Animal()
-		if found_match and intent == 'Colour':
-			return Colour()
-		if found_match and intent == 'Food':
-			return Food()
 		if found_match and intent == 'Robot':
 			return Robot()
 		if found_match and intent == 'What':
@@ -120,6 +124,22 @@ def Feeling():
 
 def FortyTwo():
 	return ('42')
+
+def Favourite(text):
+	thing = text.split()
+	if 'tree' in text:
+		return 'i like trees'
+	if 'colour' in text:
+		return 'Orange ! I like to eat oranges too'
+	if 'animal' in text:
+		return 'I like frogs'
+	if 'food' in text:
+		return 'Oranges ! What about you ?'
+	if 'tree' in text:
+		return 'Pine trees!!'
+	else:
+		return 'hmm i dont have a favourite ' + thing[-1]
+
 
 def Day():
 	dt = datetime.now()
@@ -159,6 +179,43 @@ def name(text):
 		name_index = 0
 		return responses
 
+def Joke():
+	global joke_index, joke_number
+	if joke_index == 0:
+		responses = (
+			'What do dog robots do?', 
+			'What happens when a robot dies?', 
+			'Why did the robot chicken cross the road?', 
+			'Why are robots boring?',
+			'Why did the robot need to go to therapy?',
+			'What do you call a robot who likes to row?',
+			'Why did the robot get upset?',
+			'Why did the robot sneeze?',
+			'How did the robot eat his food?',
+			'What is a robots favourite snack?'
+			)
+		joke_index = 1
+		return responses[joke_number]
+
+
+	if joke_index == 1:
+		responses = (
+			'They byte!',
+			'They rust in peace.',
+			'The chicken programmed him',
+			'They just drone on and on'
+			'Because he always bot-tled up his emotions!',
+			'A row-bot',
+			'Because everyone was pushing his buttons!',
+			'They had a virus...',
+			'He took a mega-byte',
+			'Microchips'
+			)
+		joke_number += 1
+		if joke_number > 9:
+			joke_number = 0
+		return responses[joke_number-1]
+
 def no_match_intent():
 	responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
 	return random.choice(responses)
@@ -187,18 +244,6 @@ def How():
 	responses = ('I am great', 'Doing well and you?', 'Thanks for asking! Good!')
 	return random.choice(responses)
 
-def Animal():
-	responses = ('I like frogs')
-	return responses
-
-def Colour():
-	responses = ('Orange ! I like to eat oranges too')
-	return responses
-
-def Food():
-	responses = ('Oranges ! What about you ?')
-	return responses
-
 def What():
 	responses = ('What was the question?')
 	return responses
@@ -212,4 +257,4 @@ def Home():
 	return random.choice(responses)
 
 
-get_response('what is the meaning of life')
+get_response('what is your favourite animal')
