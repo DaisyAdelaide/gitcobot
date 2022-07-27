@@ -7,7 +7,7 @@ from datetime import datetime
 name_index = 0
 pickname_index = 0
 joke_index = 0
-joke_number
+joke_number = 0
 leaving = ('bye', 'I\'m leaving', 'bye-bye', 'see ya later', 'see you later')
 bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus')
 
