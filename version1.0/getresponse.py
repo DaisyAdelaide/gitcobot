@@ -299,7 +299,11 @@ def maths():
         numbers.pop(popping)
         numbers.insert(popping,answer)
         maths()
-    
+
+	
+    operations.clear()
+    numbers.clear()
+	
     return str(answer)
 
 def check_if_maths(text):
