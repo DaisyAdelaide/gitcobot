@@ -318,8 +318,8 @@ def check_if_maths(text):
     if len(operations) > 0 and len(numbers) > 1:
         return True
     else:
-	operations.clear()
-	numbers.clear()
+        operations.clear()
+        numbers.clear()
     
 #printing = get_response('what is 150 * 2')
 #print(printing)
