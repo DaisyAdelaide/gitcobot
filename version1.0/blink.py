@@ -270,5 +270,21 @@ while True:
 
     if seconds == blinktime2:
         seconds = 0 
-        blinktime2 = random.randint(15,100)
+        blinktime2 = random.randint(35,100)
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
