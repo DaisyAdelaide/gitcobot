@@ -1,6 +1,6 @@
 import re
 import random
-import pandas as pd
+#import pandas as pd
 import csv 
 from datetime import datetime
 
@@ -317,8 +317,11 @@ def check_if_maths(text):
                 operations.append(x)
     if len(operations) > 0 and len(numbers) > 1:
         return True
+    else:
+	operations.clear()
+	numbers.clear()
     
-#printing = get_response('what is 2 + 2')
+#printing = get_response('what is 150 * 2')
 #print(printing)
 
 
