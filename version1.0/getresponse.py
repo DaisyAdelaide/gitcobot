@@ -1,6 +1,6 @@
 import re
 import random
-#import pandas as pd
+import pandas as pd
 import csv 
 from datetime import datetime
 
@@ -204,13 +204,12 @@ def Joke():
 		joke_index = 1
 		return responses[joke_number]
 
-
 	if joke_index == 1:
 		responses = (
 			'They byte!',
 			'They rust in peace.',
 			'The chicken programmed him',
-			'They just drone on and on'
+			'They just drone on and on',
 			'Because he always bot-tled up his emotions!',
 			'A row-bot',
 			'Because everyone was pushing his buttons!',
@@ -266,7 +265,7 @@ def Home():
 
 def maths():
     global numbers, operations, answer
-    index = 0
+    index = 0 
     complete = 0
     
     if operations.count('*') > 0 or operations.count('/') > 0:
@@ -303,8 +302,9 @@ def maths():
 	
     operations.clear()
     numbers.clear()
+    answer = str(answer)
 	
-    return str(answer)
+    return ('The answer is ' + answer)
 
 def check_if_maths(text):
     global operation, numbers
@@ -320,3 +320,10 @@ def check_if_maths(text):
     
 #printing = get_response('what is 2 + 2')
 #print(printing)
+
+
+
+
+
+
+
