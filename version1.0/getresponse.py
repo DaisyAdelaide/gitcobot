@@ -304,7 +304,7 @@ def maths():
     numbers.clear()
     answer = str(answer)
 	
-    return ('The answer is ' + answer)
+    return ('The answer is ' + answer + ' !')
 
 def check_if_maths(text):
     global operation, numbers
