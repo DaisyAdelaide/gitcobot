@@ -56,7 +56,7 @@ def get_intent(text):
 			return Goodbye()
 	
 	if text == 'kill yourself':
-		return kill()
+		return kill() 
 
 	input_phrase = {
 					'Greeting': r'.*\s*Hi.*',
