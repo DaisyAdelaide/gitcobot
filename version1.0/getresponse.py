@@ -315,7 +315,7 @@ def check_if_maths(text):
         for expression in operation:
             if expression == x:
                 operations.append(x)
-    if len(operations) > 0:
+    if len(operations) > 0 and len(numbers) > 1:
         return True
     
 #printing = get_response('what is 2 + 2')
