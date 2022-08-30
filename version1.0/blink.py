@@ -221,7 +221,7 @@ while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('latin-1').rstrip()
         try:
-            speed = int(line)
+            speed = line
         except:
             speed = 0
         with open ("SpeedData.csv","a",encoding='UTF8') as file:
@@ -249,7 +249,7 @@ while True:
     if seconds < 14 :
         blink_func()
 
-    if GPIO.input(button3) == 1 or int(speed) > 2:
+    if GPIO.input(button3) == 1 or int(speed) > 0:
         shrinkfunc()
         shrinking = 1
 
