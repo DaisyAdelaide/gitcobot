@@ -265,11 +265,11 @@ while True:
         index = 0
         seconds = 50
 
-    if speed > 0:
+    if speed > 1:
         shrinkfunc()
-        shrinking = 1
+        shrinking = 11
 
-    if speed == 0 and shrinking == 1:
+    if speed == 0 and shrinking == 11:
         player_surf = blinking[0]
         index = 0
         seconds = 50
