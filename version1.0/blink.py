@@ -252,8 +252,6 @@ while True:
         shrinkfunc()
         shrinking = 1
 
-    
-
     if GPIO.input(button3) == 0 and shrinking == 1:
         player_surf = blinking[0]
         index = 0
@@ -270,6 +268,14 @@ while True:
     if speed > 0:
         shrinkfunc()
         shrinking = 1
+
+    if speed == 0 and shrinking == 1:
+        player_surf = blinking[0]
+        index = 0
+        seconds = 50
+        shrinking = 0
+        mouth = smile
+        blinktime2 = 80
 
     screen.fill(orange)
     screen.blit(mouth, (286,300))
