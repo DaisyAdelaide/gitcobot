@@ -215,7 +215,7 @@ f.close()
 count = 0
 blinktime2 = 80
 
-speed = ''
+speed = 0
 
 while True:
     if ser.in_waiting > 0:
