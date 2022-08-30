@@ -215,7 +215,7 @@ f.close()
 count = 0
 blinktime2 = 80
 
-speed = 0
+speed = ''
 
 while True:
     if ser.in_waiting > 0:
@@ -246,7 +246,7 @@ while True:
     if seconds < 14 :
         blink_func()
 
-    if GPIO.input(button3) == 1 or speed > 2:
+    if GPIO.input(button3) == 1 or int(speed) > 2:
         shrinkfunc()
         shrinking = 1
 
