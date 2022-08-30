@@ -215,11 +215,12 @@ f.close()
 count = 0
 blinktime2 = 80
 
+speed = 0
 
 while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('latin-1').rstrip()
-        speed = line
+        speed = int(line)
         with open ("SpeedData.csv","a",encoding='UTF8') as file:
             writer = csv.writer(file)
             writer.writerow([line])
