@@ -220,8 +220,10 @@ global speed
 while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('latin-1').rstrip()
-        if line:
+        if line.isnumeric():
             speed = int(line)
+        else:
+            speed = 0
         with open ("SpeedData.csv","a",encoding='UTF8') as file:
             writer = csv.writer(file)
             writer.writerow([line])
