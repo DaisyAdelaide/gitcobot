@@ -252,6 +252,8 @@ while True:
         shrinkfunc()
         shrinking = 1
 
+# FIX THIS BIT NOT FINISHED
+
     if speed > 1:
         shrinkfunc()
         shrinking = 1
