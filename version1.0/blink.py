@@ -215,14 +215,11 @@ f.close()
 count = 0
 blinktime2 = 80
 
-speed = 0
+line = ''
 
 while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('latin-1').rstrip()
-        if line.isnumeric():
-            speed = int(line)
-
         with open ("SpeedData.csv","a",encoding='UTF8') as file:
             writer = csv.writer(file)
             writer.writerow(line)
@@ -252,13 +249,7 @@ while True:
         shrinkfunc()
         shrinking = 1
 
-# FIX THIS BIT NOT FINISHED
-
-    if speed > 1:
-        shrinkfunc()
-        shrinking = 1
-
-    if GPIO.input(button3) == 0 and shrinking == 1 and speed < 2:
+    if GPIO.input(button3) == 0 and shrinking == 1:
         player_surf = blinking[0]
         index = 0
         seconds = 50
@@ -270,6 +261,23 @@ while True:
         player_surf = blinking[0]
         index = 0
         seconds = 50
+
+###############################
+
+    if line == 'Driving':
+        shrinkfunc()
+        shrinking = 11
+
+    if line == 'Stop' and shrinking == 11:
+        player_surf = blinking[0]
+        index = 0
+        seconds = 50
+        shrinking = 0
+        mouth = smile
+        blinktime2 = 80
+
+
+###############################
 
 
     screen.fill(orange)
