@@ -180,8 +180,8 @@ def maths_game():
 
         textSurface = font.render(text, True, orange, black)
         textRect = textSurface.get_rect()
-        textRect.center = (200, 450)
-        screen.blit(textSurface)
+     #   textRect.center = (200, 450)
+        screen.blit(textSurface,  (200, 450))
 
         pygame.display.update()
         clock.tick(20)
