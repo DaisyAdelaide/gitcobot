@@ -107,7 +107,7 @@ def chatbot():
     blinktime = 80
     player_surf = blinking[index]
 
-    while GPIO.input(button2) == 0:
+    while GPIO.input(button3) == 0:
 
         if GPIO.input(button4) == 1:
             pygame.quit()
@@ -122,7 +122,7 @@ def chatbot():
         if start == 0:
             text = 'Press green to talk to me !'
 
-        if GPIO.input(button3) == 1:
+        if GPIO.input(button2) == 1:
             print('pressed')
             text = functions.record()
             text = str(text)
@@ -160,7 +160,7 @@ def maths_game():
     blinktime = 80
     player_surf = blinking[index]
 
-    while GPIO.input(button) == 0:
+    while GPIO.input(button3) == 0:
 
         if GPIO.input(button4) == 1:
             pygame.quit()
