@@ -180,7 +180,7 @@ def maths_game():
 
         textSurface = font.render(text, True, white, orange)
         textRect = textSurface.get_rect()
-        textRect.center = (200, 450)
+        textRect.center = (400, 200)
         
         #screen.fill(black)
         pygame.draw.rect(screen, orange, pygame.Rect(200, 450, 200, 450))
