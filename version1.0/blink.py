@@ -152,7 +152,7 @@ def chatbot():
             blinktime = random.randint(35,100)
 
 ##########
-def chatbot():
+def maths_game():
     global seconds2, index, player_surf
     seconds2 = 30
     start = 0
