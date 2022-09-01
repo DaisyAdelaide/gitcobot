@@ -151,6 +151,45 @@ def chatbot():
             seconds2 = 0 
             blinktime = random.randint(35,100)
 
+##########
+def chatbot():
+    global seconds2, index, player_surf
+    seconds2 = 30
+    start = 0
+    index = 0
+    blinktime = 80
+    player_surf = blinking[index]
+
+    while GPIO.input(button) == 0:
+
+        if GPIO.input(button4) == 1:
+            pygame.quit()
+            sys.exit()
+                   
+        black = (0, 0, 0)
+        white = (255, 255, 255)
+        orange = (255, 127, 39)
+        font = pygame.font.Font('freesansbold.ttf', 80)
+        #text = getText(start)
+
+        
+    
+        if seconds2 < 14:
+            blink_func()
+        
+        screen.fill(black)
+
+        text = ('2+2')
+
+        textSurface = font.render(text, True, white, orange)
+        textRect = textSurface.get_rect()
+        textRect.center = (200, 450)
+
+        pygame.display.update()
+        clock.tick(20)
+
+####################################
+
 def getText(start):
     if start == 0:
         text = 'Press green to talk to me !'
@@ -232,6 +271,10 @@ while True:
     if GPIO.input(button4) == 1:
         pygame.quit()
         sys.exit()
+##################################
+    if GPIO.input(button2) == 1:
+        maths_game()
+###################################
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -276,9 +319,7 @@ while True:
         mouth = smile
         blinktime2 = 80
 
-
 ###############################
-
 
     screen.fill(orange)
     screen.blit(mouth, (286,300))
