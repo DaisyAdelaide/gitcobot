@@ -174,7 +174,7 @@ def maths_game():
         if seconds2 < 14:
             blink_func()
         
-        screen.fill(black)
+        screen.fill(white)
 
         text = ('2+2')
 
