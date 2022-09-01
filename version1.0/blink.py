@@ -170,9 +170,6 @@ def maths_game():
         white = (255, 255, 255)
         orange = (255, 127, 39)
         font = pygame.font.Font('freesansbold.ttf', 80)
-        #text = getText(start)
-
-        
     
         if seconds2 < 14:
             blink_func()
@@ -181,7 +178,7 @@ def maths_game():
 
         text = ('2+2')
 
-        textSurface = font.render(text, True, white, orange)
+        textSurface = font.render(text, True, orange, black)
         textRect = textSurface.get_rect()
         textRect.center = (200, 450)
 
@@ -305,8 +302,6 @@ while True:
         index = 0
         seconds = 50
 
-###############################
-
     if line == 'Driving':
         shrinkfunc()
         shrinking = 11
@@ -318,8 +313,6 @@ while True:
         shrinking = 0
         mouth = smile
         blinktime2 = 80
-
-###############################
 
     screen.fill(orange)
     screen.blit(mouth, (286,300))
