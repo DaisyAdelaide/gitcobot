@@ -169,19 +169,19 @@ def maths_game():
         black = (0, 0, 0)
         white = (255, 255, 255)
         orange = (255, 127, 39)
-        font = pygame.font.Font('freesansbold.ttf', 80)
+        font = pygame.font.Font('freesansbold.ttf', 180)
     
         if seconds2 < 14:
             blink_func()
         
-        screen.fill(white)
+        screen.fill(black)
 
         text = ('2+2')
 
         textSurface = font.render(text, True, orange, black)
         textRect = textSurface.get_rect()
      #   textRect.center = (200, 450)
-        screen.blit(textSurface,  (200, 450))
+        screen.blit(textSurface,  (400, 650))
 
         pygame.display.update()
         clock.tick(20)
