@@ -186,6 +186,7 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
 
+
 ####################################
 
 def getText(start):
