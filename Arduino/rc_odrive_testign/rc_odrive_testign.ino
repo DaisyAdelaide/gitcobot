@@ -74,15 +74,10 @@ void loop() {
     int requested_state;
     delay(2000);
     
-    requested_state = AXIS_STATE_MOTOR_CALIBRATION;
+    requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE;
     //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, true)) return;
     delay(3000);
-    
-    requested_state = AXIS_STATE_ENCODER_OFFSET_CALIBRATION;
-   // Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
-    if(!odrive.run_state(motornum, requested_state, true, 25.0f)) return;
-    delay(2000);
   
     requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL;
     //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
@@ -91,21 +86,16 @@ void loop() {
   
     c = '1';
     motornum = c-'0';
-    delay(500);
-    requested_state = AXIS_STATE_MOTOR_CALIBRATION;
+    delay(2000);
+    requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE;
     //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, true)) return;
     delay(3000);
-  
-    requested_state = AXIS_STATE_ENCODER_OFFSET_CALIBRATION;
-    //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
-    if(!odrive.run_state(motornum, requested_state, true, 25.0f)) return;
-    delay(2000);
-  
+    
     requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL;
    // Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, false /*don't wait*/)) return;  
-    delay(2000);    
+    delay(3000);    
   }
 
   //Serial.println(TURNING_BINARY);
