@@ -178,10 +178,15 @@ def maths_game():
 
         text = ('2+2')
 
-        textSurface = font.render(text, True, orange, black)
+        textSurface = font.render(text, True, white, orange)
         textRect = textSurface.get_rect()
-     #   textRect.center = (200, 450)
-        screen.blit(textSurface,  (0, 650))
+        textRect.center = (400, 450)
+        
+        #screen.fill(black)
+        pygame.draw.rect(screen, orange, pygame.Rect(0, 440, 800, 200))
+        screen.blit(textSurface, textRect)
+        pygame.display.update()
+        clock.tick(20)
 
         pygame.display.update()
         clock.tick(20)
