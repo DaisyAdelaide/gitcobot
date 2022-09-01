@@ -120,7 +120,7 @@ def chatbot():
         #text = getText(start)
 
         if start == 0:
-            text = 'Press green to talk to me !'
+            text = 'Press blue to talk to me !'
 
         if GPIO.input(button2) == 1:
             print('pressed')
