@@ -202,7 +202,7 @@ def maths_game():
             print(answer)
             print(response)
             
-            if response.isnumeric():
+            if not response.isnumeric():
                 isolate = response.split(' ')
                 isolate = str(isolate[-1])
                 isolate = lev_distance.find_match(isolate)
