@@ -240,6 +240,7 @@ def sum():
     first_number = random.randint(0,10)
     second_number = random.randint(0,10)
     operand = random.choice(operands)
+    answer = 0
 
     problem = '{} {} {}'.format(first_number, operand, second_number)
 
