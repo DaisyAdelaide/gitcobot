@@ -193,6 +193,8 @@ def maths_game():
             asked = 1
 
         if start == 1:
+            print(answer)
+            print(response)
             if response == answer:
                 textSurface = font.render('Right', True, orange, black)
                 textRect = textSurface.get_rect()
