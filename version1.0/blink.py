@@ -229,7 +229,7 @@ def maths_game():
         clock.tick(20)
 
 def sum():
-    return '9+1','10'
+    return '9+2','11'
 ####################################
 
 def getText(start):
