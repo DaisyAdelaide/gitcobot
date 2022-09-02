@@ -256,7 +256,7 @@ def sum():
         answer = int(first_number) * int(second_number)
 
     if operand == '/':
-        answer = int(first_number) / int(second_number)
+        answer = (first_number) / (second_number)
         if (first_number % second_number) > 0:
             sum()
         else:
