@@ -260,7 +260,7 @@ def sum():
         if (first_number % second_number) > 0:
             return '0','0'
         else:
-            return problem, str(answer)
+            return problem, str(int(answer))
             
 
 
