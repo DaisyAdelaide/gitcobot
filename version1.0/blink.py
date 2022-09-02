@@ -186,7 +186,7 @@ def maths_game():
         screen.fill(black)
 
         if asked == 0:
-            problem, answer = sum()
+            problem, answer = summ()
             print (answer)
 
         if start == 0:
@@ -242,7 +242,7 @@ def is_integer_num(n):
         return n.is_integer()
     return False
 
-def sum():
+def summ():
     operands = [ '/']
     answer = 0
     operand = ''
@@ -267,12 +267,10 @@ def sum():
         if (is_integer_num(answer)):
             return problem, str(int(answer))
         else:
-            sum()
-            
-
+            summ()
 
     if (answer < 0):
-        sum()
+        summ()
     else:
         return problem, str(answer)
     
