@@ -16,7 +16,12 @@ def find_match(isolate):
 		'seven',
 		'eight',
 		'nine',
-		'ten'
+		'ten',
+		'eleven',
+		'twelve',
+		'thirteen',
+		'fourteen',
+		'fifteen'
 		)
 
 	for word in words:
