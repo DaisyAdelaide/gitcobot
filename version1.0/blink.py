@@ -187,7 +187,7 @@ def maths_game():
 
         if asked == 0:
             problem, answer = sum()
-            print answer
+            print (answer)
 
         if start == 0:
             textSurface = font.render(problem, True, orange, black)
