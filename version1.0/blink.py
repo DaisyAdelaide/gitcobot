@@ -276,7 +276,7 @@ def summ():
 
     if (answer < 0):
         return(summ())
-    else if (answer > 14):
+    elif (answer > 14):
         return(summ())
     else:
         return problem, str(answer)
