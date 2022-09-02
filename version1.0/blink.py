@@ -266,7 +266,7 @@ def sum():
     if (answer < 0):
         sum()
     else:
-        return problem, str(answer_keep)
+        return problem, str(answer)
     
 ####################################
 
