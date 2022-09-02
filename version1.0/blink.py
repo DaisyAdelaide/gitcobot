@@ -202,6 +202,7 @@ def maths_game():
             isolate = response.split(' ')
             isolate = str(isolate[-1])
             isolate = lev_distance.find_match(isolate)
+            response = isolate
             
             if response == answer:
                 textSurface = font.render('Right', True, orange, black)
