@@ -269,7 +269,7 @@ def summ():
             return(summ())
 
     if (answer < 0):
-        summ()
+        return(summ())
     else:
         return problem, str(answer)
     
