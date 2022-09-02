@@ -253,15 +253,18 @@ def sum():
         answer = int(first_number) * int(second_number)
 
     if operand == '/':
+
         answer = int(first_number) / int(second_number)
 
     if (answer < 0):
         sum()
 
-    if not(isinstance(answer, int)):
-        sum()
+    if (isinstance(answer, int)):
+        return problem, str(answer)
 
-    return problem, str(answer)
+    else:
+        sum()
+    
 ####################################
 
 def getText(start):
