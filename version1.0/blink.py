@@ -252,7 +252,10 @@ def sum():
     if operand == '/':
         answer = int(first_number) / int(second_number)
 
-    if (answer < 0) or (answer(type)==float):
+    if (answer < 0):
+        sum()
+
+    if not(isinstance(answer, int)):
         sum()
 
     return problem, str(answer)
