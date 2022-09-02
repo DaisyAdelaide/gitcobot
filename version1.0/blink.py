@@ -202,7 +202,7 @@ def maths_game():
                 textRect.center = (400, 200)
                 asked = 0
                 start = 0
-                time.sleep(2)
+                time.sleep(5)
 
             elif response == 'I didnt catch that!':
                 textSurface = font.render('I didnt catch that!', True, orange, black)
@@ -216,10 +216,8 @@ def maths_game():
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 start = 0
-                time.sleep(2)
+                time.sleep(5)
 
-            
-        
         #screen.fill(black)
         pygame.draw.rect(screen, black, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
@@ -230,7 +228,26 @@ def maths_game():
         clock.tick(20)
 
 def sum():
-    return '9+2','11'
+    operands = ['+', '-', '/', '*']
+    first_number = random.randint(0,10)
+    second_number = random.randint(0,10)
+    operand = random.choice(operands)
+
+    problem = '{} {} {}'.format(first_number, operand, second_number)
+
+    if operand == '+':
+        answer = int(first_number) + int(second_number)
+
+    if operand == '-':
+        answer = int(first_number) - int(second_number)
+
+    if operand == '*':
+        answer = int(first_number) * int(second_number)
+
+    if operand == '/':
+        answer = int(first_number) / int(second_number)
+
+    return problem, str(answer)
 ####################################
 
 def getText(start):
