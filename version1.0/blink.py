@@ -159,28 +159,53 @@ def maths_game():
     index = 0
     blinktime = 80
     player_surf = blinking[index]
+    response = ''
+    asked = 0
+    problem = ''
+    answer = ''
 
     while GPIO.input(button3) == 0:
 
         if GPIO.input(button4) == 1:
             pygame.quit()
             sys.exit()
+
+        if GPIO.input(button) == 1 and start == 0:
+            response = functions.record()
+            response = str(text)
+            start = 1
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
         orange = (255, 127, 39)
         font = pygame.font.Font('freesansbold.ttf', 180)
-    
-        if seconds2 < 14:
-            blink_func()
         
         screen.fill(black)
 
-        text = ('2+2')
+        if asked == 0:
+            problem, answer = sum()
 
-        textSurface = font.render(text, True, orange, black)
-        textRect = textSurface.get_rect()
-        textRect.center = (400, 200)
+        if start == 0:
+            textSurface = font.render(problem, True, orange, black)
+            textRect = textSurface.get_rect()
+            textRect.center = (400, 200)
+            asked = 1
+
+        if start == 1:
+            if response == answer
+                textSurface = font.render('Right', True, orange, black)
+                textRect = textSurface.get_rect()
+                textRect.center = (400, 200)
+                asked = 0
+                start = 0
+                sleep(1)
+
+            if response != answer
+                textSurface = font.render('Wrong', True, orange, black)
+                textRect = textSurface.get_rect()
+                textRect.center = (400, 200)
+                start = 0
+                sleep(1)
         
         #screen.fill(black)
         pygame.draw.rect(screen, black, pygame.Rect(400, 200, 200, 200))
@@ -191,7 +216,8 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
 
-
+def sum():
+    return '9+1','10'
 ####################################
 
 def getText(start):
