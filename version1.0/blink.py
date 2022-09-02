@@ -9,6 +9,7 @@ import functions
 import RPi.GPIO as GPIO
 import random
 import time
+import lev_distance
 
 class Button:
     def __init__(self, text, width, height, pos):
@@ -200,7 +201,7 @@ def maths_game():
             print(response)
             isolate = response.split(' ')
             isolate = str(isolate[-1])
-            isolate = find_match.find_match(isolate)
+            isolate = lev_distance.find_match(isolate)
             
             if response == answer:
                 textSurface = font.render('Right', True, orange, black)
