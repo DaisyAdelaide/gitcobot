@@ -201,14 +201,21 @@ def maths_game():
                 textRect.center = (400, 200)
                 asked = 0
                 start = 0
-                time.sleep(1)
+                time.sleep(2)
 
             if response != answer:
                 textSurface = font.render('Wrong', True, orange, black)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 start = 0
-                time.sleep(1)
+                time.sleep(2)
+
+            if response == 'I didnt catch that!':
+                textSurface = font.render('I didnt catch that!', True, orange, black)
+                textRect = textSurface.get_rect()
+                textRect.center = (400, 200)
+                start = 0
+                time.sleep(2)
         
         #screen.fill(black)
         pygame.draw.rect(screen, black, pygame.Rect(400, 200, 200, 200))
