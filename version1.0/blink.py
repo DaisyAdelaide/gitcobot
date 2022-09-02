@@ -235,6 +235,13 @@ def maths_game():
             time.sleep(2.5)
             sleep = 0
 
+def is_integer_num(n):
+    if isinstance(n, int):
+        return True
+    if isinstance(n, float):
+        return n.is_integer()
+    return False
+
 def sum():
     operands = [ '/']
     answer = 0
@@ -257,10 +264,10 @@ def sum():
 
     if operand == '/':
         answer = (first_number) / (second_number)
-        if (first_number % second_number) > 0:
-            print(first_number % second_number)
-        else:
+        if (is_integer_num(answer)):
             return problem, str(int(answer))
+        else:
+            sum()
             
 
 
