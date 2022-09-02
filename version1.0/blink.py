@@ -199,7 +199,9 @@ def maths_game():
             print(answer)
             print(response)
             isolate = response.split(' ')
-            response = str(isolate[-1])
+            isolate = str(isolate[-1])
+            isolate = lev_distance.find_match(isolate)
+            
             if response == answer:
                 textSurface = font.render('Right', True, orange, black)
                 textRect = textSurface.get_rect()
