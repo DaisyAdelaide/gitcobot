@@ -243,13 +243,12 @@ def is_integer_num(n):
     return False
 
 def summ():
-    operands = [ '/']
+    operands = ['+', '-', '/', '*']
     answer = 0
     operand = ''
     first_number = random.randint(1,10)
     second_number = random.randint(1,10)
-    #operand = random.choice(operands)
-    operand = '/'
+    operand = random.choice(operands)
 
     problem = '{} {} {}'.format(first_number, operand, second_number)
 
@@ -269,10 +268,10 @@ def summ():
         else:
             return(summ())
 
-#    if (answer < 0):
- #       summ()
-  #  else:
-   #     return problem, str(answer)
+    if (answer < 0):
+        summ()
+    else:
+        return problem, str(answer)
     
 ####################################
 
