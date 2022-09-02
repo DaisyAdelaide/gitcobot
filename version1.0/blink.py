@@ -206,6 +206,7 @@ def maths_game():
                 sleep = 1
 
             elif response == 'I didnt catch that!':
+                font = pygame.font.Font('freesansbold.ttf', 80)
                 textSurface = font.render('I didnt catch that!', True, orange, black)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
@@ -228,7 +229,7 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
         if sleep == 1:
-            time.sleep(3)
+            time.sleep(2.5)
             sleep = 0
 
 def sum():
@@ -250,6 +251,9 @@ def sum():
 
     if operand == '/':
         answer = int(first_number) / int(second_number)
+
+    if (answer < 0) or (answer(type)==float):
+        sum()
 
     return problem, str(answer)
 ####################################
