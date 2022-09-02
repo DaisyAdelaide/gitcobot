@@ -199,7 +199,7 @@ def maths_game():
             asked = 1
 
         if start == 1:
-            print(answer)
+            #print(answer)
             print(response)
             
             if not response.isnumeric():
@@ -207,6 +207,7 @@ def maths_game():
                 isolate = str(isolate[-1])
                 isolate = lev_distance.find_match(isolate)
                 response = str(w2n.word_to_num(isolate))
+                print('new {}'.format(response))
             
             if response == answer:
                 textSurface = font.render('Right', True, orange, black)
