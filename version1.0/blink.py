@@ -236,11 +236,11 @@ def maths_game():
             sleep = 0
 
 def sum():
-    operands = ['+', '-', '/', '*']
+    operands = [ '/']
     answer = 0
     operand = ''
-    first_number = random.randint(0,10)
-    second_number = random.randint(0,10)
+    first_number = random.randint(1,10)
+    second_number = random.randint(1,10)
     operand = random.choice(operands)
 
     problem = '{} {} {}'.format(first_number, operand, second_number)
@@ -255,7 +255,6 @@ def sum():
         answer = int(first_number) * int(second_number)
 
     if operand == '/':
-
         answer = int(first_number) / int(second_number)
 
     if (answer < 0):
