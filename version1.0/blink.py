@@ -8,6 +8,7 @@ import csv
 import functions
 import RPi.GPIO as GPIO
 import random
+import time
 
 class Button:
     def __init__(self, text, width, height, pos):
