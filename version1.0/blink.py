@@ -269,10 +269,6 @@ def summ():
         else:
             summ()
 
-    if (answer < 0):
-        summ()
-    else:
-        return problem, str(answer)
     
 ####################################
 
