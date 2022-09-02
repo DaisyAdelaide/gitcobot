@@ -192,7 +192,7 @@ def maths_game():
             asked = 1
 
         if start == 1:
-            if response == answer
+            if response == answer:
                 textSurface = font.render('Right', True, orange, black)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
@@ -200,7 +200,7 @@ def maths_game():
                 start = 0
                 sleep(1)
 
-            if response != answer
+            if response != answer:
                 textSurface = font.render('Wrong', True, orange, black)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
