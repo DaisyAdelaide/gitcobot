@@ -198,7 +198,7 @@ def maths_game():
         if start == 1:
             print(answer)
             print(response)
-            isolate = text.split(' ')
+            isolate = response.split(' ')
             response = str(isolate[-1])
             if response == answer:
                 textSurface = font.render('Right', True, orange, black)
