@@ -1,6 +1,5 @@
 import numpy
 
-
 def find_match(isolate):
 	all_distances = []
 	lowest = 10
@@ -58,5 +57,3 @@ def LDM(token1, token2):
                     distances[t1][t2] = c + 1
 
     return distances[len(token1)][len(token2)]
-
-print(find_match('tree'))
