@@ -164,6 +164,7 @@ def maths_game():
     asked = 0
     problem = ''
     answer = ''
+    sleep = 0
 
     while GPIO.input(button3) == 0:
 
@@ -202,21 +203,21 @@ def maths_game():
                 textRect.center = (400, 200)
                 asked = 0
                 start = 0
-                time.sleep(5)
+                sleep = 1
 
             elif response == 'I didnt catch that!':
                 textSurface = font.render('I didnt catch that!', True, orange, black)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 start = 0
-                time.sleep(2)
+                sleep = 1
 
             elif response != answer:
                 textSurface = font.render('Wrong', True, orange, black)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 start = 0
-                time.sleep(5)
+                sleep = 1
 
         #screen.fill(black)
         pygame.draw.rect(screen, black, pygame.Rect(400, 200, 200, 200))
@@ -226,6 +227,8 @@ def maths_game():
 
         pygame.display.update()
         clock.tick(20)
+        if sleep == 1:
+            time.sleep(5)
 
 def sum():
     operands = ['+', '-', '/', '*']
