@@ -10,6 +10,8 @@ import RPi.GPIO as GPIO
 import random
 import time
 import lev_distance
+from word2number import w2n
+
 
 class Button:
     def __init__(self, text, width, height, pos):
@@ -202,7 +204,7 @@ def maths_game():
             isolate = response.split(' ')
             isolate = str(isolate[-1])
             isolate = lev_distance.find_match(isolate)
-            response = isolate
+            response = w2n.word_to_num(isolate)
             
             if response == answer:
                 textSurface = font.render('Right', True, orange, black)
