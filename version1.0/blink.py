@@ -172,7 +172,7 @@ def maths_game():
 
         if GPIO.input(button) == 1 and start == 0:
             response = functions.record()
-            response = str(text)
+            response = str(response)
             start = 1
                    
         black = (0, 0, 0)
