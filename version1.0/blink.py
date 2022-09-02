@@ -172,7 +172,8 @@ def maths_game():
             sys.exit()
 
         if GPIO.input(button) == 1 and start == 0:
-            response = functions.record()
+            audio = functions.listen1()
+            response = functions.voice(audio)
             response = str(response)
             start = 1
                    
