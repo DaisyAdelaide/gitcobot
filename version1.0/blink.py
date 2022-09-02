@@ -267,8 +267,12 @@ def summ():
         if (is_integer_num(answer)):
             return problem, str(int(answer))
         else:
-            summ()
+            return(summ())
 
+#    if (answer < 0):
+ #       summ()
+  #  else:
+   #     return problem, str(answer)
     
 ####################################
 
