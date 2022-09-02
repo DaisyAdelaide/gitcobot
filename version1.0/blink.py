@@ -228,7 +228,8 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
         if sleep == 1:
-            time.sleep(5)
+            time.sleep(3)
+            sleep = 0
 
 def sum():
     operands = ['+', '-', '/', '*']
