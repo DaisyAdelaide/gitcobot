@@ -257,7 +257,7 @@ def sum():
 
     if operand == '/':
         answer = int(first_number) / int(second_number)
-        if (int(first_number) // int(second_number)) == 0:
+        if (int(first_number) % int(second_number)) == 0:
             return problem, str(answer)
         else:
             sum()
