@@ -232,7 +232,7 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
         if sleep == 1:
-            time.sleep(2.5)
+            time.sleep(1.5)
             sleep = 0
 
 def is_integer_num(n):
