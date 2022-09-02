@@ -237,10 +237,11 @@ def maths_game():
 
 def sum():
     operands = ['+', '-', '/', '*']
+    answer = 0
+    operand = ''
     first_number = random.randint(0,10)
     second_number = random.randint(0,10)
     operand = random.choice(operands)
-    answer = 0
 
     problem = '{} {} {}'.format(first_number, operand, second_number)
 
@@ -260,8 +261,10 @@ def sum():
     if (answer < 0):
         sum()
 
+    answer_keep = answer
+
     if (isinstance(answer, int)):
-        return problem, str(answer)
+        return problem, str(answer_keep)
 
     else:
         sum()
