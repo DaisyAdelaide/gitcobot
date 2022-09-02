@@ -241,7 +241,8 @@ def sum():
     operand = ''
     first_number = random.randint(1,10)
     second_number = random.randint(1,10)
-    operand = random.choice(operands)
+    #operand = random.choice(operands)
+    operand = '/'
 
     problem = '{} {} {}'.format(first_number, operand, second_number)
 
