@@ -201,10 +201,11 @@ def maths_game():
         if start == 1:
             #print(answer)
             print(response)
-            
+            isolate = response.split(' ')
+            isolate = str(isolate[-1])
+            response = isolate
+
             if not response.isnumeric():
-                isolate = response.split(' ')
-                isolate = str(isolate[-1])
                 isolate = lev_distance.find_match(isolate)
                 response = str(w2n.word_to_num(isolate))
                 print('new {}'.format(response))
