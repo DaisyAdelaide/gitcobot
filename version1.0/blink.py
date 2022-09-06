@@ -176,6 +176,10 @@ def maths_game():
     animals = ['cat','snail','dog']
     scores = [0, 0, 0]
 
+    with open ("scores_data.csv","a",encoding='UTF8') as file:
+        writer = csv.writer(file) 
+        writer.writerow('NEW GAME')
+
     while GPIO.input(button3) == 0:
 
         if GPIO.input(button4) == 1:
