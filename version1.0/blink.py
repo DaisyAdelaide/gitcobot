@@ -209,7 +209,7 @@ def maths_game():
                 if character_chosen == animal:
                     character_right = 1
             if character_right == 0:
-                character_chosen = lev_animal.find_match()
+                character_chosen = lev_animal.find_match(character_chosen)
             for index in scores:
                 if character_chosen == animals[index]:
                     scores[index] += 1
@@ -305,6 +305,7 @@ def maths_game():
 def select_character():
     character_sound = mixer.Sound('character.wav')
     character_sound.play()
+    time.sleep(1)
     return 1
 
 
