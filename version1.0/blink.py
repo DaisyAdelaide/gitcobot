@@ -211,10 +211,12 @@ def maths_game():
             for animal in animals:
                 if character_chosen == animal:
                     character_right = 1
+
             if character_right == 0:
                 character_chosen = lev_animal.find_match(character_chosen)
+
             for index in scores:
-                if character_chosen == animals[index]:
+                if character_chosen == animals[index-1]:
                     scores[index] += 1
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
