@@ -334,22 +334,15 @@ def maths_game():
                 third = second
                 second = first             
                 first = number
-            elif number > second and number < first:
+            elif number > second and number <= first:
                 third_place = second_place
                 second_place = animal_images[i]
                 third = second
                 second = number
-            elif number > third and number < second:
+            elif number > third and number <= second:
                 third_place = animal_images[i]
                 third = number
-            elif number == first and second > 0 and third > 0:
-                third_place = second_place
-                second_place = animal_images[i]
-                third = second
-                second = number
-            elif number == second and third > 0:
-                third_place = animal_images[i]
-                third = number
+            
 
 
             i += 1
