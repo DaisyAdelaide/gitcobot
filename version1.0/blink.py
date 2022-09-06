@@ -253,7 +253,7 @@ def maths_game():
             color_picked = blue
             textSurface = font.render(problem, True, yellow, blue)
             textRect = textSurface.get_rect()
-            textRect.center = (400, 200)
+            textRect.center = (400, 100)
             asked = 1
 
         if start == 1:
@@ -282,7 +282,7 @@ def maths_game():
                 color_picked = green
                 textSurface = font.render('Right', True, white, green)
                 textRect = textSurface.get_rect()
-                textRect.center = (400, 200)
+                textRect.center = (400, 100)
                 asked = 0
                 start = 0
                 right = 1
@@ -296,7 +296,7 @@ def maths_game():
                 font = pygame.font.Font('freesansbold.ttf', 80)
                 textSurface = font.render('I didnt catch that!', True, white, yellow)
                 textRect = textSurface.get_rect()
-                textRect.center = (400, 200)
+                textRect.center = (400, 100)
                 start = 0
                 sleep = 1
 
@@ -305,14 +305,14 @@ def maths_game():
                 color_picked = red
                 textSurface = font.render('Wrong', True, white, red)
                 textRect = textSurface.get_rect()
-                textRect.center = (400, 200)
+                textRect.center = (400, 100)
                 start = 0
                 wrong_sound = mixer.Sound('wrong.wav')
                 wrong_sound.play()
                 sleep = 1
 
         #screen.fill(black)
-        pygame.draw.rect(screen, color_picked, pygame.Rect(400, 0, 200, 200))
+        pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
 
         
