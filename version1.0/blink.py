@@ -202,6 +202,7 @@ def maths_game():
             print (answer)
 
         if character_state == 1:
+            character_right = 0
             audio = functions.listen1()
             character_chosen = functions.voice(audio)
             original = character_chosen
@@ -220,8 +221,8 @@ def maths_game():
                 writer = csv.writer(file) 
                 writer.writerow(' ')
                 writer.writerow(scores)
-                writer.writerow(character_chosen)
-                writer.writerow(original)
+                writer.writerow([character_chosen])
+                writer.writerow([original])
 
             character_state = 0
 
