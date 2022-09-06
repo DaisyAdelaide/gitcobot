@@ -312,7 +312,7 @@ def summ():
 
 def score_board():
     while True:
-        if button == 1:
+        if GPIO.input(button) == 1:
             break
     
 ####################################
