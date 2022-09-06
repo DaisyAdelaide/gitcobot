@@ -343,17 +343,15 @@ def maths_game():
                 third_place = animal_images[i]
                 third = number
             
-
-
             i += 1
         
         if first > 0:
             screen.blit(first_place, (350,215))
         if second > 0:
-            screen.blit(second_place, (400,255))
+            screen.blit(second_place, (450,255))
         if third > 0:
             screen.blit(third_place, (250,275))   
-        draw1 = 0     
+      
         
         screen.blit(podium,(250, 250))
 
