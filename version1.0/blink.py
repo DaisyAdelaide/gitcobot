@@ -211,10 +211,18 @@ def maths_game():
             isolate = str(isolate[-1])
             response = isolate
 
+            with open ("maths_game_data.csv","a",encoding='UTF8') as file:
+                writer = csv.writer(file) 
+                writer.writerow('answer : ' + answer)
+                writer.writerow('you said : ' + response)
+
             if not response.isnumeric():
                 isolate = lev_distance.find_match(isolate)
                 response = str(w2n.word_to_num(isolate))
                 print('new {}'.format(response))
+                with open ("maths_game_data.csv","a",encoding='UTF8') as file:
+                    writer = csv.writer(file) 
+                    writer.writerow('LD : ' + response)
             
             if response == answer:
                 screen.fill(green)
