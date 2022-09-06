@@ -72,11 +72,11 @@ def define():
 def load_animals():
     global dog, cat, snail, podium, animal_images
     dog = pygame.image.load('dog.png').convert_alpha()
-    dog = pygame.transform.scale(dog,(70,70))
+    dog = pygame.transform.scale(dog,(100,100))
     cat = pygame.image.load('cat.png').convert_alpha()
-    cat = pygame.transform.scale(cat,(70,70))
+    cat = pygame.transform.scale(cat,(100,100))
     snail = pygame.image.load('snail.png').convert_alpha()
-    snail = pygame.transform.scale(snail,(70,70))
+    snail = pygame.transform.scale(snail,(100,100))
     podium = pygame.image.load('podium.png').convert_alpha()
     podium = pygame.transform.scale(podium,(300,300))
 
@@ -326,7 +326,6 @@ def maths_game():
 
 
         i = 0
-        draw1 = 0
         for number in scores:
             if number > first:
                 third_place = second_place
@@ -335,10 +334,6 @@ def maths_game():
                 third = second
                 second = first             
                 first = number
-            elif number == first and first_place != '':
-                draw1 = 1
-                third_place = second_place
-                second_place = animal_images[i]
             elif number > second and number < first:
                 third_place = second_place
                 second_place = animal_images[i]
@@ -353,13 +348,11 @@ def maths_game():
             i += 1
         
         if first > 0:
-            screen.blit(first_place, (320,215))
-        if draw1 > 0:
-            screen.blit(second_place, (350,215))
+            screen.blit(first_place, (350,215))
         if second > 0:
-            screen.blit(second_place, (420,255))
+            screen.blit(second_place, (400,255))
         if third > 0:
-            screen.blit(third_place, (220,275))   
+            screen.blit(third_place, (250,275))   
         draw1 = 0     
         
         screen.blit(podium,(250, 250))
