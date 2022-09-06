@@ -277,7 +277,7 @@ def maths_game():
 
 def score_board():
     while True:
-        if GPIO.input(button) == 1:
+        if GPIO.input(button3) == 1:
             break
 
 def is_integer_num(n):
