@@ -312,7 +312,7 @@ def maths_game():
                 sleep = 1
 
         #screen.fill(black)
-        pygame.draw.rect(screen, color_picked, pygame.Rect(400, 100, 200, 200))
+        pygame.draw.rect(screen, color_picked, pygame.Rect(400, 0, 200, 200))
         screen.blit(textSurface, textRect)
 
         
