@@ -77,7 +77,7 @@ def load_animals():
     cat = pygame.transform.scale(cat,(100,100))
     snail = pygame.image.load('snail.png').convert_alpha()
     snail = pygame.transform.scale(snail,(100,100))
-    podium = pygame.image.load('podium.jpg').convert_alpha()
+    podium = pygame.image.load('podium.png').convert_alpha()
 
 
 def shrinkfunc():
