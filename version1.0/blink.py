@@ -272,6 +272,7 @@ def maths_game():
             sleep = 0
 
         if right == 1:
+            right = 0
             score_board()
 
 def score_board():
