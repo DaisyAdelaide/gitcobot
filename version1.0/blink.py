@@ -184,7 +184,7 @@ def maths_game():
         black = (0, 0, 0)
         white = (255, 255, 255)
         orange = (255, 127, 39)
-        font = pygame.font.Font('freesansbold.ttf', 180)
+        font = pygame.font.Font('tahoma.ttf', 180)
         
         screen.fill(black)
 
