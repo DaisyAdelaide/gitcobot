@@ -335,7 +335,7 @@ def maths_game():
                 third = second
                 second = first             
                 first = number
-            elif number == first and number > 0:
+            elif number == first and first_place != '':
                 draw1 = 1
                 third_place = second_place
                 second_place = animal_images[i]

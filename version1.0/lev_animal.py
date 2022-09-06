@@ -11,6 +11,9 @@ def find_match(isolate):
 		'dog'
 		)
 
+	if isolate == 'sale':
+		return snail
+
 	for word in words:
 		wordDistance = LDM(word,isolate)
 		if wordDistance < lowest:
