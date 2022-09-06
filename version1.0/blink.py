@@ -304,12 +304,12 @@ def maths_game():
         pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
 
-        dog = pygame.image.load('dog.jpg').convert_alpha()
+        dog = pygame.image.load('dog.png').convert_alpha()
         screen.blit(dog, (0,0))
 
         pygame.display.update()
         clock.tick(20)
-        
+
         if sleep == 1:
             time.sleep(1)
             sleep = 0
