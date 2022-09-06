@@ -330,11 +330,14 @@ def maths_game():
             if number > first:
                 third_place = second_place
                 second_place = first_place
-                first_place = animal_images[i]             
+                first_place = animal_images[i]
+                third = second
+                second = first             
                 first = number
             elif number > second and number < first:
                 third_place = second_place
                 second_place = animal_images[i]
+                third = second
                 second = number
             elif number > third and number < second:
                 third_place = animal_images[i]
