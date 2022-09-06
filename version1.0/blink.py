@@ -70,7 +70,7 @@ def define():
     shock = pygame.transform.scale(shock,(217, 150))
 
 def load_animals():
-    global dog, cat, snail, podium
+    global dog, cat, snail, podium, animal_images
     dog = pygame.image.load('dog.png').convert_alpha()
     dog = pygame.transform.scale(dog,(100,100))
     cat = pygame.image.load('cat.png').convert_alpha()
@@ -79,6 +79,8 @@ def load_animals():
     snail = pygame.transform.scale(snail,(100,100))
     podium = pygame.image.load('podium.png').convert_alpha()
     podium = pygame.transform.scale(podium,(300,300))
+
+    animal_images = [cat, snail, dog]
 
 
 def shrinkfunc():
@@ -187,6 +189,13 @@ def maths_game():
     character_right = 0
     animals = ['cat','snail','dog']
     scores = [0, 0, 0]
+
+    first = 0
+    second = 0
+    third = 0
+    first_place = ''
+    second_place = ''
+    third_place = ''
     load_animals()
 
     with open ("scores_data.csv","a",encoding='UTF8') as file:
@@ -315,11 +324,30 @@ def maths_game():
         pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
 
+
+        i = 0
+        for number in scores:
+            if number > first:
+                third_place = second_place
+                second_place = first_place
+                first_place = animal_images[i]             
+                first = number
+            elif number > second and number < first:
+                third_place = second_place
+                second_place = animal_images[i]
+                second = number
+            elif number > third and number < second:
+                third_place = animal_images[i]
+                third = number
+            i += 1
         
+        if first > 0:
+            screen.blit(first_place, (350,215))
+        if second > 0:
+            screen.blit(second_place, (450,255))
+        if third > 0:
+            screen.blit(third_place, (250,275))        
         
-        screen.blit(dog, (250,275))
-        screen.blit(cat, (350,215))
-        screen.blit(snail, (450,255))
         screen.blit(podium,(250, 250))
 
         pygame.display.update()
