@@ -78,7 +78,7 @@ def load_animals():
     snail = pygame.image.load('snail.png').convert_alpha()
     snail = pygame.transform.scale(snail,(70,70))
     podium = pygame.image.load('podium.png').convert_alpha()
-    podium = pygame.transform.scale(podium,(70,70))
+    podium = pygame.transform.scale(podium,(300,300))
 
     animal_images = [cat, snail, dog]
 
@@ -335,7 +335,7 @@ def maths_game():
                 third = second
                 second = first             
                 first = number
-            elif number == first:
+            elif number == first and number > 0:
                 draw1 = 1
                 third_place = second_place
                 second_place = animal_images[i]
