@@ -78,7 +78,7 @@ def load_animals():
     snail = pygame.image.load('snail.png').convert_alpha()
     snail = pygame.transform.scale(snail,(100,100))
     podium = pygame.image.load('podium.png').convert_alpha()
-    podium = pygame.transform.scale(podium,(200,200))
+    podium = pygame.transform.scale(podium,(300,300))
 
 
 def shrinkfunc():
@@ -320,7 +320,7 @@ def maths_game():
         screen.blit(dog, (0,0))
         screen.blit(cat, (0,100))
         screen.blit(snail, (0,200))
-        screen.blit(podium,(200, 200))
+        screen.blit(podium,(180, 250))
 
         pygame.display.update()
         clock.tick(20)
