@@ -255,6 +255,8 @@ def maths_game():
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 start = 0
+                wrong_sound = mixer.Sound('wrong.wav')
+                wrong_sound.play()
                 sleep = 1
 
         #screen.fill(black)
