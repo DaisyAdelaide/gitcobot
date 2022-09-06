@@ -20,3 +20,28 @@ LD : ,3
 answer : ,10
 you said : ,that!
 LD : ,3
+ 
+answer : 17
+you said : 17
+ 
+answer : 8
+you said : that!
+LD : 3
+ 
+answer : 8
+you said : 8
+ 
+answer : 14
+you said : 14
+ 
+answer : 2
+you said : that!
+LD : 3
+ 
+answer : 2
+you said : poop
+LD : 1
+ 
+answer : 2
+you said : that!
+LD : 3
