@@ -317,9 +317,9 @@ def maths_game():
 
         
         
-        screen.blit(dog, (250,150))
-        screen.blit(cat, (350,100))
-        screen.blit(snail, (450,170))
+        screen.blit(dog, (250,250))
+        screen.blit(cat, (350,200))
+        screen.blit(snail, (450,270))
         screen.blit(podium,(250, 250))
 
         pygame.display.update()
