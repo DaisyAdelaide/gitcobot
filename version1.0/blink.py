@@ -204,7 +204,9 @@ def maths_game():
         if character_state == 1:
             audio = functions.listen1()
             character_chosen = functions.voice(audio)
+            original = character_chosen
             character_chosen = str(character_chosen)
+            
             for animal in animals:
                 if character_chosen == animal:
                     character_right = 1
@@ -218,6 +220,8 @@ def maths_game():
                 writer = csv.writer(file) 
                 writer.writerow(' ')
                 writer.writerow(scores)
+                writer.writerow(character_chosen)
+                writer.writerow(original)
 
             character_state = 0
 
@@ -307,8 +311,6 @@ def select_character():
     character_sound.play()
     time.sleep(1)
     return 1
-
-
 
 def is_integer_num(n):
     if isinstance(n, int):
