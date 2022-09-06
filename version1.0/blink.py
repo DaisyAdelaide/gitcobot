@@ -199,7 +199,7 @@ def maths_game():
 
         if character_state == 1:
             while True:
-                if GPIO.input(button3) == 1:
+                if GPIO.input(button2) == 1:
                     character_state = 0
                     break
 
