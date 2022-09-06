@@ -172,6 +172,7 @@ def maths_game():
     sleep = 0
     right = 0
     character_state = 0
+    character_right = 0
     animals = ['cat','snail','dog']
     scores = [0, 0, 0]
 
