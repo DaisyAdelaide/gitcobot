@@ -69,6 +69,15 @@ def define():
     shock = pygame.image.load('OO.jpg').convert_alpha()
     shock = pygame.transform.scale(shock,(217, 150))
 
+def load_animals():
+    global dog, cat, snail
+    dog = pygame.image.load('dog.png').convert_alpha()
+    dog = pygame.transform.scale(dog,(100,100))
+    cat = pygame.image.load('cat.jpg').convert_alpha()
+    cat = pygame.transform.scale(cat,(100,100))
+    snail = pygame.image.load('snail.jpg').convert_alpha()
+    snail = pygame.transform.scale(snail,(100,100))
+
 def shrinkfunc():
     global player_surf, shrink_index, shrink_blink, mouth
 
@@ -175,6 +184,7 @@ def maths_game():
     character_right = 0
     animals = ['cat','snail','dog']
     scores = [0, 0, 0]
+    load_animals()
 
     with open ("scores_data.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file) 
@@ -234,8 +244,6 @@ def maths_game():
                 writer.writerow([original])
 
             character_state = 0
-
-
 
         if start == 0:
             screen.fill(blue)
@@ -304,9 +312,11 @@ def maths_game():
         pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
 
-        dog = pygame.image.load('dog.png').convert_alpha()
-        dog = pygame.transform.scale(dog,(100,100))
+        
+        
         screen.blit(dog, (0,0))
+        screen.blit(cat, (0,100))
+        screen.blit(snail, (0,200))
 
         pygame.display.update()
         clock.tick(20)
