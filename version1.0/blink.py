@@ -184,7 +184,11 @@ def maths_game():
         black = (0, 0, 0)
         white = (255, 255, 255)
         orange = (255, 127, 39)
-        font = pygame.font.Font('tahoma.ttf', 180)
+        blue = (25, 130, 196)
+        yellow = (255, 202, 58)
+        green = (138, 201, 38)
+        red = (255, 51, 58)
+        font = pygame.font.Font('freesansbold.ttf', 180)
         
         screen.fill(black)
 
@@ -193,7 +197,7 @@ def maths_game():
             print (answer)
 
         if start == 0:
-            textSurface = font.render(problem, True, orange, black)
+            textSurface = font.render(problem, True, yellow, blue)
             textRect = textSurface.get_rect()
             textRect.center = (400, 200)
             asked = 1
@@ -211,7 +215,7 @@ def maths_game():
                 print('new {}'.format(response))
             
             if response == answer:
-                textSurface = font.render('Right', True, orange, black)
+                textSurface = font.render('Right', True, white, green)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 asked = 0
@@ -220,14 +224,14 @@ def maths_game():
 
             elif response == 'I didnt catch that!':
                 font = pygame.font.Font('freesansbold.ttf', 80)
-                textSurface = font.render('I didnt catch that!', True, orange, black)
+                textSurface = font.render('I didnt catch that!', True, white, yellow)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 start = 0
                 sleep = 1
 
             elif response != answer:
-                textSurface = font.render('Wrong', True, orange, black)
+                textSurface = font.render('Wrong', True, white, red)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 200)
                 start = 0
