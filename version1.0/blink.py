@@ -217,7 +217,7 @@ def maths_game():
 
             for index in scores:
                 if character_chosen == animals[index-1]:
-                    scores[index] += 1
+                    scores[index-1] += 1
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file) 
