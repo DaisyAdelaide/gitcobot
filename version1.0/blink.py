@@ -359,7 +359,8 @@ def maths_game():
         if second > 0:
             screen.blit(second_place, (420,255))
         if third > 0:
-            screen.blit(third_place, (220,275))        
+            screen.blit(third_place, (220,275))   
+        draw1 = 0     
         
         screen.blit(podium,(250, 250))
 
