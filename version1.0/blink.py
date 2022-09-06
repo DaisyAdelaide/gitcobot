@@ -171,6 +171,8 @@ def maths_game():
     sleep = 0
     right = 0
     character_state = 0
+    animals = ['cat','snail','dog']
+    scores = [0, 0, 0]
 
     while GPIO.input(button3) == 0:
 
@@ -198,10 +200,25 @@ def maths_game():
             print (answer)
 
         if character_state == 1:
-            while True:
-                if GPIO.input(button2) == 1:
-                    character_state = 0
-                    break
+            audio = functions.listen1()
+            character_chosen = functions.voice(audio)
+            character_chosen = str(character_chosen)
+            for animal in animals:
+                if character_chosen == animal:
+                    character_right = 1
+            if character_right == 0:
+                character_chosen = lev_animal.find_match()
+            for index in scores:
+                if character_chosen == animals[index]:
+                    scores[index] += 1
+
+            with open ("scores_data.csv","a",encoding='UTF8') as file:
+                writer = csv.writer(file) 
+                writer.writerow(' ')
+                writer.writerow(scores)
+
+            character_state = 0
+
 
 
         if start == 0:
