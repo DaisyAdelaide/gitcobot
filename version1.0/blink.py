@@ -73,9 +73,9 @@ def load_animals():
     global dog, cat, snail
     dog = pygame.image.load('dog.png').convert_alpha()
     dog = pygame.transform.scale(dog,(100,100))
-    cat = pygame.image.load('cat.jpg').convert_alpha()
+    cat = pygame.image.load('cat.png').convert_alpha()
     cat = pygame.transform.scale(cat,(100,100))
-    snail = pygame.image.load('snail.jpg').convert_alpha()
+    snail = pygame.image.load('snail.png').convert_alpha()
     snail = pygame.transform.scale(snail,(100,100))
 
 def shrinkfunc():
