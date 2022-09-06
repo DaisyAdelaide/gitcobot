@@ -234,7 +234,7 @@ def maths_game():
                 textRect.center = (400, 200)
                 asked = 0
                 start = 0
-                correct_sound = mixer.Sound('correct.mp3')
+                correct_sound = mixer.Sound('correct.wav')
                 correct_sound.play()
                 sleep = 1
 
