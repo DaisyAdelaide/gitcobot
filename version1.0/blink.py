@@ -319,7 +319,7 @@ def maths_game():
         screen.blit(dog, (0,0))
         screen.blit(cat, (0,100))
         screen.blit(snail, (0,200))
-        screen.blit(podium(400, 400))
+        screen.blit(podium,(400, 400))
 
         pygame.display.update()
         clock.tick(20)
