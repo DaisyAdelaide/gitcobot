@@ -191,8 +191,6 @@ def maths_game():
         red = (255, 51, 58)
         font = pygame.font.Font('freesansbold.ttf', 180)
         
-        
-
         if asked == 0:
             problem, answer = summ()
             print (answer)
@@ -236,6 +234,7 @@ def maths_game():
                 start = 0
                 correct_sound = mixer.Sound('correct.wav')
                 correct_sound.play()
+                score_board()
                 sleep = 1
 
             elif response == 'I didnt catch that!':
@@ -310,6 +309,11 @@ def summ():
         return(summ())
     else:
         return problem, str(answer)
+
+def score_board():
+    while True:
+        if button == 1:
+            break
     
 ####################################
 
