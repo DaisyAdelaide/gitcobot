@@ -170,6 +170,7 @@ def maths_game():
     answer = ''
     sleep = 0
     right = 0
+    character_state = 0
 
     while GPIO.input(button3) == 0:
 
@@ -195,6 +196,13 @@ def maths_game():
         if asked == 0:
             problem, answer = summ()
             print (answer)
+
+        if character_state == 1:
+            while True:
+                if GPIO.input(button3) == 1:
+                    character_state = 0
+                    break
+
 
         if start == 0:
             screen.fill(blue)
@@ -273,11 +281,13 @@ def maths_game():
 
         if right == 1:
             right = 0
-            score_board()
+            character_state = select_character()
 
-def score_board():
+def select_character():
     character_sound = mixer.Sound('character.wav')
     character_sound.play()
+    return 1
+
 
 
 def is_integer_num(n):
