@@ -306,7 +306,8 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
 
-        screen.blit('dog.jpg', (600,200))
+        dog = pygame.image.load('dog.jpg').convert_alpha()
+        screen.blit(dog, (600,200))
 
         pygame.display.update()
         clock.tick(20)
