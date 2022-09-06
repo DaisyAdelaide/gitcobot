@@ -12,7 +12,7 @@ def find_match(isolate):
 		)
 
 	if isolate == 'sale':
-		return snail
+		return 'snail'
 
 	for word in words:
 		wordDistance = LDM(word,isolate)
