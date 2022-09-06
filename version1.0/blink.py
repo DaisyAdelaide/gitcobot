@@ -214,8 +214,8 @@ def maths_game():
             with open ("maths_game_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file) 
                 writer.writerow(' ')
-                writer.writerow(['answer : '] + [answer])
-                writer.writerow(['you said : '] + [response])
+                writer.writerow(['answer : ' + answer])
+                writer.writerow(['you said : ' + response])
 
             if not response.isnumeric():
                 isolate = lev_distance.find_match(isolate)
@@ -223,7 +223,7 @@ def maths_game():
                 print('new {}'.format(response))
                 with open ("maths_game_data.csv","a",encoding='UTF8') as file:
                     writer = csv.writer(file) 
-                    writer.writerow(['LD : '] + [response])
+                    writer.writerow(['LD : ' + response])
             
             if response == answer:
                 screen.fill(green)
