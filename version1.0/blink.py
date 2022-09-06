@@ -312,7 +312,7 @@ def maths_game():
                 sleep = 1
 
         #screen.fill(black)
-        pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
+        pygame.draw.rect(screen, color_picked, pygame.Rect(400, 100, 200, 200))
         screen.blit(textSurface, textRect)
 
         
@@ -320,7 +320,7 @@ def maths_game():
         screen.blit(dog, (0,0))
         screen.blit(cat, (0,100))
         screen.blit(snail, (0,200))
-        screen.blit(podium,(250, 230))
+        screen.blit(podium,(250, 250))
 
         pygame.display.update()
         clock.tick(20)
