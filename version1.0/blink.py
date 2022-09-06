@@ -276,9 +276,9 @@ def maths_game():
             score_board()
 
 def score_board():
-    while True:
-        if GPIO.input(button2) == 1:
-            break
+    character_sound = mixer.Sound('character.wav')
+    character_sound.play()
+
 
 def is_integer_num(n):
     if isinstance(n, int):
