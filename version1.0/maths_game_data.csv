@@ -14,3 +14,26 @@ L,D, ,:, ,3
 a,n,s,w,e,r, ,:, ,1
 y,o,u, ,s,a,i,d, ,:, ,t,h,a,t,!
 L,D, ,:, ,3
+ 
+answer : ,42
+you said : ,took
+LD : ,2
+ 
+answer : ,42
+you said : ,took
+LD : ,2
+ 
+answer : ,42
+you said : ,42
+ 
+answer : ,10
+you said : ,that!
+LD : ,3
+ 
+answer : ,10
+you said : ,that!
+LD : ,3
+ 
+answer : ,10
+you said : ,that!
+LD : ,3
