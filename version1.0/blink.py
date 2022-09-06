@@ -70,7 +70,7 @@ def define():
     shock = pygame.transform.scale(shock,(217, 150))
 
 def load_animals():
-    global dog, cat, snail
+    global dog, cat, snail, podium
     dog = pygame.image.load('dog.png').convert_alpha()
     dog = pygame.transform.scale(dog,(100,100))
     cat = pygame.image.load('cat.png').convert_alpha()
