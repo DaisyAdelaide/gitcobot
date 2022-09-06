@@ -178,7 +178,8 @@ def maths_game():
 
     with open ("scores_data.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file) 
-        writer.writerow('NEW GAME')
+        writer.writerow(['NEW GAME'])
+        writer.writerow([scores])
 
     while GPIO.input(button3) == 0:
 
@@ -219,9 +220,11 @@ def maths_game():
             if character_right == 0:
                 character_chosen = lev_animal.find_match(character_chosen)
 
+            i = 0
             for index in scores:
-                if character_chosen == animals[index-1]:
-                    scores[index-1] += 1
+                if character_chosen == animals[i]:
+                    scores[i] += 1
+                i += 1
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file) 
