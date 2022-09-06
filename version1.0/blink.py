@@ -305,6 +305,7 @@ def maths_game():
         screen.blit(textSurface, textRect)
 
         dog = pygame.image.load('dog.png').convert_alpha()
+        dog = pygame.transform.scale(dog,(100,100))
         screen.blit(dog, (0,0))
 
         pygame.display.update()
