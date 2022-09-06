@@ -169,6 +169,7 @@ def maths_game():
     problem = ''
     answer = ''
     sleep = 0
+    right = 0
 
     while GPIO.input(button3) == 0:
 
@@ -232,9 +233,9 @@ def maths_game():
                 textRect.center = (400, 200)
                 asked = 0
                 start = 0
+                right = 1
                 correct_sound = mixer.Sound('correct.wav')
                 correct_sound.play()
-                score_board()
                 sleep = 1
 
             elif response == 'I didnt catch that!':
@@ -267,8 +268,16 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
         if sleep == 1:
-            time.sleep(1.5)
+            time.sleep(1)
             sleep = 0
+
+        if right == 1:
+            score_board()
+
+def score_board():
+    while True:
+        if GPIO.input(button) == 1:
+            break
 
 def is_integer_num(n):
     if isinstance(n, int):
@@ -309,11 +318,6 @@ def summ():
         return(summ())
     else:
         return problem, str(answer)
-
-def score_board():
-    while True:
-        if GPIO.input(button) == 1:
-            break
     
 ####################################
 
