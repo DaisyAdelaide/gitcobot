@@ -325,7 +325,7 @@ def maths_game():
         screen.blit(textSurface, textRect)
 
         load_animals()
-        
+
 
         for number in scores:
             if number > first:
@@ -343,13 +343,13 @@ def maths_game():
         draw2 = 0
         draw3 = 0
         for score in scores:
-            if score == first and draw1 == 0:
+            if score == first and draw1 == 0 and score > 0:
                 first_place = animal_images[i]
                 draw1 += 1
-            if score == second and draw2 == 0:
+            if score == second and draw2 == 0 and score > 0:
                 second_place = animal_images[i]
                 draw2 += 1
-            if score == third and draw3 == 0:
+            if score == third and draw3 == 0 and score > 0:
                 third_place = animal_images[i]
                 draw3 += 1
             i += 1
