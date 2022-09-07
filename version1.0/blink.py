@@ -77,10 +77,12 @@ def load_animals():
     cat = pygame.transform.scale(cat,(100,100))
     snail = pygame.image.load('snail.png').convert_alpha()
     snail = pygame.transform.scale(snail,(100,100))
+    frog = pygame.image.load('frog.png').convert_alpha()
+    frog = pygame.transform.scale(frog,(100,100))
     podium = pygame.image.load('podium.png').convert_alpha()
     podium = pygame.transform.scale(podium,(300,300))
 
-    animal_images = [cat, snail, dog]
+    animal_images = [cat, snail, dog, frog]
 
 
 def shrinkfunc():
@@ -187,8 +189,8 @@ def maths_game():
     right = 0
     character_state = 0
     character_right = 0
-    animals = ['cat','snail','dog']
-    scores = [0, 0, 0]
+    animals = ['cat','snail','dog', 'frog']
+    scores = [0, 0, 0, 0]
 
     first = 0
     second = 0
@@ -326,7 +328,6 @@ def maths_game():
 
         load_animals()
 
-
         for number in scores:
             if number > first:
                 third = second
@@ -395,9 +396,6 @@ def maths_game():
                 x += 1
 
 
-
-
-        
         screen.blit(podium,(250, 250))
 
         pygame.display.update()
