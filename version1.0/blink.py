@@ -353,8 +353,10 @@ def maths_game():
         if third > 0:
             screen.blit(third_place, (250,275))   
 """     
-        load_animals()
 
+
+        load_animals()
+        
         for number in scores:
             if number > first:
                 third = second
