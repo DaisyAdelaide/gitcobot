@@ -352,13 +352,14 @@ def maths_game():
             elif score == third and draw3 == 0 and score > 0:
                 third_place = animal_images[i]
                 draw3 += 1
-            else:
-                if score == first and score > 0:
-                    draw1 += 1
-                if score == second and score > 0:
-                    draw2 += 1
-                if score == third and score > 0:
-                    draw3 += 1
+                
+            elif score == first and draw1 > 0:
+                draw1 += 1
+            elif score == second and draw2 > 0:
+                draw2 += 1
+            elif score == third and draw3 > 0:
+                draw3 += 1
+
             i += 1
 
 
