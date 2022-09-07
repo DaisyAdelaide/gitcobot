@@ -355,8 +355,8 @@ def maths_game():
 """     
 
 
-        load_animals()
-        
+        #load_animals()
+
         for number in scores:
             if number > first:
                 third = second
