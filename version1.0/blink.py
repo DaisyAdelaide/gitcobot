@@ -354,9 +354,12 @@ def maths_game():
                 draw3 += 1
             i += 1
 
-        if draw1 == 1 or draw2 == 1 or draw3 == 1:
+
+        if draw1 == 1:
             screen.blit(first_place, (350,215))
+        if draw2 == 1:
             screen.blit(second_place, (450,255))
+        if draw3 == 1:
             screen.blit(third_place, (250,275))
 
         x = 0
