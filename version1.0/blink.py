@@ -324,38 +324,8 @@ def maths_game():
         pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
 
-"""
-        i = 0
-        draw = 0
-        for number in scores:
-            if number > first:
-                third_place = second_place
-                second_place = first_place
-                first_place = animal_images[i]
-                third = second
-                second = first             
-                first = number
-            elif number > second and number < first:
-                third_place = second_place
-                second_place = animal_images[i]
-                third = second
-                second = number
-            elif number > third and number < second:
-                third_place = animal_images[i]
-                third = number
-            
-            i += 1
+        load_animals()
         
-        if first > 0:
-            screen.blit(first_place, (350,215))
-        if second > 0:
-            screen.blit(second_place, (450,255))
-        if third > 0:
-            screen.blit(third_place, (250,275))   
-"""     
-
-
-        #load_animals()
 
         for number in scores:
             if number > first:
