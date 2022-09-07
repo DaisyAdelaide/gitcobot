@@ -324,8 +324,9 @@ def maths_game():
         pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
 
-
+"""
         i = 0
+        draw = 0
         for number in scores:
             if number > first:
                 third_place = second_place
@@ -351,7 +352,68 @@ def maths_game():
             screen.blit(second_place, (450,255))
         if third > 0:
             screen.blit(third_place, (250,275))   
-      
+"""     
+        load_animals()
+
+        for number in scores:
+            if number > first:
+                third = second
+                second = first
+                first = number
+            if number > second and number < first:
+                third = second
+                second = number
+            if number > third and number < second:
+                third = number
+
+        i = 0
+        draw1 = 0
+        draw2 = 0
+        draw3 = 0
+        for score in scores:
+            if score == first and draw1 == 0:
+                first_place = animal_images[i]
+                draw1 += 1
+            if score == second and draw2 == 0:
+                second_place = animal_images[i]
+                draw2 += 1
+            if score == third and draw3 == 0:
+                third_place = animal_images[i]
+                draw3 += 1
+            i += 1
+
+        if draw1 < 2 and draw2 < 2 and draw3 < 2:
+            screen.blit(first_place, (350,215))
+            screen.blit(second_place, (450,255))
+            screen.blit(third_place, (250,275))
+
+        x = 0
+        if draw1 > 1:
+            for score in scores:
+                if score == first:
+                    animal_images[x] = pygame.transform.scale(animal_images[x],(70,70))
+                    screen.blit(animal_images[x], (350 + x*20,215))
+                x += 1
+
+        x = 0
+        if draw2 > 1:
+            for score in scores:
+                if score == second:
+                    animal_images[x] = pygame.transform.scale(animal_images[x],(70,70))
+                    screen.blit(animal_images[x], (450 + x*20,255))
+                x += 1
+
+        x = 0
+        if draw3 > 1:
+            for score in scores:
+                if score == third:
+                    animal_images[x] = pygame.transform.scale(animal_images[x],(70,70))
+                    screen.blit(animal_images[x], (250 + x*20,275))
+                x += 1
+
+
+
+
         
         screen.blit(podium,(250, 250))
 
