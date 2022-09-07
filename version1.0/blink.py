@@ -354,7 +354,7 @@ def maths_game():
                 draw3 += 1
             i += 1
 
-        if draw1 < 2 and draw2 < 2 and draw3 < 2:
+        if draw1 == 1 and draw2 == 1 and draw3 == 1:
             screen.blit(first_place, (350,215))
             screen.blit(second_place, (450,255))
             screen.blit(third_place, (250,275))
