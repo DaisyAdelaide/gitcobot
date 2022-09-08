@@ -70,7 +70,7 @@ def define():
     shock = pygame.transform.scale(shock,(217, 150))
 
 def load_animals():
-    global dog, cat, snail, podium, animal_images
+    global dog, cat, snail, podium, animal_images, frog
     dog = pygame.image.load('dog.png').convert_alpha()
     dog = pygame.transform.scale(dog,(100,100))
     cat = pygame.image.load('cat.png').convert_alpha()
@@ -78,7 +78,7 @@ def load_animals():
     snail = pygame.image.load('snail.png').convert_alpha()
     snail = pygame.transform.scale(snail,(100,100))
     frog = pygame.image.load('frog.png').convert_alpha()
-    frog = pygame.transform.scale(frog,(100,100))
+    frog = pygame.transform.scale(frog,(110,110))
     podium = pygame.image.load('podium.png').convert_alpha()
     podium = pygame.transform.scale(podium,(300,300))
 
@@ -365,11 +365,11 @@ def maths_game():
 
 
         if draw1 == 1:
-            screen.blit(first_place, (350,215))
+            screen.blit(first_place, (500,20))
         if draw2 == 1:
-            screen.blit(second_place, (450,255))
+            screen.blit(second_place, (500,320))
         if draw3 == 1:
-            screen.blit(third_place, (250,275))
+            screen.blit(third_place, (500,620))
 
         x = 0
         if draw1 > 1:
@@ -396,7 +396,7 @@ def maths_game():
                 x += 1
 
 
-        screen.blit(podium,(250, 250))
+        #screen.blit(podium,(250, 250))
 
         pygame.display.update()
         clock.tick(20)
