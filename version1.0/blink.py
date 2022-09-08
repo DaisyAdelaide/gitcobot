@@ -260,6 +260,32 @@ def maths_game():
                 writer.writerow([character_chosen])
                 writer.writerow([original])
 
+            load_animals()
+
+            print(scores)
+
+            dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
+
+            dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
+
+            list1 = list(dict1.keys())
+            list1.reverse()
+
+            x = 0
+            if len(list1) > 0:
+                for animal in list1:
+                    lookup = animal
+                    animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
+                    screen.blit(animal, (30 + x*130,350+x*30))
+
+                    font = pygame.font.Font('freesansbold.ttf', 50)
+                    textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
+                    textRect3 = textSurface3.get_rect()
+                    textRect3.center = (30 + x*130,300+x*30)
+                    screen.blit(textSurface3, textRect3)
+
+                    x += 1
+
             character_state = 0
 
         if start == 0:
@@ -339,33 +365,7 @@ def maths_game():
         #pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
         screen.blit(textSurface, textRect)
 
-        load_animals()
-
-        print(scores)
-
-        dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
-
-        dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
-
-        list1 = list(dict1.keys())
-        list1.reverse()
-
-        x = 0
-        if len(list1) > 0:
-            for animal in list1:
-                lookup = animal
-                animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
-                screen.blit(animal, (30 + x*130,350+x*30))
-
-                font = pygame.font.Font('freesansbold.ttf', 50)
-                textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
-                textRect3 = textSurface3.get_rect()
-                textRect3.center = (30 + x*130,300+x*30)
-                screen.blit(textSurface3, textRect3)
-
-                x += 1
-
-
+        
         #screen.blit(podium,(250, 250))
 
         pygame.display.update()
@@ -378,7 +378,7 @@ def maths_game():
         if right == 1:
             right = 0
             character_state = select_character()
-            
+
         if asked == 2:
             asked = 0
 
