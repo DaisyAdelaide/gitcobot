@@ -365,26 +365,29 @@ def maths_game():
 
 
         if draw1 == 1:
-            screen.blit(first_place, (500,20))
+            first_place = pygame.transform.scale(first_place,(130,130))
+            screen.blit(first_place, (20,500))
         if draw2 == 1:
-            screen.blit(second_place, (500,320))
+            second_place = pygame.transform.scale(second_place,(100,100))
+            screen.blit(second_place, (320,500))
         if draw3 == 1:
-            screen.blit(third_place, (500,620))
+            third_place = pygame.transform.scale(third_place,(70,70))
+            screen.blit(third_place, (620,500))
 
         x = 0
         if draw1 > 1:
             for score in scores:
                 if score == first:
-                    animal_images[x] = pygame.transform.scale(animal_images[x],(70,70))
-                    screen.blit(animal_images[x], (330 + x*40,245))
+                    animal_images[x] = pygame.transform.scale(animal_images[x],(130,130))
+                    screen.blit(animal_images[x], (20 + x*60,500))
                 x += 1
 
         x = 0
         if draw2 > 1:
             for score in scores:
                 if score == second:
-                    animal_images[x] = pygame.transform.scale(animal_images[x],(70,70))
-                    screen.blit(animal_images[x], (420 + x*40,285))
+                    animal_images[x] = pygame.transform.scale(animal_images[x],(100,100))
+                    screen.blit(animal_images[x], (320 + x*50,500))
                 x += 1
 
         x = 0
@@ -392,7 +395,7 @@ def maths_game():
             for score in scores:
                 if score == third:
                     animal_images[x] = pygame.transform.scale(animal_images[x],(70,70))
-                    screen.blit(animal_images[x], (220 + x*40,305))
+                    screen.blit(animal_images[x], (620 + x*40,500))
                 x += 1
 
 
