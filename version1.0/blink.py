@@ -245,7 +245,7 @@ def maths_game():
                     correct_sound = mixer.Sound('correct.wav')
                     correct_sound.play()
 
-                    right == 1
+                    right = 1
 
                 elif response != answer:
                     screen.fill(red)
