@@ -207,6 +207,7 @@ def maths_game():
 
         screen.fill(blue)
         color_picked = blue
+        font = pygame.font.Font('freesansbold.ttf', 180)
         textSurface = font.render(problem, True, yellow, blue)
         textRect = textSurface.get_rect()
         textRect.center = (400, 150)
@@ -260,6 +261,13 @@ def maths_game():
                 pygame.display.update()
                 clock.tick(20)
                 time.sleep(2)
+
+        if right == 1:
+            select_character()
+            audio = functions.listen1()
+            character_chosen = functions.voice(audio)
+            character_chosen = str(character_chosen)
+
 
                 
 
