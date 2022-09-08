@@ -314,7 +314,7 @@ def maths_game():
                 textRect3.center = (30 + x*130,300+x*30)
                 screen.blit(textSurface3, textRect3)
 
-            x += 1
+                x += 1
 
 
         pygame.display.update()
