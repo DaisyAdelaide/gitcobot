@@ -250,7 +250,7 @@ def maths_game():
                         scores[i] += 1
                         points = 1
                         print('points after'+str(points))
-                    if operand == '*' or operand == '/':
+                    else:
                         scores[i] += 3
                         points = 3
                         print('points'+str(points))
