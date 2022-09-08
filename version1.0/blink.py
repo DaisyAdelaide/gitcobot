@@ -303,7 +303,7 @@ def maths_game():
                 textSurface2 = font.render('Points : {}'.format(points), True, orange, green)
                 textRect2 = textSurface2.get_rect()
                 textRect2.center = (400, 250)
-                pygame.draw.rect(screen, green, pygame.Rect(400, 200, 200, 200))
+                #pygame.draw.rect(screen, green, pygame.Rect(400, 200, 200, 200))
                 screen.blit(textSurface2, textRect2)
 
                 asked = 0
