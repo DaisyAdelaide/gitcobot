@@ -244,6 +244,7 @@ def maths_game():
             i = 0
             for index in scores:
                 if character_chosen == animals[i]:
+                    print('adding to scores {}'.format(str(points)))
                     scores[i] += points 
                 i += 1
 
