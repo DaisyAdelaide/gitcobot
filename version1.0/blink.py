@@ -271,6 +271,7 @@ def maths_game():
             if character_chosen == 'I didnt catch that!':
                 wrong_sound = mixer.Sound('wrong.wav')
                 wrong_sound.play()
+                x = 1
 
             x = 0
             for animal in animals:
