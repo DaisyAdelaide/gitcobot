@@ -382,7 +382,7 @@ def maths_game():
             for score in scores:
                 if score == first:
                     animal_images[x] = pygame.transform.scale(animal_images[x],(130,130))
-                    screen.blit(animal_images[x], (70 + index*130,350))
+                    screen.blit(animal_images[x], (30 + index*130,350))
                     index += 1
                 x += 1
 
