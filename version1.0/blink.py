@@ -242,9 +242,15 @@ def maths_game():
                 character_chosen = lev_animal.find_match(character_chosen)
 
             i = 0
+            points = 0
             for index in scores:
                 if character_chosen == animals[i]:
-                    scores[i] += 1
+                    if operand == '+' or operand == '-':
+                        scores[i] += 1
+                        points = 1
+                    if operand == '+' or operand == '-':
+                        scores[i] += 3
+                        points = 3
                 i += 1
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
@@ -288,11 +294,18 @@ def maths_game():
             if response == answer:
                 screen.fill(green)
                 color_picked = green
+                font = pygame.font.Font('freesansbold.ttf', 100)
                 textSurface = font.render('Right', True, white, green)
-                if operand == '+':
-                    textSurface = font.render('Plus', True, white, green)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 150)
+
+                font = pygame.font.Font('freesansbold.ttf', 100)
+                textSurface2 = font.render('Points : {}'.format(points), True, orange, green)
+                textRect2 = textSurface2.get_rect()
+                textRect2.center = (400, 250)
+                pygame.draw.rect(screen, green, pygame.Rect(400, 200, 200, 200))
+                screen.blit(textSurface2, textRect2)
+
                 asked = 0
                 start = 0
                 right = 1
