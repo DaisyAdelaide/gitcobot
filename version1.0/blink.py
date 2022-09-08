@@ -237,6 +237,11 @@ def maths_game():
             for animal in animals:
                 if character_chosen == animal:
                     character_right = 1
+                    for index in scores:
+                    if character_chosen == animals[i]:
+                        print('adding to scores {}'.format(str(points)))
+                        scores[i] += points 
+                    i += 1
 
             if character_right == 0:
                 character_chosen = lev_animal.find_match(character_chosen)
@@ -246,9 +251,6 @@ def maths_game():
                         print('adding to scores {}'.format(str(points)))
                         scores[i] += points 
                     i += 1
-
-            
-
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file) 
@@ -268,8 +270,6 @@ def maths_game():
             asked = 1
 
         if start == 1:
-
-
 
             #print(answer)
             print(response)
