@@ -246,7 +246,6 @@ def maths_game():
                 character_chosen = lev_animal.find_match(character_chosen)
 
             i = 0
-            print('points before'+str(points))
             for index in scores:
                 if character_chosen == animals[i]:
                     if operand == '+' or operand == '-':
@@ -300,8 +299,6 @@ def maths_game():
                 textSurface = font.render('Right', True, white, green)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 150)
-
-                print('points loop'+str(points))
 
                 font = pygame.font.Font('freesansbold.ttf', 100)
                 textSurface2 = font.render('Points : {}'.format(points), True, orange, green)
@@ -358,6 +355,13 @@ def maths_game():
             for animal in list1:
                 animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
                 screen.blit(animal, (30 + x*130,350+x*30))
+
+                font = pygame.font.Font('freesansbold.ttf', 50)
+                textSurface3 = font.render('{}'.format(dict1['animal']), True, orange, green)
+                textRect3 = textSurface3.get_rect()
+                textRect2.center = (30 + x*130,300+x*30)
+                screen.blit(textSurface3, textRect3)
+
                 x += 1
 
         #screen.blit(podium,(250, 250))
