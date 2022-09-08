@@ -306,7 +306,7 @@ def maths_game():
                 #pygame.draw.rect(screen, green, pygame.Rect(400, 200, 200, 200))
                 screen.blit(textSurface2, textRect2)
 
-                asked = 0
+                asked = 2
                 start = 0
                 right = 1
                 correct_sound = mixer.Sound('correct.wav')
@@ -364,6 +364,7 @@ def maths_game():
 
                 x += 1
 
+
         #screen.blit(podium,(250, 250))
 
         pygame.display.update()
@@ -376,6 +377,8 @@ def maths_game():
         if right == 1:
             right = 0
             character_state = select_character()
+        if asked == 2:
+            asked = 1
 
 def select_character():
     character_sound = mixer.Sound('character.wav')
