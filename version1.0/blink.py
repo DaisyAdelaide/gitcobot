@@ -366,7 +366,7 @@ def maths_game():
 
         if draw1 == 1:
             first_place = pygame.transform.scale(first_place,(130,130))
-            screen.blit(first_place, (20,500))
+            screen.blit(first_place, (0, 0))
         if draw2 == 1:
             second_place = pygame.transform.scale(second_place,(100,100))
             screen.blit(second_place, (320,500))
