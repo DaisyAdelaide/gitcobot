@@ -177,146 +177,45 @@ def chatbot():
 
 ##########
 def maths_game():
-    global seconds2, index, player_surf
-    seconds2 = 30
-    start = 0
-    index = 0
-    blinktime = 80
-    player_surf = blinking[index]
-    response = ''
-    asked = 0
-    problem = ''
-    answer = ''
-    sleep = 0
-    right = 0
-    character_state = 0
-    character_right = 0
     animals = ['cat','snail','dog', 'frog']
-    scores = [0, 0, 0, 0]
-    operand = ''
-    points = 0
+scores = [0, 0, 0, 0]
 
-    load_animals()
-    list1 = []
+black = (0, 0, 0)
+white = (255, 255, 255)
+orange = (255, 127, 39)
+blue = (25, 130, 196)
+yellow = (255, 202, 58)
+green = (138, 201, 38)
+red = (255, 51, 58)
+font = pygame.font.Font('freesansbold.ttf', 180)
 
-    while GPIO.input(button3) == 0:
+load_animals()
 
-        if GPIO.input(button4) == 1:
+problem, answer, points = summ()
+
+recorded_maths = 0
+
+#the exit button
+while GPIO.input(button3) == 0:
+
+    #emergency exit
+    if GPIO.input(button4) == 1:
             pygame.quit()
             sys.exit()
 
-        if GPIO.input(button) == 1 and start == 0:
+    #record maths answer
+    if GPIO.input(button) == 1:
             audio = functions.listen1()
             response = functions.voice(audio)
             response = str(response)
-            start = 1
-                   
-        black = (0, 0, 0)
-        white = (255, 255, 255)
-        orange = (255, 127, 39)
-        blue = (25, 130, 196)
-        yellow = (255, 202, 58)
-        green = (138, 201, 38)
-        red = (255, 51, 58)
-        font = pygame.font.Font('freesansbold.ttf', 180)
-        
-        if asked == 0:
-            problem, answer, points = summ()
 
-        if character_state == 1:
-            character_right = 0
-            audio = functions.listen1()
-            character_chosen = functions.voice(audio)
-            original = character_chosen
-            character_chosen = str(character_chosen)
-            if character_chosen == 'I didnt catch that!':
-                character_right = 1
-                wrong_sound = mixer.Sound('wrong.wav')
-                wrong_sound.play()
-            
-            for animal in animals:
-                if character_chosen == animal:
-                    character_right = 1
-                    i = 0
-                    for index in scores:
-                        if character_chosen == animals[i]:
-                            print('adding to scores {}'.format(str(points)))
-                            scores[i] += points 
-                        i += 1
-
-            if character_right == 0:
-                character_chosen = lev_animal.find_match(character_chosen)
-                j = 0
-                for index in scores:
-                    if character_chosen == animals[j]:
-                        print('adding to scores {}'.format(str(points)))
-                        scores[j] += points 
-                    j += 1
-
-            with open ("scores_data.csv","a",encoding='UTF8') as file:
-                writer = csv.writer(file) 
-                writer.writerow(' ')
-                writer.writerow(scores)
-                writer.writerow([character_chosen])
-                writer.writerow([original])
-
-            load_animals()
-
-            print(scores)
-
-            dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
-
-            dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
-
-            list1 = list(dict1.keys())
-            list1.reverse()
-
-            x = 0
-            if len(list1) > 0:
-                for animal in list1:
-                    lookup = animal
-                    animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
-                    screen.blit(animal, (30 + x*130,350+x*30))
-
-                    font = pygame.font.Font('freesansbold.ttf', 50)
-                    textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
-                    textRect3 = textSurface3.get_rect()
-                    textRect3.center = (30 + x*130,300+x*30)
-                    screen.blit(textSurface3, textRect3)
-
-                    x += 1
-
-            character_state = 0
-
-        if start == 0:
-            screen.fill(blue)
-            color_picked = blue
-            textSurface = font.render(problem, True, yellow, blue)
-            textRect = textSurface.get_rect()
-            textRect.center = (400, 150)
-            asked = 1
-
-        if start == 1:
-
-            #print(answer)
-            print(response)
             isolate = response.split(' ')
             isolate = str(isolate[-1])
             response = isolate
-
-            with open ("maths_game_data.csv","a",encoding='UTF8') as file:
-                writer = csv.writer(file) 
-                writer.writerow(' ')
-                writer.writerow(['answer : ' + answer])
-                writer.writerow(['you said : ' + response])
-
+            
             if not response.isnumeric() and response != 'I didnt catch that!':
                 isolate = lev_distance.find_match(isolate)
-                response = str(w2n.word_to_num(isolate))
-                print('new {}'.format(response))
-                with open ("maths_game_data.csv","a",encoding='UTF8') as file:
-                    writer = csv.writer(file) 
-                    writer.writerow(['LD : ' + response])
+                response = str(w2n.word_to_num(isolate))     
             
             if response == answer:
                 screen.fill(green)
@@ -326,29 +225,15 @@ def maths_game():
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 150)
 
-                font = pygame.font.Font('freesansbold.ttf', 100)
                 textSurface2 = font.render('Points : {}'.format(points), True, orange, green)
                 textRect2 = textSurface2.get_rect()
                 textRect2.center = (400, 250)
-                #pygame.draw.rect(screen, green, pygame.Rect(400, 200, 200, 200))
                 screen.blit(textSurface2, textRect2)
 
-                asked = 2
-                start = 0
-                right = 1
                 correct_sound = mixer.Sound('correct.wav')
                 correct_sound.play()
-                sleep = 1
 
-            elif response == 'I didnt catch that!':
-                screen.fill(yellow)
-                color_picked = yellow
-                font = pygame.font.Font('freesansbold.ttf', 80)
-                textSurface = font.render('I didnt catch that!', True, white, yellow)
-                textRect = textSurface.get_rect()
-                textRect.center = (400, 150)
-                start = 0
-                sleep = 1
+                right == 1
 
             elif response != answer:
                 screen.fill(red)
@@ -356,31 +241,81 @@ def maths_game():
                 textSurface = font.render('Wrong', True, white, red)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 150)
-                start = 0
+  
                 wrong_sound = mixer.Sound('wrong.wav')
                 wrong_sound.play()
-                sleep = 1
 
-        #screen.fill(black)
-        #pygame.draw.rect(screen, color_picked, pygame.Rect(400, 200, 200, 200))
-        screen.blit(textSurface, textRect)
-
-        
-        #screen.blit(podium,(250, 250))
-
-        pygame.display.update()
-        clock.tick(20)
-
-        if sleep == 1:
+            screen.blit(textSurface, textRect)
+            pygame.display.update()
+            clock.tick(20)
             time.sleep(1)
-            sleep = 0
 
-        if right == 1:
-            right = 0
-            character_state = select_character()
+            if right == 1:
+                select_character()
 
-        if asked == 2:
-            asked = 0
+                audio = functions.listen1()
+                character_chosen = functions.voice(audio)
+
+                character_chosen = str(character_chosen)
+                
+                if character_chosen == 'I didnt catch that!':
+                    wrong_sound = mixer.Sound('wrong.wav')
+                    wrong_sound.play()
+
+                else:
+                    x = 0
+                    for animal in animals:
+                        if character_chosen == animal:
+                            i = 0
+                            for index in scores:
+                                if character_chosen == animals[i]:
+                                    scores[i] += points 
+                                i += 1
+                        x = 1
+
+                    if x == 0:
+                        character_chosen = lev_animal.find_match(character_chosen)
+                        for animal in animals:
+                        if character_chosen == animal:
+                            i = 0
+                            for index in scores:
+                                if character_chosen == animals[i]:
+                                    scores[i] += points 
+                                i += 1
+                     load_animals()
+
+                dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
+
+                dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
+
+                list1 = list(dict1.keys())
+                list1.reverse()
+
+                x = 0
+                if len(list1) > 0:
+                    for animal in list1:
+                        lookup = animal
+                        animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
+                        screen.blit(animal, (30 + x*130,350+x*30))
+
+                        font = pygame.font.Font('freesansbold.ttf', 50)
+                        textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
+                        textRect3 = textSurface3.get_rect()
+                        textRect3.center = (30 + x*130,300+x*30)
+                        screen.blit(textSurface3, textRect3)
+
+                        x += 1
+
+                screen.fill(blue)
+                color_picked = blue
+                textSurface = font.render(problem, True, yellow, blue)
+                textRect = textSurface.get_rect()
+                textRect.center = (400, 150)
+
+                screen.blit(textSurface, textRect)
+                pygame.display.update()
+                clock.tick(20)
+
 
 def select_character():
     character_sound = mixer.Sound('character.wav')
