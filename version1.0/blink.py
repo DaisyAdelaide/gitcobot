@@ -203,6 +203,15 @@ def maths_game():
                 pygame.quit()
                 sys.exit()
 
+        screen.fill(blue)
+        color_picked = blue
+        textSurface = font.render(problem, True, yellow, blue)
+        textRect = textSurface.get_rect()
+        textRect.center = (400, 150)
+        screen.blit(textSurface, textRect)
+        pygame.display.update()
+        clock.tick(20)
+
         #record maths answer
         if GPIO.input(button) == 1:
                 audio = functions.listen1()
