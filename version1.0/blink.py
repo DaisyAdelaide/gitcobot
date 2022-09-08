@@ -236,6 +236,8 @@ def maths_game():
             character_chosen = functions.voice(audio)
             original = character_chosen
             character_chosen = str(character_chosen)
+            if character_chosen == 'I didnt catch that!':
+                character_right = 1
             
             for animal in animals:
                 if character_chosen == animal:
@@ -280,7 +282,7 @@ def maths_game():
                 writer.writerow(['answer : ' + answer])
                 writer.writerow(['you said : ' + response])
 
-            if not response.isnumeric():
+            if not response.isnumeric() and response != 'I didnt catch that!':
                 isolate = lev_distance.find_match(isolate)
                 response = str(w2n.word_to_num(isolate))
                 print('new {}'.format(response))

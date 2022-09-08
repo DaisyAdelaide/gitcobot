@@ -13,6 +13,10 @@ def find_match(isolate):
 
 	if isolate == 'sale':
 		return 'snail'
+	if isolate == 'cell':
+		return 'snail'
+	is isolate == 'that!':
+		return 'go again'
 
 	for word in words:
 		wordDistance = LDM(word,isolate)
