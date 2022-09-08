@@ -195,6 +195,8 @@ def maths_game():
 
     recorded_maths = 0
 
+    right == 0
+
     #the exit button
     while GPIO.input(button3) == 0:
 
