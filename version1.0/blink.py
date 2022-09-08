@@ -337,7 +337,7 @@ def maths_game():
         dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
 
         list1 = list(dict1.keys())
-        list1 = list1.reverse()
+        list1.reverse()
 
         x = 0
         if len(list1) > 0:
