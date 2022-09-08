@@ -331,14 +331,12 @@ def maths_game():
 
         print(scores)
 
-        dict1 = {animal_images[i]:scores[i] if scores[i]>0 for i in range(len(animal_images))}
+        dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
 
         dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
 
         list1 = list(dict1.keys())
-
-        print(dict1)
-        print(list1)
+        list1 = list1.reverse()
 
         x = 0
         for animal in list1:
