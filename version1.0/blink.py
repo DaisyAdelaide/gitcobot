@@ -276,13 +276,14 @@ while GPIO.input(button3) == 0:
                     if x == 0:
                         character_chosen = lev_animal.find_match(character_chosen)
                         for animal in animals:
-                        if character_chosen == animal:
-                            i = 0
-                            for index in scores:
-                                if character_chosen == animals[i]:
-                                    scores[i] += points 
-                                i += 1
-                     load_animals()
+                            if character_chosen == animal:
+                                i = 0
+                                for index in scores:
+                                    if character_chosen == animals[i]:
+                                        scores[i] += points 
+                                    i += 1
+                                
+                load_animals()
 
                 dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
 
