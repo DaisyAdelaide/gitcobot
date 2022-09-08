@@ -194,6 +194,7 @@ def maths_game():
     animals = ['cat','snail','dog', 'frog']
     scores = [0, 0, 0, 0]
     operand = ''
+    points = 0
 
     load_animals()
     list1 = []
@@ -242,7 +243,6 @@ def maths_game():
                 character_chosen = lev_animal.find_match(character_chosen)
 
             i = 0
-            points = 0
             for index in scores:
                 if character_chosen == animals[i]:
                     if operand == '+' or operand == '-':
