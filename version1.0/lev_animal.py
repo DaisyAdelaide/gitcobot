@@ -15,7 +15,7 @@ def find_match(isolate):
 		return 'snail'
 	if isolate == 'cell':
 		return 'snail'
-	is isolate == 'that!':
+	if isolate == 'that!':
 		return 'go again'
 
 	for word in words:
