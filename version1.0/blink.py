@@ -248,10 +248,7 @@ def maths_game():
             i = 0
             for index in scores:
                 if character_chosen == animals[i]:
-                    if operand == '+' or operand == '-':
-                        scores[i] += 1
-                    else:
-                        scores[i] += 3
+                    scores[i] += points 
                 i += 1
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
