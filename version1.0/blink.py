@@ -353,11 +353,12 @@ def maths_game():
         x = 0
         if len(list1) > 0:
             for animal in list1:
+                lookup = animal
                 animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
                 screen.blit(animal, (30 + x*130,350+x*30))
 
                 font = pygame.font.Font('freesansbold.ttf', 50)
-                textSurface3 = font.render('{}'.format(dict1['animal']), True, orange, green)
+                textSurface3 = font.render('{}'.format(dict1[lookup]), True, orange, green)
                 textRect3 = textSurface3.get_rect()
                 textRect2.center = (30 + x*130,300+x*30)
                 screen.blit(textSurface3, textRect3)
