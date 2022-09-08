@@ -342,8 +342,8 @@ def maths_game():
 
         x = 0
         for animal in list1:
-            animal_images[x] = pygame.transform.scale(animal_images[x],(100,100))
-            screen.blit(animal_images[x], (30 + x*130,350))
+            animal = pygame.transform.scale(animal,(100,100))
+            screen.blit(animal, (30 + x*130,350))
             x += 1
 
         #screen.blit(podium,(250, 250))
