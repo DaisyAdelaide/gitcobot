@@ -178,103 +178,92 @@ def chatbot():
 ##########
 def maths_game():
     animals = ['cat','snail','dog', 'frog']
-scores = [0, 0, 0, 0]
+    scores = [0, 0, 0, 0]
 
-black = (0, 0, 0)
-white = (255, 255, 255)
-orange = (255, 127, 39)
-blue = (25, 130, 196)
-yellow = (255, 202, 58)
-green = (138, 201, 38)
-red = (255, 51, 58)
-font = pygame.font.Font('freesansbold.ttf', 180)
+    black = (0, 0, 0)
+    white = (255, 255, 255)
+    orange = (255, 127, 39)
+    blue = (25, 130, 196)
+    yellow = (255, 202, 58)
+    green = (138, 201, 38)
+    red = (255, 51, 58)
+    font = pygame.font.Font('freesansbold.ttf', 180)
 
-load_animals()
+    load_animals()
 
-problem, answer, points = summ()
+    problem, answer, points = summ()
 
-recorded_maths = 0
+    recorded_maths = 0
 
-#the exit button
-while GPIO.input(button3) == 0:
+    #the exit button
+    while GPIO.input(button3) == 0:
 
-    #emergency exit
-    if GPIO.input(button4) == 1:
-            pygame.quit()
-            sys.exit()
+        #emergency exit
+        if GPIO.input(button4) == 1:
+                pygame.quit()
+                sys.exit()
 
-    #record maths answer
-    if GPIO.input(button) == 1:
-            audio = functions.listen1()
-            response = functions.voice(audio)
-            response = str(response)
-
-            isolate = response.split(' ')
-            isolate = str(isolate[-1])
-            response = isolate
-            
-            if not response.isnumeric() and response != 'I didnt catch that!':
-                isolate = lev_distance.find_match(isolate)
-                response = str(w2n.word_to_num(isolate))     
-            
-            if response == answer:
-                screen.fill(green)
-                color_picked = green
-                font = pygame.font.Font('freesansbold.ttf', 100)
-                textSurface = font.render('Right', True, white, green)
-                textRect = textSurface.get_rect()
-                textRect.center = (400, 150)
-
-                textSurface2 = font.render('Points : {}'.format(points), True, orange, green)
-                textRect2 = textSurface2.get_rect()
-                textRect2.center = (400, 250)
-                screen.blit(textSurface2, textRect2)
-
-                correct_sound = mixer.Sound('correct.wav')
-                correct_sound.play()
-
-                right == 1
-
-            elif response != answer:
-                screen.fill(red)
-                color_picked = red
-                textSurface = font.render('Wrong', True, white, red)
-                textRect = textSurface.get_rect()
-                textRect.center = (400, 150)
-  
-                wrong_sound = mixer.Sound('wrong.wav')
-                wrong_sound.play()
-
-            screen.blit(textSurface, textRect)
-            pygame.display.update()
-            clock.tick(20)
-            time.sleep(1)
-
-            if right == 1:
-                select_character()
-
+        #record maths answer
+        if GPIO.input(button) == 1:
                 audio = functions.listen1()
-                character_chosen = functions.voice(audio)
+                response = functions.voice(audio)
+                response = str(response)
 
-                character_chosen = str(character_chosen)
+                isolate = response.split(' ')
+                isolate = str(isolate[-1])
+                response = isolate
                 
-                if character_chosen == 'I didnt catch that!':
+                if not response.isnumeric() and response != 'I didnt catch that!':
+                    isolate = lev_distance.find_match(isolate)
+                    response = str(w2n.word_to_num(isolate))     
+                
+                if response == answer:
+                    screen.fill(green)
+                    color_picked = green
+                    font = pygame.font.Font('freesansbold.ttf', 100)
+                    textSurface = font.render('Right', True, white, green)
+                    textRect = textSurface.get_rect()
+                    textRect.center = (400, 150)
+
+                    textSurface2 = font.render('Points : {}'.format(points), True, orange, green)
+                    textRect2 = textSurface2.get_rect()
+                    textRect2.center = (400, 250)
+                    screen.blit(textSurface2, textRect2)
+
+                    correct_sound = mixer.Sound('correct.wav')
+                    correct_sound.play()
+
+                    right == 1
+
+                elif response != answer:
+                    screen.fill(red)
+                    color_picked = red
+                    textSurface = font.render('Wrong', True, white, red)
+                    textRect = textSurface.get_rect()
+                    textRect.center = (400, 150)
+      
                     wrong_sound = mixer.Sound('wrong.wav')
                     wrong_sound.play()
 
-                else:
-                    x = 0
-                    for animal in animals:
-                        if character_chosen == animal:
-                            i = 0
-                            for index in scores:
-                                if character_chosen == animals[i]:
-                                    scores[i] += points 
-                                i += 1
-                        x = 1
+                screen.blit(textSurface, textRect)
+                pygame.display.update()
+                clock.tick(20)
+                time.sleep(1)
 
-                    if x == 0:
-                        character_chosen = lev_animal.find_match(character_chosen)
+                if right == 1:
+                    select_character()
+
+                    audio = functions.listen1()
+                    character_chosen = functions.voice(audio)
+
+                    character_chosen = str(character_chosen)
+                    
+                    if character_chosen == 'I didnt catch that!':
+                        wrong_sound = mixer.Sound('wrong.wav')
+                        wrong_sound.play()
+
+                    else:
+                        x = 0
                         for animal in animals:
                             if character_chosen == animal:
                                 i = 0
@@ -282,40 +271,51 @@ while GPIO.input(button3) == 0:
                                     if character_chosen == animals[i]:
                                         scores[i] += points 
                                     i += 1
-                                
-                load_animals()
+                            x = 1
 
-                dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
+                        if x == 0:
+                            character_chosen = lev_animal.find_match(character_chosen)
+                            for animal in animals:
+                                if character_chosen == animal:
+                                    i = 0
+                                    for index in scores:
+                                        if character_chosen == animals[i]:
+                                            scores[i] += points 
+                                        i += 1
 
-                dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
+                    load_animals()
 
-                list1 = list(dict1.keys())
-                list1.reverse()
+                    dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
 
-                x = 0
-                if len(list1) > 0:
-                    for animal in list1:
-                        lookup = animal
-                        animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
-                        screen.blit(animal, (30 + x*130,350+x*30))
+                    dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
 
-                        font = pygame.font.Font('freesansbold.ttf', 50)
-                        textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
-                        textRect3 = textSurface3.get_rect()
-                        textRect3.center = (30 + x*130,300+x*30)
-                        screen.blit(textSurface3, textRect3)
+                    list1 = list(dict1.keys())
+                    list1.reverse()
 
-                        x += 1
+                    x = 0
+                    if len(list1) > 0:
+                        for animal in list1:
+                            lookup = animal
+                            animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
+                            screen.blit(animal, (30 + x*130,350+x*30))
 
-                screen.fill(blue)
-                color_picked = blue
-                textSurface = font.render(problem, True, yellow, blue)
-                textRect = textSurface.get_rect()
-                textRect.center = (400, 150)
+                            font = pygame.font.Font('freesansbold.ttf', 50)
+                            textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
+                            textRect3 = textSurface3.get_rect()
+                            textRect3.center = (30 + x*130,300+x*30)
+                            screen.blit(textSurface3, textRect3)
 
-                screen.blit(textSurface, textRect)
-                pygame.display.update()
-                clock.tick(20)
+                            x += 1
+
+                    screen.fill(blue)
+                    color_picked = blue
+                    textSurface = font.render(problem, True, yellow, blue)
+                    textRect = textSurface.get_rect()
+                    textRect.center = (400, 150)
+
+                    screen.blit(textSurface, textRect)
+                    pygame.display.update()
+                    clock.tick(20)
 
 
 def select_character():
