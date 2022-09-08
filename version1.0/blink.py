@@ -290,6 +290,7 @@ def maths_game():
                             if character_chosen == animals[i]:
                                 scores[i] += points 
                             i += 1
+            summ()
 
         load_animals()
 
