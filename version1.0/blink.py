@@ -409,7 +409,7 @@ def summ():
     if operand == '/':
         answer = (first_number) / (second_number)
         if (is_integer_num(answer)):
-            return problem, str(int(answer))
+            return problem, str(int(answer)), operand 
         else:
             return(summ())
 

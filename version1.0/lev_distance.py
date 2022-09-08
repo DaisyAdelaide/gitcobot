@@ -70,6 +70,9 @@ def find_match(isolate):
 
 		)
 
+	if isolate == 'ace':
+		return 'eight'
+
 	for word in words:
 		wordDistance = LDM(word,isolate)
 		if wordDistance < lowest:
