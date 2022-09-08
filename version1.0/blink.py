@@ -280,7 +280,7 @@ def maths_game():
                         if character_chosen == animals[i]:
                             scores[i] += points 
                         i += 1
-                x = 1
+                    x = 1
             if x == 0:
                 character_chosen = lev_animal.find_match(character_chosen)
                 for animal in animals:
