@@ -242,11 +242,7 @@ def maths_game():
                 character_chosen = lev_animal.find_match(character_chosen)
 
             i = 0
-            for index in scores:
-                if character_chosen == animals[i]:
-                    print('adding to scores {}'.format(str(points)))
-                    scores[i] += points 
-                i += 1
+
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file) 
@@ -258,6 +254,14 @@ def maths_game():
             character_state = 0
 
         if start == 0:
+
+            for index in scores:
+                if character_chosen == animals[i]:
+                    print('adding to scores {}'.format(str(points)))
+                    scores[i] += points 
+                i += 1
+
+                
             screen.fill(blue)
             color_picked = blue
             textSurface = font.render(problem, True, yellow, blue)
