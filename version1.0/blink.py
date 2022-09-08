@@ -13,6 +13,8 @@ import lev_distance
 import lev_animal
 from word2number import w2n
 from pygame import mixer
+from collections import OrderedDict
+import operator
 
 
 class Button:
