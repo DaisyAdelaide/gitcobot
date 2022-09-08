@@ -255,6 +255,7 @@ def maths_game():
                     wrong_sound = mixer.Sound('wrong.wav')
                     wrong_sound.play()
 
+
                 screen.blit(textSurface, textRect)
                 pygame.display.update()
                 clock.tick(20)
@@ -270,7 +271,6 @@ def maths_game():
             if character_chosen == 'I didnt catch that!':
                 wrong_sound = mixer.Sound('wrong.wav')
                 wrong_sound.play()
-                break
 
             x = 0
             for animal in animals:
