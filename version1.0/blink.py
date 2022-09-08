@@ -222,7 +222,10 @@ def maths_game():
         
         if asked == 0:
             problem, answer, operand = summ()
-            print (operand)
+            if operand == '+' or operand == '-':
+                points = 1
+            else:
+                points = 3
 
         if character_state == 1:
             character_right = 0
@@ -248,12 +251,8 @@ def maths_game():
                 if character_chosen == animals[i]:
                     if operand == '+' or operand == '-':
                         scores[i] += 1
-                        points = 1
-                        print('points after'+str(points))
                     else:
                         scores[i] += 3
-                        points = 3
-                        print('points'+str(points))
                 i += 1
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
