@@ -360,7 +360,7 @@ def maths_game():
                 font = pygame.font.Font('freesansbold.ttf', 50)
                 textSurface3 = font.render('{}'.format(dict1[lookup]), True, orange, green)
                 textRect3 = textSurface3.get_rect()
-                textRect2.center = (30 + x*130,300+x*30)
+                textRect3.center = (30 + x*130,300+x*30)
                 screen.blit(textSurface3, textRect3)
 
                 x += 1
