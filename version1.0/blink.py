@@ -339,7 +339,7 @@ def maths_game():
         list1 = list1.reverse()
 
         x = 0
-        if len(list1)>0:
+        if list1:
             for animal in list1:
                 animal = pygame.transform.scale(animal,(100,100))
                 screen.blit(animal, (30 + x*130,350))
