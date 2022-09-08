@@ -222,7 +222,7 @@ def maths_game():
         
         if asked == 0:
             problem, answer, operand = summ()
-            print (answer)
+            print (operand)
 
         if character_state == 1:
             character_right = 0
