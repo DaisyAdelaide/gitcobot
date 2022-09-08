@@ -215,6 +215,30 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
 
+        load_animals()
+
+        dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
+
+        dict1 = dict(sorted(dict1.items(), key=operator.itemgetter(1)))
+
+        list1 = list(dict1.keys())
+        list1.reverse()
+
+        x = 0
+        if len(list1) > 0:
+            for animal in list1:
+                lookup = animal
+                animal = pygame.transform.scale(animal,(130-x*30,130-x*30))
+                screen.blit(animal, (30 + x*130,350+x*30))
+                font = pygame.font.Font('freesansbold.ttf', 50)
+
+                textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
+                textRect3 = textSurface3.get_rect()
+                textRect3.center = (30 + x*130,300+x*30)
+                screen.blit(textSurface3, textRect3)
+
+            x += 1
+
         #record maths answer
         if GPIO.input(button) == 1:
                 audio = functions.listen1()
