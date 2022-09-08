@@ -254,14 +254,6 @@ def maths_game():
             character_state = 0
 
         if start == 0:
-
-            for index in scores:
-                if character_chosen == animals[i]:
-                    print('adding to scores {}'.format(str(points)))
-                    scores[i] += points 
-                i += 1
-
-                
             screen.fill(blue)
             color_picked = blue
             textSurface = font.render(problem, True, yellow, blue)
@@ -270,6 +262,13 @@ def maths_game():
             asked = 1
 
         if start == 1:
+
+            for index in scores:
+                if character_chosen == animals[i]:
+                    print('adding to scores {}'.format(str(points)))
+                    scores[i] += points 
+                i += 1
+            
             #print(answer)
             print(response)
             isolate = response.split(' ')
