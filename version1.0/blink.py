@@ -221,11 +221,7 @@ def maths_game():
         font = pygame.font.Font('freesansbold.ttf', 180)
         
         if asked == 0:
-            problem, answer, operand = summ()
-            if operand == '+' or operand == '-':
-                points = 1
-            else:
-                points = 3
+            problem, answer, points = summ()
 
         if character_state == 1:
             character_right = 0
@@ -395,22 +391,27 @@ def summ():
     first_number = random.randint(1,10)
     second_number = random.randint(1,10)
     operand = random.choice(operands)
+    points = 0
 
     problem = '{} {} {}'.format(first_number, operand, second_number)
 
     if operand == '+':
         answer = int(first_number) + int(second_number)
+        points = 1
 
     if operand == '-':
         answer = int(first_number) - int(second_number)
+        points = 2
 
     if operand == '*':
         answer = int(first_number) * int(second_number)
+        points = 3
 
     if operand == '/':
         answer = (first_number) / (second_number)
+        points = 4
         if (is_integer_num(answer)):
-            return problem, str(int(answer)), operand 
+            return problem, str(int(answer)), points 
         else:
             return(summ())
 
@@ -419,7 +420,7 @@ def summ():
     elif (answer > 60):
         return(summ())
     else:
-        return problem, str(answer), operand 
+        return problem, str(answer), points 
     
 ####################################
 
