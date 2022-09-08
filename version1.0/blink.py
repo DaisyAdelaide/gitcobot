@@ -192,11 +192,11 @@ def maths_game():
     character_state = 0
     character_right = 0
     animals = ['cat','snail','dog', 'frog']
-    scores = [4, 3, 2, 1]
+    scores = [0, 0, 0, 0]
 
-    first = 4
-    second = 3
-    third = 2
+    first = 0
+    second = 0
+    third = 0
     first_place = ''
     second_place = ''
     third_place = ''
