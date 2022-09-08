@@ -193,13 +193,8 @@ def maths_game():
     character_right = 0
     animals = ['cat','snail','dog', 'frog']
     scores = [0, 0, 0, 0]
+    operand = ''
 
-    first = 0
-    second = 0
-    third = 0
-    first_place = ''
-    second_place = ''
-    third_place = ''
     load_animals()
     list1 = []
 
@@ -225,7 +220,7 @@ def maths_game():
         font = pygame.font.Font('freesansbold.ttf', 180)
         
         if asked == 0:
-            problem, answer = summ()
+            problem, answer, operand = summ()
             print (answer)
 
         if character_state == 1:
@@ -294,6 +289,8 @@ def maths_game():
                 screen.fill(green)
                 color_picked = green
                 textSurface = font.render('Right', True, white, green)
+                if operand == '+':
+                    textSurface = font.render('Plus', True, white, green)
                 textRect = textSurface.get_rect()
                 textRect.center = (400, 150)
                 asked = 0
@@ -403,7 +400,7 @@ def summ():
     elif (answer > 60):
         return(summ())
     else:
-        return problem, str(answer)
+        return problem, str(answer), operand 
     
 ####################################
 
