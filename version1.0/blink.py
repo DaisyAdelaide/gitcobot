@@ -378,8 +378,9 @@ def maths_game():
         if right == 1:
             right = 0
             character_state = select_character()
+            
         if asked == 2:
-            asked = 1
+            asked = 0
 
 def select_character():
     character_sound = mixer.Sound('character.wav')
