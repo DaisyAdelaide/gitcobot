@@ -4,9 +4,14 @@ import pyttsx3, time
 engine = pyttsx3.init() 
 
 voices = engine.getProperty('voices')
+engine.setProperty('voice', voices.id)
+
 engine.setProperty('rate', 125)
-engine.setProperty('voice', voices[0].id)
-engine.say("Hello I am the cobot") 
+
+
+for voice in voices:
+   	engine.setProperty('voice', voice.id)
+	engine.say("Hello I am the cobot") 
 engine.runAndWait()
 
 rate = engine.getProperty('rate')   # getting details of current speaking rate
