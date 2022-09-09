@@ -2,6 +2,8 @@
 #apt-get install alsa-utils
 import pyttsx3, time 
 engine = pyttsx3.init() 
+
+engine.setProperty('rate', 125)
 engine.say("Hello I am the cobot") 
 engine.runAndWait()
 
