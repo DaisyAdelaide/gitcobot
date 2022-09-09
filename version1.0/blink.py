@@ -77,14 +77,14 @@ def load_animals():
     cat = pygame.image.load('cat.png').convert_alpha()
     snail = pygame.image.load('snail.png').convert_alpha()
     frog = pygame.image.load('frog.png').convert_alpha()
-    tiger = pygame.image.load('tiger.png').convert_alpha()
+    tiger = pygame.image.load('lion.png').convert_alpha()
     cow = pygame.image.load('cow.png').convert_alpha()
     fish = pygame.image.load('fish.png').convert_alpha()
     duck = pygame.image.load('duck.png').convert_alpha()
     sheep = pygame.image.load('sheep.png').convert_alpha()
     moose = pygame.image.load('moose.png').convert_alpha()
 
-    animal_images = [cat, snail, dog, frog, tiger, cow, fish, duck, sheep, moose]
+    animal_images = [cat, snail, dog, frog, lion, cow, fish, duck, sheep, moose]
 
 
 def shrinkfunc():
@@ -177,7 +177,7 @@ def chatbot():
 
 ##########
 def maths_game():
-    animals = ['cat','snail','dog', 'frog', 'tiger', 'cow', 'fish', 'duck', 'sheep', 'moose']
+    animals = ['cat','snail','dog', 'frog', 'lion', 'cow', 'fish', 'duck', 'sheep', 'moose']
     scores = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     black = (0, 0, 0)
