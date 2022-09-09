@@ -73,25 +73,25 @@ def define():
 
 def load_animals():
     global dog, cat, snail, podium, animal_images, frog
-    dog = pygame.image.load('dog.png').convert()
+    dog = pygame.image.load('dog.png').convert_alpha()
     #dog = pygame.transform.scale(dog,(100,100))
 
-    cat = pygame.image.load('cat.png').convert()
+    cat = pygame.image.load('cat.png').convert_alpha()
     #cat = pygame.transform.scale(cat,(100,100))
 
-    snail = pygame.image.load('snail.png').convert()
+    snail = pygame.image.load('snail.png').convert_alpha()
     #snail = pygame.transform.scale(snail,(100,100))
 
-    frog = pygame.image.load('frog.png').convert()
+    frog = pygame.image.load('frog.png').convert_alpha()
     #frog = pygame.transform.scale(frog,(110,110))
 
-    tiger = pygame.image.load('tiger.png').convert()
+    tiger = pygame.image.load('tiger.png').convert_alpha()
     #tiger = pygame.transform.scale(tiger,(100,100))
 
-    pig = pygame.image.load('pig.png').convert()
+    pig = pygame.image.load('pig.png').convert_alpha()
     #pig = pygame.transform.scale(pig,(100,100))
 
-    giraffe = pygame.image.load('giraffe.png').convert()
+    giraffe = pygame.image.load('giraffe.png').convert_alpha()
     #giraffe = pygame.transform.scale(giraffe,(100,100))
 
 
@@ -322,7 +322,7 @@ def maths_game():
             for animal in list1:
                 lookup = animal
                 animal = pygame.transform.scale(animal,(130-x*15,130-x*15))
-                screen.blit(animal, (20 + x*130,350+x*15))
+                screen.blit(animal, (25 + x*130,350+x*15))
                 font = pygame.font.Font('freesansbold.ttf', 50)
 
                 textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
