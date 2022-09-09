@@ -84,8 +84,9 @@ def load_animals():
     duck = pygame.image.load('duck.png').convert_alpha()
     sheep = pygame.image.load('sheep.png').convert_alpha()
     moose = pygame.image.load('moose.png').convert_alpha()
+    Leprechaun  = pygame.image.load('lep.png').convert_alpha()
 
-    animal_images = [cat, snail, dog, frog, lion, cow, fish, duck, sheep, moose]
+    animal_images = [cat, snail, dog, frog, lion, cow, fish, duck, sheep, moose, Leprechaun]
 
 
 def shrinkfunc():
@@ -184,8 +185,8 @@ def chatbot():
 
 ##########
 def maths_game():
-    animals = ['cat','snail','dog', 'frog', 'lion', 'cow', 'fish', 'duck', 'sheep', 'moose']
-    scores = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    animals = ['cat','snail','dog', 'frog', 'lion', 'cow', 'fish', 'duck', 'sheep', 'moose','Leprechaun']
+    scores = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     black = (0, 0, 0)
     white = (255, 255, 255)

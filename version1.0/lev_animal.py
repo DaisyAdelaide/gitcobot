@@ -5,7 +5,7 @@ def find_match(isolate):
 	lowest = 20
 	returning = ''
 
-	words = ('cat','snail','dog', 'frog', 'lion', 'cow', 'fish', 'duck', 'sheep', 'moose')
+	words = ('cat','snail','dog', 'frog', 'lion', 'cow', 'fish', 'duck', 'sheep', 'moose','Leprechaun')
 
 	if isolate == 'sale':
 		return 'snail'
