@@ -186,7 +186,7 @@ def chatbot():
 ##########
 def maths_game():
     animals = ['cat','snail','dog', 'frog', 'lion', 'cow', 'fish', 'duck', 'sheep', 'moose','Leprechaun']
-    scores = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    scores = [0,0,0,0,0,0,0,0,0,0,0]
 
     black = (0, 0, 0)
     white = (255, 255, 255)
