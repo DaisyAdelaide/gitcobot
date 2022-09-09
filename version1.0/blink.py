@@ -321,12 +321,6 @@ def maths_game():
         pygame.display.update()
         clock.tick(20)
 
-            
-
-
-                
-
-
 def select_character():
     character_sound = mixer.Sound('character.wav')
     character_sound.play()
