@@ -15,6 +15,7 @@ from word2number import w2n
 from pygame import mixer
 from collections import OrderedDict
 import operator
+import pyttsx3, time 
 
 
 class Button:
@@ -151,6 +152,11 @@ def chatbot():
             text = functions.record()
             text = str(text)
             start = 1
+            engine = pyttsx3.init()
+            voices = engine.getProperty('voices')
+            engine.setProperty('voice', 'english-scottish')
+            engine.say(text)
+            engine.runAndWait()
     
         if seconds2 < 14:
             blink_func()
@@ -194,7 +200,6 @@ def maths_game():
     problem, answer, points = summ()
 
     right = 0
-
 
     #the exit button
     while GPIO.input(button3) == 0:
