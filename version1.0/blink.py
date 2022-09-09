@@ -154,7 +154,7 @@ def chatbot():
             start = 1
             engine = pyttsx3.init()
             voices = engine.getProperty('voices')
-            engine.setProperty('voice', 'english-scottish')
+            engine.setProperty('voice', 'English-UK')
             engine.say(text)
             engine.runAndWait()
     
