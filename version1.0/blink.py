@@ -268,12 +268,13 @@ def maths_game():
             character_chosen = functions.voice(audio)
             character_chosen = str(character_chosen)
 
+            x = 0
+
             if character_chosen == 'I didnt catch that!':
                 wrong_sound = mixer.Sound('wrong.wav')
                 wrong_sound.play()
                 x = 1
-
-            x = 0
+            
             for animal in animals:
                 if character_chosen == animal:
                     i = 0
