@@ -10,7 +10,7 @@ engine.setProperty('rate', 125)
 
 
 for voice in voices:
-   	engine.setProperty('voice', voice.id)
+   	engine.setProperty('voice', voice.id[voice])
    	engine.say("Hello I am the cobot") 
 engine.runAndWait()
 
