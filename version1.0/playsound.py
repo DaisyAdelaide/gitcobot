@@ -1,8 +1,10 @@
 #pip3 install pyttsx3
 #apt-get install alsa-utils
-import pyttsx3, time 
+import pyttsx3
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', 'English-UK')
-engine.say('The quick brown fox jumped over the lazy dog.')
-engine.runAndWait()
+voiceFemales = filter(lambda v: v.gender == 'VoiceGenderFemale', voices)
+for v in voiceFemales:
+    engine.setProperty('voice', v.id)
+    engine.say('Hello world from ' + v.name)
+    engine.runAndWait()
