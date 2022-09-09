@@ -77,7 +77,7 @@ def load_animals():
     cat = pygame.image.load('cat.png').convert_alpha()
     snail = pygame.image.load('snail.png').convert_alpha()
     frog = pygame.image.load('frog.png').convert_alpha()
-    tiger = pygame.image.load('lion.png').convert_alpha()
+    lion = pygame.image.load('lion.png').convert_alpha()
     cow = pygame.image.load('cow.png').convert_alpha()
     fish = pygame.image.load('fish.png').convert_alpha()
     duck = pygame.image.load('duck.png').convert_alpha()
