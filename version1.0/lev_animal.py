@@ -5,11 +5,7 @@ def find_match(isolate):
 	lowest = 20
 	returning = ''
 
-	words = (
-		'cat',
-		'snail',
-		'dog'
-		)
+	words = ('cat','snail','dog', 'frog', 'lion', 'cow', 'fish', 'duck', 'sheep', 'moose')
 
 	if isolate == 'sale':
 		return 'snail'
@@ -58,4 +54,4 @@ def LDM(token1, token2):
     return distances[len(token1)][len(token2)]
 
 
-print(find_match('sale'))
+#print(find_match('dish'))

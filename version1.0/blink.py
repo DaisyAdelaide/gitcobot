@@ -193,8 +193,6 @@ def maths_game():
 
     problem, answer, points = summ()
 
-    recorded_maths = 0
-
     right = 0
 
     #the exit button
@@ -258,7 +256,6 @@ def maths_game():
 
                 screen.blit(textSurface, textRect)
                 pygame.display.update()
-                #clock.tick(20)
                 time.sleep(2)
 
         if right == 1:
@@ -306,7 +303,7 @@ def maths_game():
         x = 0
         if len(list1) > 0:
             for animal in list1:
-                if x < 8:
+                if x < 7:
                     lookup = animal
                     animal = pygame.transform.scale(animal,(130-x*15,130-x*15))
                     screen.blit(animal, (30 + x*135,350+x*15))
