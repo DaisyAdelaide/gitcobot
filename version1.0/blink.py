@@ -74,29 +74,29 @@ def define():
 def load_animals():
     global dog, cat, snail, podium, animal_images, frog
     dog = pygame.image.load('dog.png').convert_alpha()
-    dog = pygame.transform.scale(dog,(100,100))
+    #dog = pygame.transform.scale(dog,(100,100))
 
     cat = pygame.image.load('cat.png').convert_alpha()
-    cat = pygame.transform.scale(cat,(100,100))
+    #cat = pygame.transform.scale(cat,(100,100))
 
     snail = pygame.image.load('snail.png').convert_alpha()
-    snail = pygame.transform.scale(snail,(100,100))
+    #snail = pygame.transform.scale(snail,(100,100))
 
     frog = pygame.image.load('frog.png').convert_alpha()
-    frog = pygame.transform.scale(frog,(110,110))
+    #frog = pygame.transform.scale(frog,(110,110))
 
     tiger = pygame.image.load('tiger.png').convert_alpha()
-    tiger = pygame.transform.scale(tiger,(100,100))
+    #tiger = pygame.transform.scale(tiger,(100,100))
 
     pig = pygame.image.load('pig.png').convert_alpha()
-    pig = pygame.transform.scale(pig,(100,100))
+    #pig = pygame.transform.scale(pig,(100,100))
 
     giraffe = pygame.image.load('giraffe.png').convert_alpha()
-    giraffe = pygame.transform.scale(giraffe,(100,100))
+    #giraffe = pygame.transform.scale(giraffe,(100,100))
 
 
-    podium = pygame.image.load('podium.png').convert_alpha()
-    podium = pygame.transform.scale(podium,(300,300))
+    #podium = pygame.image.load('podium.png').convert_alpha()
+    #podium = pygame.transform.scale(podium,(300,300))
 
     animal_images = [cat, snail, dog, frog, tiger, pig, giraffe]
 
