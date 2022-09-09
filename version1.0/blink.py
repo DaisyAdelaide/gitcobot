@@ -327,7 +327,7 @@ def maths_game():
 
                 textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
                 textRect3 = textSurface3.get_rect()
-                textRect3.center = (30 + x*130,300+x*15)
+                textRect3.center = (30 + x*135,300+x*15)
                 screen.blit(textSurface3, textRect3)
 
                 x += 1
