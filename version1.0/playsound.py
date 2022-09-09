@@ -3,6 +3,7 @@
 import pyttsx3, time 
 engine = pyttsx3.init() 
 
+voices = engine.getProperty('voices')
 engine.setProperty('rate', 125)
 engine.setProperty('voice', voices[1].id)
 engine.say("Hello I am the cobot") 
