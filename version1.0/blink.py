@@ -308,7 +308,7 @@ def maths_game():
                             i += 1
             problem, answer, points = summ()
 
-        load_animals()
+        #load_animals()
 
         dict1 = {animal_images[i]:scores[i]for i in range(len(animal_images)) if scores[i]>0 }
 
