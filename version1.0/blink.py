@@ -322,7 +322,7 @@ def maths_game():
             for animal in list1:
                 lookup = animal
                 animal = pygame.transform.scale(animal,(130-x*15,130-x*15))
-                screen.blit(animal, (35 + x*130,350+x*15))
+                screen.blit(animal, (30 + x*135,350+x*15))
                 font = pygame.font.Font('freesansbold.ttf', 50)
 
                 textSurface3 = font.render('{}'.format(dict1[lookup]), True, white, blue)
