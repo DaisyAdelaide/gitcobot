@@ -17,12 +17,20 @@ int TURNING_BINARY = 0;
 const int SWITCH = 12; 
 int SWITCH_VALUE = 1400;
 
+const int REVERSE = 13;
+int REVERSE_VALUE = 0;
+
 int TURNING_MAGNITUDE;
 
 int RIGHT_SPEED;
 int LEFT_SPEED;
 
 int DRIVING = 0;
+
+int axis = 0;
+char c = '0';
+int motornum = c-'0';
+int requested_state;
 
 SoftwareSerial odrive_serial(8, 9);
 ODriveArduino odrive(odrive_serial);
@@ -58,45 +66,49 @@ void loop() {
   }
 
   SWITCH_VALUE = pulseIn(SWITCH, HIGH, 25000);
+  if (SWITCH_VALUE < 1300)
+  {
+    axis = 0;
+    odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 10.0f << '\n';
+    odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 11.0f << '\n';
+    
+    delay(2000);
+    c = '0';
+    motornum = c-'0';
+    requested_state;
+    delay(2000);
+    
+    requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE;
+    if(!odrive.run_state(motornum, requested_state, true)) return;
+    delay(3000);
+  
+    requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL;
+    if(!odrive.run_state(motornum, requested_state, false /*don't wait*/)) return;
+    delay(3000);  
+  }
+
 
   if (SWITCH_VALUE > 1800)
   {
-   
-    for (int axis = 0; axis < 2; ++axis) 
-    {
-      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 10.0f << '\n';
-      odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 11.0f << '\n';
-      // This ends up writing something like "w axis0.motor.config.current_lim 10.0\n"
-    }
-    delay(2000);
-    char c = '0';
-    int motornum = c-'0';
-    int requested_state;
-    delay(2000);
+    axis = 1;
+    odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 10.0f << '\n';
+    odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 11.0f << '\n';
     
-    requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE;
-    //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
-    if(!odrive.run_state(motornum, requested_state, true)) return;
-    delay(3000);
-  
-    requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL;
-    //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
-    if(!odrive.run_state(motornum, requested_state, false /*don't wait*/)) return;
     delay(2000);
-  
     c = '1';
     motornum = c-'0';
+    requested_state;
     delay(2000);
+    
     requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE;
-    //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, true)) return;
     delay(3000);
-    
+  
     requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL;
-   // Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
-    if(!odrive.run_state(motornum, requested_state, false /*don't wait*/)) return;  
-    delay(3000);    
+    if(!odrive.run_state(motornum, requested_state, false /*don't wait*/)) return;
+    delay(3000);
   }
+  
 
   //Serial.println(TURNING_BINARY);
 
@@ -118,6 +130,13 @@ void loop() {
    LEFT_SPEED = THROTTLE_BINARY; 
   }
 
+  REVERSE_VALUE = pulseIn(REVERSE, HIGH, 25000);
+  if (REVERSE_VALUE < 1000) 
+  {
+   RIGHT_SPEED = -RIGHT_SPEED;
+   LEFT_SPEED = -LEFT_SPEED;
+  }
+  
   odrive.SetVelocity(0, LEFT_SPEED);
   odrive.SetVelocity(1, -RIGHT_SPEED);
 
