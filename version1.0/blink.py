@@ -224,6 +224,7 @@ def maths_game():
                 audio = functions.listen1()
                 response = functions.voice(audio)
                 response = str(response)
+                original = response
 
                 isolate = response.split(' ')
                 isolate = str(isolate[-1])
@@ -272,6 +273,7 @@ def maths_game():
             audio = functions.listen1()
             character_chosen = functions.voice(audio)
             character_chosen = str(character_chosen)
+            original = character_chosen
 
             x = 0
 
@@ -298,6 +300,19 @@ def maths_game():
                                 scores[i] += points 
                             i += 1
             problem, answer, points = summ()
+
+            with open ("scores_data.csv","a",encoding='UTF8') as file:
+                writer = csv.writer(file)
+                to_write = 'maths answer given: ' + original
+                writer.writerow([to_write])
+                to_write = 'maths answer found: ' + response
+                writer.writerow([to_write])
+                to_write = 'character said: ' + original
+                writer.writerow([to_write])
+                to_write = 'character chosen: ' + character_chosen
+                writer.writerow([to_write])
+                writer.writerow([scores])
+                writer.writerow()
 
         #load_animals()
 
