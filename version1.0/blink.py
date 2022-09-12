@@ -312,7 +312,7 @@ def maths_game():
                 to_write = 'character chosen: ' + character_chosen
                 writer.writerow([to_write])
                 writer.writerow([scores])
-                writer.writerow()
+                writer.writerow('')
 
         #load_animals()
 
