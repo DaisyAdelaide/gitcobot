@@ -60,3 +60,38 @@ character said: I didnt catch that!
 character chosen: I didnt catch that!
 "[5, 4, 1, 1, 1, 3, 3, 0, 0, 0, 0]"
 
+
+maths answer given: 6
+maths answer found: 6
+character said: dog
+character chosen: dog
+"[1, 1, 3, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 6
+maths answer found: 6
+character said: sheep
+character chosen: sheep
+"[1, 1, 3, 1, 1, 0, 0, 0, 2, 0, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: fish
+character chosen: fish
+"[1, 1, 3, 1, 1, 0, 1, 0, 2, 0, 0]"
+
+
+maths answer given: the answer is to
+maths answer found: 2
+character said: sale
+character chosen: snail
+"[1, 3, 3, 1, 1, 0, 1, 0, 2, 0, 0]"
+
+
+maths answer given: 12
+maths answer found: 12
+character said: frog
+character chosen: frog
+"[1, 3, 3, 2, 1, 0, 1, 0, 2, 0, 0]"
+
