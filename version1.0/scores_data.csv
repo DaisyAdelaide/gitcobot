@@ -1023,3 +1023,24 @@ character said: cheap
 character chosen: sheep
 "[1, 2, 1, 1, 1, 0, 0, 0, 2, 0, 0]"
 
+
+maths answer given: 1
+maths answer found: 1
+character said: cheap
+character chosen: sheep
+"[1, 1, 1, 1, 1, 0, 0, 0, 4, 0, 0]"
+
+
+maths answer given: 4
+maths answer found: 4
+character said: moose
+character chosen: moose
+"[1, 1, 1, 1, 1, 0, 0, 0, 4, 2, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: dog
+character chosen: dog
+"[1, 1, 4, 1, 1, 0, 0, 0, 4, 2, 0]"
+
