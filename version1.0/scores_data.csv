@@ -1006,3 +1006,20 @@ cat
 0,0,0,0
 I didnt catch that!
 I didnt catch that!
+maths answer given: dog
+maths answer found: 18
+character said: dog
+character chosen: dog
+"[1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0]"
+maths answer given: snail
+maths answer found: 9
+character said: snail
+character chosen: snail
+"[1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+maths answer given: cheap
+maths answer found: 1
+character said: cheap
+character chosen: sheep
+"[1, 2, 1, 1, 1, 0, 0, 0, 2, 0, 0]"
+
