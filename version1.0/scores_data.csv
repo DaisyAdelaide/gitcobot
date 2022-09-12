@@ -18,3 +18,45 @@ character said: dog
 character chosen: dog
 "[1, 1, 4, 1, 1, 0, 0, 0, 4, 2, 0]"
 
+
+maths answer given: 6
+maths answer found: 6
+character said: cow
+character chosen: cow
+"[1, 1, 1, 1, 1, 3, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 36
+maths answer found: 36
+character said: fish
+character chosen: fish
+"[1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 4
+maths answer found: 4
+character said: snail
+character chosen: snail
+"[1, 4, 1, 1, 1, 3, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 1
+maths answer found: 1
+character said: giraffe
+character chosen: cat
+"[4, 4, 1, 1, 1, 3, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 10
+maths answer found: 10
+character said: giraffe
+character chosen: cat
+"[5, 4, 1, 1, 1, 3, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 7
+maths answer found: 7
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[5, 4, 1, 1, 1, 3, 3, 0, 0, 0, 0]"
+
