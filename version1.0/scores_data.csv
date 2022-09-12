@@ -158,3 +158,45 @@ character said: snail
 character chosen: snail
 "[3, 6, 5, 3, 2, 0, 0, 0, 3, 0, 0]"
 
+
+maths answer given: 36
+maths answer found: 36
+character said: fish
+character chosen: fish
+"[1, 1, 1, 1, 1, 0, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 6
+maths answer found: 6
+character said: lion
+character chosen: lion
+"[1, 1, 1, 1, 2, 0, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 30
+maths answer found: 30
+character said: cow
+character chosen: cow
+"[1, 1, 1, 1, 2, 3, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 20
+maths answer found: 20
+character said: sale
+character chosen: snail
+"[1, 4, 1, 1, 2, 3, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 6
+maths answer found: 6
+character said: dog
+character chosen: dog
+"[1, 4, 2, 1, 2, 3, 3, 0, 0, 0, 0]"
+
+
+maths answer given: 1
+maths answer found: 1
+character said: fish
+character chosen: fish
+"[1, 4, 2, 1, 2, 3, 7, 0, 0, 0, 0]"
+
