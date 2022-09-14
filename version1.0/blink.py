@@ -552,7 +552,7 @@ while True:
         index = 0
         seconds = 50
 
-    if line == 'Driving':
+    if line == 'Driving' and shrinking != 11:
         shrinkfunc()
         shrinking = 11
         driving_sound = mixer.Sound('correct.wav')
