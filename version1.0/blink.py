@@ -385,7 +385,7 @@ def maths_game():
         clock.tick(10)
 
 def select_character():
-    character_sound = mixer.Sound('character.wav')
+    character_sound = mixer.Sound('character.mp3')
     character_sound.play()
     time.sleep(1)
     return 1
