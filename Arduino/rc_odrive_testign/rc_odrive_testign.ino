@@ -22,6 +22,7 @@ int REVERSE_VALUE = 0;
 
 const int SPEAK = 7;
 int SPEAK_VALUE = 0;
+int SPEAKING = 0;
 
 int TURNING_MAGNITUDE;
 
@@ -70,9 +71,14 @@ void loop() {
     DRIVING = 0;
   }
 
-  if(SPEAK_VALUE > 1800)
+  if((SPEAK_VALUE > 1800) && (SPEAKING == 0))
   {
     Serial.println("Speak");
+    SPEAKING = 1;
+  }
+  if(SPEAK_VALUE < 1400)
+  {
+    SPEAKING = 0;
   }
 
   SWITCH_VALUE = pulseIn(SWITCH, HIGH, 25000);

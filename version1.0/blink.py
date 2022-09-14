@@ -225,6 +225,19 @@ def maths_game():
                 pygame.quit()
                 sys.exit()
 
+        if ser.in_waiting > 0:
+            line = ser.readline().decode('latin-1').rstrip()    
+
+            if line == 'Speak':
+                engine = pyttsx3.init()
+                voices = engine.getProperty('voices')
+                engine.setProperty('rate', 125)
+                engine.setProperty('voice', 'English-UK')
+                opening = problem
+                engine.say(opening)
+                engine.runAndWait()
+                time.sleep(0.5)
+
         screen.fill(blue)
         color_picked = blue
         font = pygame.font.Font('freesansbold.ttf', 180)
