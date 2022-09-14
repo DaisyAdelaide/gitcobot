@@ -239,13 +239,13 @@ def maths_game():
                 if operand == '/':
                     operand = 'divided by'
 
-                problem = '{} {} {}'.format(first_number, operand, second_number)
+                new_problem = '{} {} {}'.format(first_number, operand, second_number)
 
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 125)
                 engine.setProperty('voice', 'English-UK')
-                opening = 'The question is : ' + problem
+                opening = 'The question is : ' + new_problem
                 engine.say(opening)
                 engine.runAndWait()
                 time.sleep(0.5)
