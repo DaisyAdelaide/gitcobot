@@ -213,7 +213,7 @@ def maths_game():
 
     load_animals()
 
-    problem, answer, points, first_number, second_number = summ()
+    problem, answer, points, first_number, second_number, operand = summ()
 
     right = 0
 
@@ -432,7 +432,7 @@ def summ():
     elif (answer > 60):
         return(summ())
     else:
-        return problem, str(answer), points, first_number, second_number
+        return problem, str(answer), points, first_number, second_number, operand
     
 ####################################
 
