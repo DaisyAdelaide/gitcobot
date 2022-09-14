@@ -148,15 +148,15 @@ def chatbot():
         if ser.in_waiting > 0:
             line = ser.readline().decode('latin-1').rstrip()    
 
-        if line == 'Speak':
-            engine = pyttsx3.init()
-            voices = engine.getProperty('voices')
-            engine.setProperty('rate', 125)
-            engine.setProperty('voice', 'English-UK')
-            opening = 'Hello how are you ?'
-            engine.say(opening)
-            engine.runAndWait()
-            time.sleep(0.5)
+            if line == 'Speak':
+                engine = pyttsx3.init()
+                voices = engine.getProperty('voices')
+                engine.setProperty('rate', 125)
+                engine.setProperty('voice', 'English-UK')
+                opening = 'Hello how are you ?'
+                engine.say(opening)
+                engine.runAndWait()
+                time.sleep(0.5)
 
 
         if start == 0:
