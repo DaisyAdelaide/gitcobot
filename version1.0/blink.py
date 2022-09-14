@@ -338,7 +338,7 @@ def maths_game():
                             if character_chosen == animals[i]:
                                 scores[i] += points 
                             i += 1
-            problem, answer, points = summ()
+            problem, answer, points, first_number, second_number, operand = summ()
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file)
