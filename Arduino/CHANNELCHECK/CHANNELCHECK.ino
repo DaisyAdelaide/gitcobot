@@ -1,5 +1,5 @@
-const int TURNING_STICK = 13;
-int TURNING_STICK_VALUE = 0;
+const int TURNING_STICK = 7;
+int REVERSE_VALUE = 0;
 
 
 void setup() {
@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-  TURNING_STICK_VALUE = pulseIn(TURNING_STICK, HIGH, 25000);
-  Serial.println(TURNING_STICK_VALUE);
+  REVERSE_VALUE = pulseIn(TURNING_STICK, HIGH, 25000);
+  Serial.println(REVERSE_VALUE);
 
 }

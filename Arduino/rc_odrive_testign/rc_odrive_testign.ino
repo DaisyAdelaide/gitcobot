@@ -20,6 +20,9 @@ int SWITCH_VALUE = 1400;
 const int REVERSE = 13;
 int REVERSE_VALUE = 0;
 
+const int SPEAK = 7;
+int SPEAK_VALUE = 0;
+
 int TURNING_MAGNITUDE;
 
 int RIGHT_SPEED;
@@ -53,6 +56,8 @@ void loop() {
   TURNING_STICK_VALUE = pulseIn(TURNING_STICK, HIGH, 25000);
   TURNING_BINARY = map(TURNING_STICK_VALUE, 1150, 1700, 0, 100);
 
+  SPEAK_VALUE = pulseIn(SPEAK, HIGH, 25000);
+
   if ((THROTTLE_BINARY > 1) && (DRIVING == 0))
   {
     Serial.println("Driving");
@@ -63,6 +68,11 @@ void loop() {
   {
     Serial.println("Stop");
     DRIVING = 0;
+  }
+
+  if(SPEAK_VALUE > 1800)
+  {
+    Serial.println("Speak");
   }
 
   SWITCH_VALUE = pulseIn(SWITCH, HIGH, 25000);
