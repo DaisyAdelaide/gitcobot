@@ -555,8 +555,11 @@ while True:
     if line == 'Driving':
         shrinkfunc()
         shrinking = 11
+        mixer.music.load('background.wav')
+        mixer.music.play(-1)
 
     if line == 'Stop' and shrinking == 11:
+        pygame. mixer. music. stop()
         player_surf = blinking[0]
         index = 0
         seconds = 50
