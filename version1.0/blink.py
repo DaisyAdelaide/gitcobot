@@ -171,7 +171,8 @@ def chatbot():
             voices = engine.getProperty('voices')
             engine.setProperty('rate', 125)
             engine.setProperty('voice', 'English-UK')
-            engine.say(text)
+            new_text = '   ' + text 
+            engine.say(new_text)
             engine.runAndWait()
     
         if seconds2 < 14:
@@ -245,7 +246,7 @@ def maths_game():
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 125)
                 engine.setProperty('voice', 'English-UK')
-                opening = 'The question is : ' + new_problem
+                opening = '   The question is : ' + new_problem
                 engine.say(opening)
                 engine.runAndWait()
                 time.sleep(0.5)
