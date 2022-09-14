@@ -555,7 +555,7 @@ while True:
         seconds = 50
 
     if line == 'Driving':
-        if driving_index = 0:
+        if driving_index == 0:
             driving_sound = mixer.Sound('correct.wav')
             driving_sound.play()
 
