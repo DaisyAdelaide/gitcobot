@@ -557,6 +557,7 @@ while True:
         shrinking = 11
         driving_sound = mixer.Sound('correct.wav')
         driving_sound.play()
+        time.sleep(0.1)
 
     if line == 'Stop' and shrinking == 11:
         #pygame.mixer.music.stop()
