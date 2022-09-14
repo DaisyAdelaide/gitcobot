@@ -213,7 +213,7 @@ def maths_game():
 
     load_animals()
 
-    problem, answer, points = summ()
+    problem, answer, points, first_number, second_number = summ()
 
     right = 0
 
@@ -229,6 +229,18 @@ def maths_game():
             line = ser.readline().decode('latin-1').rstrip()    
 
             if line == 'Speak':
+
+                if operand == '+':
+                    operand = 'plus'
+                if operand == '-':
+                    operand = 'minus'
+                if operand == '*':
+                    operand = 'multiplied by'
+                if operand == '/':
+                    operand = 'divided by'
+
+                problem = '{} {} {}'.format(first_number, operand, second_number)
+
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 125)
@@ -420,7 +432,7 @@ def summ():
     elif (answer > 60):
         return(summ())
     else:
-        return problem, str(answer), points 
+        return problem, str(answer), points, first_number, second_number
     
 ####################################
 
