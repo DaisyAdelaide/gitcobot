@@ -555,7 +555,7 @@ while True:
     if line == 'Driving':
         shrinkfunc()
         shrinking = 11
-        driving_sound = mixer.Sound('driving_sound.wav')
+        driving_sound = mixer.Sound('right.wav')
         driving_sound.play()
 
     if line == 'Stop' and shrinking == 11:
