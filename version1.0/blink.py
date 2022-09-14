@@ -233,7 +233,7 @@ def maths_game():
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 125)
                 engine.setProperty('voice', 'English-UK')
-                opening = problem
+                opening = 'The question is : ' + problem
                 engine.say(opening)
                 engine.runAndWait()
                 time.sleep(0.5)
