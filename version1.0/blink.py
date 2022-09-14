@@ -153,7 +153,7 @@ def chatbot():
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 125)
                 engine.setProperty('voice', 'English-UK')
-                opening = 'Hello how are you ?'
+                opening = 'Hellooooooo there how are you ?'
                 engine.say(opening)
                 engine.runAndWait()
                 time.sleep(0.5)
