@@ -483,6 +483,8 @@ seconds = 0
 seconds2 = 0
 shrinking = 0
 
+driving_index = 0
+
 gui_font = pygame.font.Font(None,30)
 
 record_button = Button('Record', 100, 30, (0,0))
@@ -552,11 +554,14 @@ while True:
         index = 0
         seconds = 50
 
-    if line == 'Driving' and shrinking != 11:
+    if line == 'Driving':
+        if driving_index = 0:
+            driving_sound = mixer.Sound('correct.wav')
+            driving_sound.play()
+
         shrinkfunc()
         shrinking = 11
-        driving_sound = mixer.Sound('correct.wav')
-        driving_sound.play()
+        driving_index = 1        
         time.sleep(0.1)
 
     if line == 'Stop' and shrinking == 11:
@@ -567,6 +572,7 @@ while True:
         shrinking = 0
         mouth = smile
         blinktime2 = 80
+        driving_index = 0
 
     screen.fill(orange)
     screen.blit(mouth, (286,300))
