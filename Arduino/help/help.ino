@@ -17,13 +17,6 @@ int TURNING_BINARY = 0;
 const int SWITCH = 12; 
 int SWITCH_VALUE = 1400;
 
-const int REVERSE = 13;
-int REVERSE_VALUE = 0;
-
-const int SPEAK = 7;
-int SPEAK_VALUE = 0;
-int SPEAKING = 0;
-
 int TURNING_MAGNITUDE;
 
 int RIGHT_SPEED;
@@ -52,32 +45,20 @@ void loop() {
   TURNING_STICK_VALUE = pulseIn(TURNING_STICK, HIGH, 25000);
   TURNING_BINARY = map(TURNING_STICK_VALUE, 1150, 1700, 0, 100);
 
-  SPEAK_VALUE = pulseIn(SPEAK, HIGH, 25000);
-
-  if ((THROTTLE_BINARY > 0) && (DRIVING == 0))
+  if ((THROTTLE_BINARY > 1) && (DRIVING == 0))
   {
     Serial.println("Driving");
     DRIVING = 1;
   }
   
-  if ((THROTTLE_BINARY == 0) && (DRIVING == 1))
+  if ((THROTTLE_BINARY < 2) && (DRIVING == 1))
   {
     Serial.println("Stop");
     DRIVING = 0;
   }
 
-  if((SPEAK_VALUE > 1800) && (SPEAKING == 0))
-  {
-    Serial.println("Speak");
-    SPEAKING = 1;
-  }
-  if(SPEAK_VALUE < 1400)
-  {
-    SPEAKING = 0;
-  }
-
   SWITCH_VALUE = pulseIn(SWITCH, HIGH, 25000);
-  
+
   if (SWITCH_VALUE > 1800)
   {
    
@@ -127,7 +108,6 @@ void loop() {
     delay(2000);    
   }
 
-
   //Serial.println(TURNING_BINARY);
 
   if (TURNING_BINARY < 40)
@@ -148,17 +128,7 @@ void loop() {
    LEFT_SPEED = THROTTLE_BINARY; 
   }
 
-  REVERSE_VALUE = pulseIn(REVERSE, HIGH, 25000);
-  if (REVERSE_VALUE < 1000) 
-  {
-   RIGHT_SPEED = -RIGHT_SPEED;
-   LEFT_SPEED = -LEFT_SPEED;
-  }
-  Serial.println(LEFT_SPEED);
-  Serial.println(-RIGHT_SPEED);
-  
   odrive.SetVelocity(0, LEFT_SPEED);
   odrive.SetVelocity(1, -RIGHT_SPEED);
-  delay(5);
 
 }
