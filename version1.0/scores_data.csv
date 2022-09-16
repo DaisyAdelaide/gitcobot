@@ -200,3 +200,157 @@ character said: fish
 character chosen: fish
 "[1, 4, 2, 1, 2, 3, 7, 0, 0, 0, 0]"
 
+
+maths answer given: 12
+maths answer found: 12
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 9
+maths answer found: 9
+character said: snail
+character chosen: snail
+"[1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: fish
+character chosen: fish
+"[1, 2, 1, 1, 1, 0, 1, 0, 0, 0, 0]"
+
+
+maths answer given: 9
+maths answer found: 9
+character said: cow
+character chosen: cow
+"[1, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0]"
+
+
+maths answer given: 10
+maths answer found: 10
+character said: sale
+character chosen: snail
+"[1, 5, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 13
+maths answer found: 13
+character said: sheep
+character chosen: sheep
+"[1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0]"
+
+
+maths answer given: 19
+maths answer found: 19
+character said: snake
+character chosen: snail
+"[1, 2, 1, 1, 1, 0, 0, 0, 1, 0, 0]"
+
+
+maths answer given: 13
+maths answer found: 13
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 2, 1, 1, 1, 0, 0, 0, 1, 0, 0]"
+
+
+maths answer given: 14
+maths answer found: 14
+character said: stop
+character chosen: dog
+"[1, 2, 2, 1, 1, 0, 0, 0, 1, 0, 0]"
+
+
+maths answer given: 18
+maths answer found: 18
+character said: cell
+character chosen: snail
+"[1, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 12
+maths answer found: 12
+character said: moose
+character chosen: moose
+"[1, 4, 1, 1, 1, 0, 0, 0, 0, 3, 0]"
+
+
+maths answer given: 60
+maths answer found: 60
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 4, 1, 1, 1, 0, 0, 0, 0, 3, 0]"
+
+
+maths answer given: the answer is 0
+maths answer found: 0
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: the answer is to
+maths answer found: 2
+character said: sheep
+character chosen: sheep
+"[1, 1, 1, 1, 1, 0, 0, 0, 3, 0, 0]"
+
+
+maths answer given: 16
+maths answer found: 16
+character said: snail
+character chosen: snail
+"[1, 2, 1, 1, 1, 0, 0, 0, 3, 0, 0]"
+
+
+maths answer given: 50
+maths answer found: 50
+character said: fraud
+character chosen: frog
+"[1, 2, 1, 4, 1, 0, 0, 0, 3, 0, 0]"
+
+
+maths answer given: 14
+maths answer found: 14
+character said: dog
+character chosen: dog
+"[1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 11
+maths answer found: 11
+character said: leprechaun
+character chosen: Leprechaun
+"[1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 1]"
+
+
+maths answer given: 11
+maths answer found: 11
+character said: leprechaun
+character chosen: Leprechaun
+"[1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 2]"
+
+
+maths answer given: do
+maths answer found: 2
+character said: feel
+character chosen: frog
+"[1, 1, 2, 4, 1, 0, 0, 0, 0, 0, 2]"
+
+
+maths answer given: I didnt catch that!
+maths answer found: 3
+character said: smell
+character chosen: snail
+"[1, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 0
+maths answer found: 0
+character said: frog
+character chosen: frog
+"[1, 1, 1, 3, 1, 0, 0, 0, 0, 0, 0]"
+
