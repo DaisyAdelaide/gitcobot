@@ -264,6 +264,7 @@ def maths_game():
 
         #record maths answer
         if GPIO.input(button) == 1 or ask == 1:
+                ask = 0
                 audio = functions.listen1()
                 response = functions.voice(audio)
                 response = str(response)
