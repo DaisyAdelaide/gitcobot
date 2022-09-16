@@ -434,7 +434,7 @@ def CALIBRATION():
 	This will be very useful during testing with the pi.
 	Must remember to put the switch down and straight back up once the sequence has been initiated.
 
-def FVP():
+def First_Viable_Product():
 
 	The first viable product has been reached. The cobot is fully built. The battery is installed. The waterjet pulleys have been installed also.
 	Performance:
@@ -475,6 +475,12 @@ def FVP():
 		Wooden dowels not pla
 		Maybe look at better graphics/emotions, different blinking funcitons depending on emotion ?
 		Sensors ? Maybe look at some distance sensors to avoid collisions, where would these go ?
+		google a question !
+		Prompt the user of all the things clover can do
+		Think about some extra functions. Localisation ? LiDar? Handing out papers ? 
+		Taller ? double the base chassis walls ? space for arms here ?
+
+		Test more elastic bands on the wheels.
 
 
 
