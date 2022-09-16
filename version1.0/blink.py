@@ -549,12 +549,20 @@ while True:
         mouth = smile
         blinktime2 = 80
 
+    if shrinking == 11:
+        player_surf = blinking[0]
+        index = 0
+        seconds = 50
+        shrinking = 0
+        mouth = smile
+        blinktime2 = 80
+
     if GPIO.input(button2) == 1:
         player_surf = blinking[0]
         index = 0
         seconds = 50
 
-    if line == 'Driving':
+    if line == 'Driving' and shrinking == 0:
         if driving_index == 0:
             mixer.music.load('background.wav')
             mixer.music.play(-1)

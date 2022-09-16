@@ -54,13 +54,13 @@ void loop() {
 
   SPEAK_VALUE = pulseIn(SPEAK, HIGH, 25000);
 
-  if ((THROTTLE_BINARY > 0) && (DRIVING == 0))
+  if ((THROTTLE_BINARY > 1) && (DRIVING == 0))
   {
     Serial.println("Driving");
     DRIVING = 1;
   }
   
-  if ((THROTTLE_BINARY == 0) && (DRIVING == 1))
+  if ((THROTTLE_BINARY < 2) && (DRIVING == 1))
   {
     Serial.println("Stop");
     DRIVING = 0;
@@ -159,6 +159,6 @@ void loop() {
   
   odrive.SetVelocity(0, LEFT_SPEED);
   odrive.SetVelocity(1, -RIGHT_SPEED);
-  delay(5);
+  //delay(5);
 
 }
