@@ -582,6 +582,7 @@ while True:
         mouth = smile
         blinktime2 = 80
         driving_index = 0
+        print('here')
 
     screen.fill(orange)
     screen.blit(mouth, (286,300))
