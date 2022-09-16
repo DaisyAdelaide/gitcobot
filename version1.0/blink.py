@@ -573,7 +573,7 @@ while True:
         driving_index = 1        
         #time.sleep(0.1)
 
-    if line == 'Stop':
+    if line == 'Stop' and driving_index == 1:
         pygame.mixer.music.stop()
         player_surf = blinking[0]
         index = 0
