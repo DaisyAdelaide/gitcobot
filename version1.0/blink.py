@@ -564,8 +564,9 @@ while True:
 
     if line == 'Driving' and shrinking == 0:
         if driving_index == 0:
-            mixer.music.load('background.wav')
-            mixer.music.play(-1)
+            pygame.mixer.init()
+            pygame.mixer.music.load('background.wav')
+            pygame.mixer.music.play(-1)
 
         #shrinkfunc()
         shrinking = 11
