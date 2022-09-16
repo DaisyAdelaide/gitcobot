@@ -217,6 +217,7 @@ def maths_game():
     problem, answer, points, first_number, second_number, operand = summ()
 
     right = 0
+    ask = 0
 
     #the exit button
     while GPIO.input(button3) == 0:
@@ -251,6 +252,8 @@ def maths_game():
                 engine.runAndWait()
                 time.sleep(0.5)
 
+                ask = 1
+
         screen.fill(blue)
         color_picked = blue
         font = pygame.font.Font('freesansbold.ttf', 180)
@@ -260,7 +263,7 @@ def maths_game():
         screen.blit(textSurface, textRect)
 
         #record maths answer
-        if GPIO.input(button) == 1:
+        if GPIO.input(button) == 1 or ask == 1:
                 audio = functions.listen1()
                 response = functions.voice(audio)
                 response = str(response)
@@ -571,7 +574,6 @@ while True:
         shrinkfunc()
         shrinking = 11
         driving_index = 1        
-        #time.sleep(0.1)
 
     if line == 'Stop' and driving_index == 1:
         pygame.mixer.music.stop()
