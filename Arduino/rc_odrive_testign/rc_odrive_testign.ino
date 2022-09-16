@@ -154,8 +154,8 @@ void loop() {
    RIGHT_SPEED = -RIGHT_SPEED;
    LEFT_SPEED = -LEFT_SPEED;
   }
-  Serial.println(LEFT_SPEED);
-  Serial.println(-RIGHT_SPEED);
+  //Serial.println(LEFT_SPEED);
+  //Serial.println(-RIGHT_SPEED);
   
   odrive.SetVelocity(0, LEFT_SPEED);
   odrive.SetVelocity(1, -RIGHT_SPEED);
