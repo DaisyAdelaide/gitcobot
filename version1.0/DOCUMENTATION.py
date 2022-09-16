@@ -16,12 +16,6 @@ def GIVEN_CONSTRAINTS():
 	Be 100% controllable.
 	Be on a low budget.
 
-	Fr60 Cyr5
-
-	He3/ R and D
-
-	He3/s 5nstr4ct6rs and teaches r6b6t5cs
-
 def Ideation():
 	Drive Mechanism:
 		Different options were considered. 
