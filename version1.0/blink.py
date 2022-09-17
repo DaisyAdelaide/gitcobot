@@ -428,7 +428,7 @@ def summ():
         answer = (first_number) / (second_number)
         points = 4
         if (is_integer_num(answer)):
-            return problem, str(int(answer)), points 
+            return  problem, str(answer), points, first_number, second_number, operand 
         else:
             return(summ())
 
