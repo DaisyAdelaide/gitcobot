@@ -1,20 +1,16 @@
-def GIVEN_CONSTRAINTS():
-	One robot body that could carry the buckets.
-	Less than 51 pounds.
-	Remote Control.
-	Can interact with children and have voice command/interaction.
+def GIVEN_CONSTRAINTS(): One robot body that could carry the buckets. Less
+than 51 pounds. Remote Control. Can interact with children and have voice
+command/interaction.
 
-	As not many constraints were given, I followed these quite strictly. I did not consider that a trailer may be a better option
-	as there were only a few requirements given and I needed to start somewhere.
+	As not many constraints were given, I followed these quite strictly. I did
+	not consider that a trailer may be a better option as there were only a few
+	requirements given and I needed to start somewhere.
 
-	Get the kit to the classroom.
-	Interact with the students. 
-	Initially only fun and excite them for robotics, moving forward maybe more comprehensive functions to learn about the robot.
-	Be able to manouvre around a classroom.
-	Be able to access anywhere a wheelchair can.
-	Each part less than 51 pounds.
-	Be 100% controllable.
-	Be on a low budget.
+	Get the kit to the classroom. Interact with the students.  Initially only fun
+	and excite them for robotics, moving forward maybe more comprehensive
+	functions to learn about the robot. Be able to manouvre around a classroom.
+	Be able to access anywhere a wheelchair can. Each part less than 51 pounds.
+	Be 100% controllable. Be on a low budget.
 
 def Ideation():
 	Drive Mechanism:
@@ -277,8 +273,10 @@ def ESCs():
 
 	There is only one bidirectional ESC on the market for such high voltage and current requirement. It is on backorder.
 
-	Another option is the ODrive. This is a BLDC driver board. From my research, it would provide the best possible precision movement of the motors, it has its own firmware installed.
-	This will be difficult to use as it is new to me and for everyone at zen also, but a good addition to the project. It will allow excellent control which is needed in a classroom envirnoment.
+	Another option is the ODrive. This is a BLDC driver board. From my research, it would provide the best possible precision movement of the 
+	motors, it has its own firmware installed.
+	This will be difficult to use as it is new to me and for everyone at zen also, but a good addition to the project. It will allow excellent 
+	control which is needed in a classroom envirnoment.
 	This will be purchased and replace the ESCs. An encoder will be used in combination with it.
 			
 def Brain_Ideas():
@@ -315,35 +313,53 @@ def Chassis_version_2():
 
 		Some options are considered below. Please refer to smaller_chassis1.JPEG and smaller_chassis2.JPEG.
 
-		In design one, the two driven wheels are at the front and one castor is at the back for balance. The benefits of this design is that the driven wheels are at the very front of the chassis 
-		providing excellent control for turning and can assist with getting over bumps. Although, the front still has corners. The turning radius is also not minimised, the robot has a turning radius
-		the length of itself. It could spin on the spot but would need the centre distance between the two wheels. While this is an improvement on the original design, it could be better.
+		In design one, the two driven wheels are at the front and one castor is at the back for balance. The benefits of this design is that the driven 
+		wheels are at the very front of the chassis 
+		providing excellent control for turning and can assist with getting over bumps. Although, the front still has corners. The turning radius is
+		 also not minimised, the robot has a turning radius
+		the length of itself. It could spin on the spot but would need the centre distance between the two wheels. While this is an improvement on the 
+		original design, it could be better.
 
-		The second design consists of a circular shape. This aims to reduce the size of the chassis from above. The issue here is that the drive mechanism is exposed. This is due to the wheels being
-		placed at the widest distance of the chassis, apart from one another. This is to give the best chance at turning and for balance. Putting the wheels closer together, a smaller width than
-		the widest section of the chassis would result in some of the chassis extending over the wheels. This would be unstable. The turning radius is the centre distance between the wheels and the 
+		The second design consists of a circular shape. This aims to reduce the size of the chassis from above. The issue here is that the drive 
+		mechanism is exposed. This is due to the wheels being
+		placed at the widest distance of the chassis, apart from one another. This is to give the best chance at turning and for balance. Putting 
+		the wheels closer together, a smaller width than
+		the widest section of the chassis would result in some of the chassis extending over the wheels. This would be unstable. The turning radius 
+		is the centre distance between the wheels and the 
 		castor similar to above.
 
-		The third design aims to enslose the drive mech within the body, while avoiding the issues in design one. For these reasons the wheels were placed at the back. Once considered it is 
+		The third design aims to enslose the drive mech within the body, while avoiding the issues in design one.
+		 For these reasons the wheels were placed at the back. Once considered it is 
 		evident that the control of this chassis when driving would be minimal. The front castor has no control at all. This is not possible.
 
-		The next design, design 4, is looking at a circular shape again. Instead of putting the wheels at the front, they are placed in the centre, at the widest section of the chassis. To allow this design to 
-		work the majority of the weight would need to be placed at the back to ensure the front dosent drag on the ground. While this may work, it opens up lots of problems regarding balance.
-		If the robot was pushed or the weight became unabalanced it could very easily tipped forward. It is also only using half of the chassis for storage, as the front would have to be essentially 
+		The next design, design 4, is looking at a circular shape again. Instead of putting the wheels at the front, 
+		they are placed in the centre, at the widest section of the chassis. To allow this design to 
+		work the majority of the weight would need to be placed at the back to ensure the front dosent drag on the ground. 
+		While this may work, it opens up lots of problems regarding balance.
+		If the robot was pushed or the weight became unabalanced it could very easily tipped forward. It is also only using half of the chassis for storage,
+		 as the front would have to be essentially 
 		empty for it to be light. This causes many issues for the drive mechanism as there is no longer space for both motors, the battery ect.
 
-		Considering all of the above options it is evident that a circular shape is the best. It has a turning radius of zero, it can turn on the spot. The drive mech can be contained within, there are
-		no corners, it can move in any direction easily. It is also a symetrical shape and very asthetically pleasing. Looking at the movement of roombas we can see how effective the circle shape
+		Considering all of the above options it is evident that a circular shape is the best. It has a turning radius of zero, it can turn on the spot. 
+		The drive mech can be contained within, there are
+		no corners, it can move in any direction easily. It is also a symetrical shape and very asthetically pleasing. 
+		Looking at the movement of roombas we can see how effective the circle shape
 		is. 
 		By adding an additional castor at the front all of the problems of design 4 would be solved, while all of the benefits would remain.
 
 		The final design is design 5. 
-		The castor at the front is nessesary for balance, suspension will be added as if it were static it would cause vibrations through the whole chassis on bumps. This can be seen in 
+		The castor at the front is nessesary for balance, suspension will be added as if it were static it would cause vibrations through the whole chassis on bumps. 
+		This can be seen in 
 		smaller_chassis2.
 		The four quaters of the chassis can be printed. The round shape will be able to complete on the spot turns and can move backwards with the same accuracy 
 		as forwrads should this be nessesary. 
 
 		To view an image of this version of the chassis with the head please view newchassis.JPEG
+
+	Comments:
+		This design has been built and is the current version of the cobot.
+		This chassis shape is very successful. It is both manouvreable and small and neat. 
+		The cobot fits on a back seat with a seatbelt on.
 
 def DRIVE_MECH_TESTING_v2():
 
@@ -428,46 +444,65 @@ def CALIBRATION():
 	This will be very useful during testing with the pi.
 	Must remember to put the switch down and straight back up once the sequence has been initiated.
 
+	The calibration issues have been fixed. After testing everything it was the motor connections.
+	The code should not be the problem if there is problems in the future.
+	Step one when testing for this issue; connections everywhere !!!!
+
 def First_Viable_Product():
 
 	The first viable product has been reached. The cobot is fully built. The battery is installed. The waterjet pulleys have been installed also.
 	Performance:
 	The face : 
-		The face has three modes at the moment. The base screen is just a blinking face. Once the robot starts to drive the eyes go into the shrinking mode.
+		The face has three modes at the moment. The base screen is just a blinking face. 
+		Once the robot starts to drive the eyes go into the shrinking mode.
 		The speaker also starts playing a beep boop noise while driving. 
 	The chat mode:
-		When entering the chat mode, the robot will no longer make noise while driving. It will speak 'hello how are you' when the left throttle is maxed 
+		When entering the chat mode, the robot will no longer make noise while driving.
+		 It will speak 'hello how are you' when the left throttle is maxed 
 		on the remote control.
-		Other than this it is button controlled. Once the user presses the record button it records the phrase and produces a response.
+		Other than this it is button controlled. Once the user presses the record button 
+		it records the phrase and produces a response.
 		This response is spoken on the speaker.
 	The maths mode:
-		When entering the maths mode, again the robot does not make noise when driving. I feel it would just be too disruptive but maybe not.
-		Again when the right throttle is maxed the robot says the sum and initiates the answering process.
+		When entering the maths mode, again the robot does not make noise when driving. 
+		I feel it would just be too disruptive but maybe not.
+		Again when the right throttle is maxed the robot says the sum and initiates the 
+		answering process.
 		The answering process can also be initiated from pressing a button on the robot head.
 
 	Mechanical:
 	The Drive Mech:
-		The new pulleys have eliminated the slipping on the smaller pulley. This was caused from the wear on an interference fit on the motor shaft.
-		While this is an improvement, due to the motor shaft being hand grinded the grind was not completly straight. This left the pulleys sitting slightly
-		crooked. This is causing some extra wear on the belt but not slipping still. The pulleys were also too fat and do not really fit well on the shaft.
+		The new pulleys have eliminated the slipping on the smaller pulley. This was caused from 
+		the wear on an interference fit on the motor shaft.
+		While this is an improvement, due to the motor shaft being hand grinded the grind was not
+		 completly straight. This left the pulleys sitting slightly
+
+		crooked. This is causing some extra wear on the belt but not slipping still. The pulleys 
+		were also too fat and do not really fit well on the shaft.
 		They were also superglued on.
-		The big pulley was just not holding. The set screws were not strong enough. I ended up supergluing the flange connectors onto the shaft which did
+		The big pulley was just not holding. The set screws were not strong enough. I ended up 
+		supergluing the flange connectors onto the shaft which did
 		actually solve the problem, although I dont think this is a good solution.
 
-		The castors are too low causing some problems going over bumps and reversing. The traction of the drive wheels would also be slightly better if 
+		The castors are too low causing some problems going over bumps and reversing. 
+		The traction of the drive wheels would also be slightly better if 
 		these were made higher.
 
-		Overall, there are some hacky aspects to the drive mech which should be eliminated in the next version but end of the day it is 
+		Overall, there are some hacky aspects to the drive mech which should be eliminated
+		 in the next version but end of the day it is 
 		working well and holding up so far.	
 
 	Problems to fix:
 		The drive mech as described above ... good luck
-		The cable management in the head , make a hole in the bottom of the head and also at the bottom of the neck.
-		Make the head spin ? Think about remote, no more controls really unless I start doubling up but that is very complex to remember.
+		The cable management in the head , make a hole in the bottom of the head and also at 
+		the bottom of the neck.
+		Make the head spin ? Think about remote, no more controls really unless I start 
+		doubling up but that is very complex to remember.
 		Screen is not even, fix that
 		Maybe look at increasing clearance on the wheels, would require smaller pulleys ?
 		Wooden dowels not pla
-		Maybe look at better graphics/emotions, different blinking funcitons depending on emotion ?
+		Maybe look at better graphics/emotions, different blinking funcitons depending on 
+		emotion ?
 		Sensors ? Maybe look at some distance sensors to avoid collisions, where would these go ?
 		google a question !
 		Prompt the user of all the things clover can do
@@ -476,8 +511,44 @@ def First_Viable_Product():
 
 		Test more elastic bands on the wheels.
 
+	Update 29/09/2022
+		The drive shaft has been updated
+		A hex shaft is replacing the round shaft.
+		The same bearings will be used with an attached collar to hold the hex shaft
+		The pulleys have a detachable wall which will enable easy installation of the timing belt
+		The timing belt also has been replaced
+		The bearing mounts have been reprinted in PETG. This is due to the lack of an enclosure to print with abs
+		The acrylic supports will still be used
+		The castors have been changed. A rocker mechanism is now in place.
+		Only one castor will ever be in contact with the ground, there is about a 1 cm gap between the high castor and the ground.
+		This enables the robot to navigate bumps much better than the suspension mechanism
+		The neck has been reprinted
+		The joints have a much smaller clearance and so it is an interference fit.
+		This is proving much stronger.
+
+		All of the things above solve all current problems, no testing has yet been completed.
 
 
+
+def battery_problems():
+	8s, 5.0Ah, 65C, 130C, burst
+
+
+	Thursday 29th Sep, all cells left at storage. Battery was behaving fine until now.
+	
+	Monday 3rd Oct, Cell 3 at 0.5V, all other cells at 3.8V.
+		I used the charger on lead acid mode to charge the battery until cell 3 was at 2.5V. I monitored this on a voltmeter.
+		Once at 2.5V I switched to LiPo balance charging. 
+		I got cell 3 up to storage voltage.
+		I left the battery to rest.
+		
+	Tuesday 4th Oct Cell 3 at 3.7V, all other cells at 3.8V.
+		I rebalanced
+		I used the battery in the cobot, cell 3 discharging faster than other cells.
+		I charged them all to 4.2
+
+	Wednesday 5th Oct Cell 3 at 3.9V, all other cells just below 4.2V even.
+		I am discharging at 0.5A to 3.5V.
 			
 
 

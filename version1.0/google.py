@@ -6,25 +6,61 @@ headers = {
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
 }
 
-html = requests.get('https://www.google.com/search?q="where is google', headers=headers)
+html = requests.get('https://www.google.com/search?q="how do i solve a rubiks cube', headers=headers)
 soup = BeautifulSoup(html.text, 'html.parser')
 
+
 answer = 'i dont know'
+typee = ''
 
 
-#try:
-#answer = soup.select_one('.SPZz6b').text
+try:
+	answer = soup.select_one('.hgKElc').text
+	typee = 'one'
+except:
+	answer = 'Not this one'
 
-#except:
-	#answer = soup.select_one('.t2b5Cf').text
+#This option is the dictionary
+if answer == 'Not this one':
+	try:
+		answer = soup.select_one('.MjjYud').text
+		answer = answer.split(';',1)
+		answer = answer [1]
+		answer = answer.split('.',1)
+		answer = answer [0]
+		typee = 'two'
+	except:
+		answer = 'Not this one'
 
-answer = soup.find('div',class_='SPZz6b').find_next('span').text
+if answer == 'Not this one':
+	try:
+		answer = soup.select_one('.t2b5Cf').text
+		typee = 'two'
+	except:
+		answer = 'Not this one'
 
+#This one may not be good
+if answer == 'Not this one':
+	try:
+		answer = soup.select_one('.SPZz6b').text
+		typee = 'three'
+	except:
+		answer = 'Not this one'
 
+#does the first line of a wesite, sometimes good sometimes bad, will always return something
+if answer == 'Not this one':
+	try:
+		answer = soup.select_one('.lyLwlc').text
+		typee = 'four'
+	except:
+		answer = 'Not this one'
+
+print(type(answer))
+print(typee)
 print(answer)
 
 
-
+#can do what,how,where
 
 # This kinda works !!!! Fix it up a bit
 # Try is not working maybe if statements ? 
