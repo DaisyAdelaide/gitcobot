@@ -1,63 +1,64 @@
 from bs4 import BeautifulSoup
 import requests
 
-headers = {
-    'User-agent':
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
-}
+def goooogle(question):
 
-html = requests.get('https://www.google.com/search?q="do aliens exist', headers=headers)
-soup = BeautifulSoup(html.text, 'html.parser')
-
-
-answer = 'i dont know'
-typee = ''
+	headers = {
+	    'User-agent':
+	    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
+	}
 
 
-try:
-	answer = soup.select_one('.hgKElc').text
-	typee = 'one'
-except:
-	answer = 'Not this one'
+	html = requests.get('https://www.google.com/search?q="{}'.format(question), headers=headers)
+	soup = BeautifulSoup(html.text, 'html.parser')
 
-#This option is the dictionary
-if answer == 'Not this one':
+	answer = 'i dont know'
+	typee = ''
+
 	try:
-		answer = soup.select_one('.MjjYud').text
-		answer = answer.split(';',1)
-		answer = answer [1]
-		answer = answer.split('.',1)
-		answer = answer [0]
-		typee = 'two'
+		answer = soup.select_one('.hgKElc').text
+		typee = 'one'
 	except:
 		answer = 'Not this one'
 
-if answer == 'Not this one':
-	try:
-		answer = soup.select_one('.t2b5Cf').text
-		typee = 'two'
-	except:
-		answer = 'Not this one'
+	#This option is the dictionary
+	if answer == 'Not this one':
+		try:
+			answer = soup.select_one('.MjjYud').text
+			answer = answer.split(';',1)
+			answer = answer [1]
+			answer = answer.split('.',1)
+			answer = answer [0]
+			typee = 'two'
+		except:
+			answer = 'Not this one'
 
-#This one may not be good
-if answer == 'Not this one':
-	try:
-		answer = soup.select_one('.SPZz6b').text
-		typee = 'three'
-	except:
-		answer = 'Not this one'
+	if answer == 'Not this one':
+		try:
+			answer = soup.select_one('.t2b5Cf').text
+			typee = 'two'
+		except:
+			answer = 'Not this one'
 
-#does the first line of a wesite, sometimes good sometimes bad, will always return something
-if answer == 'Not this one':
-	try:
-		answer = soup.select_one('.lyLwlc').text
-		typee = 'four'
-	except:
-		answer = 'Not this one'
+	#This one may not be good
+	if answer == 'Not this one':
+		try:
+			answer = soup.select_one('.SPZz6b').text
+			typee = 'three'
+		except:
+			answer = 'Not this one'
 
-print(type(answer))
-print(typee)
-print(answer)
+	#does the first line of a wesite, sometimes good sometimes bad, will always return something
+	if answer == 'Not this one':
+		try:
+			answer = soup.select_one('.lyLwlc').text
+			typee = 'four'
+		except:
+			answer = 'Not this one'
+
+	return answer, typee
+
+print(goooogle('tell me a joke'))
 
 
 #can do what,how,where
