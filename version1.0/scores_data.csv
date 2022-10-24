@@ -354,3 +354,262 @@ character said: frog
 character chosen: frog
 "[1, 1, 1, 3, 1, 0, 0, 0, 0, 0, 0]"
 
+
+maths answer given: 3
+maths answer found: 3
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 3
+maths answer found: 3
+character said: snail
+character chosen: snail
+"[1, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 40
+maths answer found: 40
+character said: sale
+character chosen: snail
+"[1, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 50
+maths answer found: 50
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 14
+maths answer found: 14
+character said: dog
+character chosen: dog
+"[1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 13
+maths answer found: 13
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 9
+maths answer found: 9
+character said: snake
+character chosen: snail
+"[1, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 28
+maths answer found: 28
+character said: dog
+character chosen: dog
+"[1, 1, 4, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 30
+maths answer found: 30
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 4, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 12
+maths answer found: 12
+character said: peacock
+character chosen: cow
+"[1, 1, 4, 1, 1, 1, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 11
+maths answer found: 11
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 4, 1, 1, 1, 0, 0, 0, 0, 0]"
+
+
+maths answer given: the answer is to
+maths answer found: 2
+character said: Vogue
+character chosen: dog
+"[1, 1, 6, 1, 1, 1, 0, 0, 0, 0, 0]"
+
+
+maths answer given: the answer is 11
+maths answer found: 11
+character said: do you speak Italian
+character chosen: moose
+"[1, 1, 6, 1, 1, 1, 0, 0, 0, 1, 0]"
+
+
+maths answer given: 7
+maths answer found: 7
+character said: dog
+character chosen: dog
+"[1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 30
+maths answer found: 30
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 3
+maths answer found: 3
+character said: abusing robot
+character chosen: snail
+"[1, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 11
+maths answer found: 11
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: I didnt catch that!
+maths answer found: 3
+character said: frog
+character chosen: frog
+"[1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 5
+maths answer found: 5
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: Mayan
+character chosen: cat
+"[2, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 45
+maths answer found: 45
+character said: dog
+character chosen: dog
+"[2, 1, 4, 2, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 0
+maths answer found: 0
+character said: frog
+character chosen: frog
+"[2, 1, 4, 4, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 6
+maths answer found: 6
+character said: dog
+character chosen: dog
+"[2, 1, 6, 4, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: Aladdin
+maths answer found: 11
+character said: frog
+character chosen: frog
+"[1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 1
+maths answer found: 1
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: frog
+character chosen: frog
+"[1, 1, 1, 3, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 9
+maths answer found: 9
+character said: frog
+character chosen: frog
+"[1, 1, 1, 6, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 3
+maths answer found: 3
+character said: frog
+character chosen: frog
+"[1, 1, 1, 8, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 36
+maths answer found: 36
+character said: frog
+character chosen: frog
+"[1, 1, 1, 11, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 18
+maths answer found: 18
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 60 60 60 60 60 the answer is 60
+maths answer found: 60
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: the answer is 36
+maths answer found: 36
+character said: stop
+character chosen: dog
+"[1, 1, 4, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 1
+maths answer found: 1
+character said: Bach
+character chosen: cat
+"[3, 1, 4, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: the answer is to
+maths answer found: 2
+character said: dog
+character chosen: dog
+"[3, 1, 6, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 3
+maths answer found: 3
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 1
+maths answer found: 1
+character said: frog
+character chosen: frog
+"[1, 1, 1, 3, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 6
+maths answer found: 6
+character said: frog
+character chosen: frog
+"[1, 1, 1, 5, 1, 0, 0, 0, 0, 0, 0]"
+
