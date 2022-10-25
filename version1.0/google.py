@@ -56,9 +56,9 @@ def goooogle(question):
 		except:
 			answer = 'Not this one'
 
-	return answer, typee
+	return answer
 
-print(goooogle('tell me a joke'))
+#print(goooogle('tell me a joke'))
 
 
 #can do what,how,where

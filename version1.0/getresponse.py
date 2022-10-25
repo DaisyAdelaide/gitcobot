@@ -3,6 +3,7 @@ import random
 #import pandas as pd
 import csv 
 from datetime import datetime
+import google
 
 name_index = 0
 pickname_index = 0
@@ -95,7 +96,7 @@ def get_intent(text):
 		if found_match and intent == 'Joke':
 			return Joke()
 		if found_match and intent == 'no_match_intent':
-			return no_match_intent()
+			return no_match_intent(text)
 		if found_match and intent == 'Age':
 			return Age()
 		if found_match and intent == 'Day':
@@ -119,7 +120,7 @@ def get_intent(text):
 		if found_match and intent == 'Robot':
 			return Robot()
 		if found_match and intent == 'What':
-			return What()
+			return What(text)
 		if found_match and intent == 'Home':
 			return Home()
 		if found_match and intent == 'Home2':
@@ -159,7 +160,7 @@ def Time():
 	return('It is ' + current_time)
 
 def Age():
-	responses = ('I am only 2 months old!')
+	responses = ('I am only 4 months old!')
 	return (responses)
 
 def BAD():
@@ -192,7 +193,7 @@ def Joke():
 		responses = (
 			'What do dog robots do?', 
 			'What happens when a robot dies?', 
-			'Why did the robot chicken cross the road?', 
+			'Why did the robot cross the road?', 
 			'Why are robots boring?',
 			'Why did the robot need to go to therapy?',
 			'What do you call a robot who likes to row?',
@@ -223,36 +224,42 @@ def Joke():
 			joke_number = 0
 		return responses[joke_number-1]
 
-def no_match_intent():
-	responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
-	return random.choice(responses)
+def no_match_intent(text):
+	#responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
+	responses = google.goooogle(text)
+	return responses
+	#return random.choice(responses)
 
 def Greet():
 	responses = ('Hi there', 'Hi !', 'Hello')
 	return random.choice(responses)
 
+#def DescribeSelf(text):
+#	global pickname_index
+#	if pickname_index == 0:
+#		responses = ('I dont have a name ! Suggest one!')
+#		pickname_index = 1
+#		return responses
+#	if pickname_index == 1:
+#		with open('NameSuggestions.csv','a',encoding='UTF8') as file:
+#			writer = csv.writer(file)
+#			writer.writerow([text])
+#		opinion = ('Ooh, I like ', 'Hmm not sure about ', 'I dont know how I feel about ')
+#		suggestion = random.choice(opinion) + text + ''
+#		responses = suggestion
+#		pickname_index = 0
+#		return responses
+
 def DescribeSelf(text):
-	global pickname_index
-	if pickname_index == 0:
-		responses = ('I dont have a name ! Suggest one!')
-		pickname_index = 1
-		return responses
-	if pickname_index == 1:
-		with open('NameSuggestions.csv','a',encoding='UTF8') as file:
-			writer = csv.writer(file)
-			writer.writerow([text])
-		opinion = ('Ooh, I like ', 'Hmm not sure about ', 'I dont know how I feel about ')
-		suggestion = random.choice(opinion) + text + ''
-		responses = suggestion
-		pickname_index = 0
-		return responses
+	responses = ('My name is Clover !')
+	return responses
 
 def How():
 	responses = ('I am great', 'Doing well and you?', 'Thanks for asking! Good!')
 	return random.choice(responses)
 
-def What():
-	responses = ('What was the question?')
+def What(text):
+	responses = google.goooogle(text)
 	return responses
 
 def Robot():
@@ -321,8 +328,8 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-#printing = get_response('what is 150 * 2')
-#print(printing)
+printing = get_response('where are the aliens')
+
 
 
 
