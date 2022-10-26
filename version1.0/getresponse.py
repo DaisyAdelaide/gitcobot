@@ -160,7 +160,12 @@ def Time():
 	return('It is ' + current_time)
 
 def Age():
-	responses = ('I am only 4 months old!')
+	then = datetime(2022,6,5)        # Initial Commit
+	now  = datetime.now()                         
+	duration = str(now - then) 
+	duration = duration.split(',',1)
+	duration = duration[0]
+	responses = ('I am {} old !'.format(duration))
 	return (responses)
 
 def BAD():
@@ -209,13 +214,13 @@ def Joke():
 		responses = (
 			'They byte!',
 			'They rust in peace.',
-			'The chicken programmed him',
+			'The chicken programmed her',
 			'They just drone on and on',
-			'Because he always bot-tled up his emotions!',
+			'Because she always bot-tled up her emotions!',
 			'A row-bot',
-			'Because everyone was pushing his buttons!',
+			'Because everyone was pushing her buttons!',
 			'They had a virus...',
-			'He took a mega-byte',
+			'She took a mega-byte',
 			'Microchips'
 			)
 		joke_number += 1
@@ -328,10 +333,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('the rockies')
-
-
-
+printing = get_response('how old are you')
 
 
 
