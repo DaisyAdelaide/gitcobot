@@ -17,6 +17,9 @@ def goooogle(question):
 
 	try:
 		answer = soup.select_one('.hgKElc').text
+		if 'https' in answer:
+			answer = answer.split('https',1)
+			answer = answer [0]
 		typee = 'one'
 	except:
 		answer = 'Not this one'
@@ -40,10 +43,14 @@ def goooogle(question):
 		except:
 			answer = 'Not this one'
 
-	#This one may not be good
+	#This one is the first line of a landmark i think
 	if answer == 'Not this one':
 		try:
-			answer = soup.select_one('.SPZz6b').text
+			answer = soup.select_one('.kno-rdesc').text
+			answer = answer.split('Description',1)
+			answer = answer [1]
+			answer = answer.split('. ',1)
+			answer = answer [0]
 			typee = 'three'
 		except:
 			answer = 'Not this one'
@@ -52,9 +59,13 @@ def goooogle(question):
 	if answer == 'Not this one':
 		try:
 			answer = soup.select_one('.lyLwlc').text
+			answer = answer.split('— ',1)
+			answer = answer [1]
+			answer = answer.split('.',1)
+			answer = answer [0]
 			typee = 'four'
 		except:
-			answer = 'Not this one'
+			answer = 'I dont know! google'
 
 	return answer
 

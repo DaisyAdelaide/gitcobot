@@ -81,7 +81,7 @@ def get_intent(text):
 					'Time': r'.*\s*what time.*',
 
 					'What': r'.*\s*what.*',
-					'How': r'.*\s*how.*',
+					'How': r'.*\s*how are you.*',
 					'no_match_intent': r''
 
 					}
@@ -328,7 +328,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('where are the aliens')
+printing = get_response('the rockies')
 
 
 
