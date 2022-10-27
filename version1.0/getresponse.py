@@ -333,7 +333,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('how old are you')
+printing = get_response('what is your favourite animal')
 
 
 
