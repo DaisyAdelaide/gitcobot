@@ -201,7 +201,7 @@ def chatbot():
 ##########
 def maths_game():
     #animals = ['cat','snail','dog', 'fish', 'duck', 'frog', 'lion', 'cow',  'sheep', 'moose','Leprechaun']
-    animals = ['cat','snail','dog','fish', 'duck' ]
+    animals = ['cat','snail','dog', 'fish', 'duck']
     scores = [1,1,1,1,1]
 
     black = (0, 0, 0)
@@ -372,7 +372,7 @@ def maths_game():
         x = 0
         if len(list1) > 0:
             for animal in list1:
-                if x < 7:
+                if x < 5:
                     lookup = animal
                     animal = pygame.transform.scale(animal,(130-x*15,130-x*15))
                     screen.blit(animal, (30 + x*135,350+x*15))
