@@ -86,7 +86,7 @@ def load_animals():
     moose = pygame.image.load('moose.png').convert_alpha()
     Leprechaun  = pygame.image.load('lep.png').convert_alpha()
 
-    animal_images = [cat, snail, dog, frog, lion, cow, fish, duck, sheep, moose, Leprechaun]
+    animal_images = [cat, snail, dog, fish, duck, frog, lion, cow, sheep, moose, Leprechaun]
 
 
 def shrinkfunc():
