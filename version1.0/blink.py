@@ -157,7 +157,7 @@ def chatbot():
                 engine.say(opening)
                 engine.runAndWait()
                 time.sleep(0.5)
-                
+
             if line == 'Speak':
                 et_sound = mixer.Sound('ET.wav')
                 et_sound.play()
@@ -518,9 +518,14 @@ line = ''
 while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('latin-1').rstrip()
-        with open ("SpeedData.csv","a",encoding='UTF8') as file:
-            writer = csv.writer(file)
-            writer.writerow([line])
+        if line.is_numeric():
+            with open ("PositionData.csv","a",encoding='UTF8') as file:
+                writer = csv.writer(file)
+                writer.writerow([line])
+        else:
+            with open ("SpeedData.csv","a",encoding='UTF8') as file:
+                writer = csv.writer(file)
+                writer.writerow([line])
     
     if GPIO.input(button) == 1:
         print(count)
