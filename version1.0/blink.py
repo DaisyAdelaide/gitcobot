@@ -148,7 +148,7 @@ def chatbot():
         if ser.in_waiting > 0:
             line = ser.readline().decode('latin-1').rstrip()    
 
-            if line == 'Speak':
+            if line == 'Speakk':
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 125)
@@ -157,6 +157,11 @@ def chatbot():
                 engine.say(opening)
                 engine.runAndWait()
                 time.sleep(0.5)
+                
+            if line == 'Speak':
+                et_sound = mixer.Sound('ET.wav')
+                et_sound.play()
+
 
 
         if start == 0:
