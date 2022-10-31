@@ -173,12 +173,10 @@ void loop() {
   odrive.SetVelocity(1, LEFT_SPEED);
   odrive.SetVelocity(0, -RIGHT_SPEED);
   //delay(5);
-  
-  //Serial << odrive.GetPosition(0) << '\t';
 
-  speeed1 = odrive.GetPosition(0);
-  if (speeed1 != speed1){
-    Serial.println(speeed1);
+  speeed1 = odrive.GetPosition(1);
+  if (speeed1 > speed1){
+    Serial.println("plus one");
   }
   speed1 = speeed1;
 
