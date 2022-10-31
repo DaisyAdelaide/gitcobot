@@ -648,3 +648,73 @@ character said: duck
 character chosen: duck
 "[2, 2, 1, 3, 2, 0, 0, 0, 0, 0, 0]"
 
+
+maths answer given: 9
+maths answer found: 9
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 6
+maths answer found: 6
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 18 18 18
+maths answer found: 18
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: I'm hungry
+maths answer found: 0
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 40 40 40
+maths answer found: 40
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 2
+maths answer found: 2
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 10
+maths answer found: 10
+character said: buck
+character chosen: duck
+"[1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 5
+maths answer found: 5
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: Guelph
+maths answer found: 12
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: Dumbledore duck
+character chosen: duck
+"[1, 1, 1, 1, 6, 0, 0, 0, 0, 0, 0]"
+
