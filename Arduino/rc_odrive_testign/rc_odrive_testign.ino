@@ -81,12 +81,20 @@ void loop() {
   if (SWITCH_VALUE > 1800)
   {
    
+    /*for (int axis = 0; axis < 2; ++axis) 
+    {
+      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 20.0f << '\n';
+      odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 30.0f << '\n';
+      // This ends up writing something like "w axis0.motor.config.current_lim 10.0\n"
+    }*/
+
     for (int axis = 0; axis < 2; ++axis) 
     {
-      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 10.0f << '\n';
-      odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 20.0f << '\n';
+      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 40.0f << '\n';
+      odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 30.0f << '\n';
       // This ends up writing something like "w axis0.motor.config.current_lim 10.0\n"
     }
+    
     delay(2000);
     char c = '0';
     int motornum = c-'0';
