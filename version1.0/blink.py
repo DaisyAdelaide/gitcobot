@@ -518,7 +518,7 @@ line = ''
 while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('latin-1').rstrip()
-        if line.is_numeric():
+        if line.isnumeric():
             with open ("PositionData.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file)
                 writer.writerow([line])
