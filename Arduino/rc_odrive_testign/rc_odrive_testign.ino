@@ -188,6 +188,7 @@ void loop() {
   {
     Serial.println(rot_tally);
     DRIVING = 0;
+    rot_tally = 0;
   }
 
 
