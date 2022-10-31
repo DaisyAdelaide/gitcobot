@@ -32,9 +32,10 @@ int LEFT_SPEED;
 int DRIVING = 0;
 
 int speed1 = 0;
-int speed2 = 0;
 int speeed1 = 0;
-int speeed2 = 0;
+int rot_tally = 0;
+
+String STATE = "STOP";
 
 SoftwareSerial odrive_serial(8, 9);
 ODriveArduino odrive(odrive_serial);
@@ -63,12 +64,13 @@ void loop() {
   {
     Serial.println("Driving");
     DRIVING = 1;
+    STATE = "DRIVING";
   }
   
   if ((THROTTLE_BINARY < 2) && (DRIVING == 1))
   {
     Serial.println("Stop");
-    DRIVING = 0;
+    STATE = "STOP";
   }
 
   if((SPEAK_VALUE > 1800) && (SPEAKING == 0))
@@ -176,9 +178,18 @@ void loop() {
 
   speeed1 = odrive.GetPosition(1);
   if (speeed1 > speed1){
-    Serial.println("plus one");
+    if (STATE = "DRIVING"){
+      rot_tally += 1;
+    }
   }
   speed1 = speeed1;
+
+  if (STATE == "STOP" && (DRIVING == 1))
+  {
+    Serial.println(rot_tally);
+    DRIVING = 0;
+    rot_tally = 0;
+  }
 
 
 }
