@@ -31,6 +31,11 @@ int LEFT_SPEED;
 
 int DRIVING = 0;
 
+int speed1 = 0;
+int speed2 = 0;
+int speeed1 = 0;
+int speeed2 = 0;
+
 SoftwareSerial odrive_serial(8, 9);
 ODriveArduino odrive(odrive_serial);
 
@@ -168,5 +173,14 @@ void loop() {
   odrive.SetVelocity(1, LEFT_SPEED);
   odrive.SetVelocity(0, -RIGHT_SPEED);
   //delay(5);
+  
+  //Serial << odrive.GetPosition(0) << '\t';
+
+  speeed1 = odrive.GetPosition(0);
+  if (speeed1 != speed1){
+    Serial.println(speeed1);
+  }
+  speed1 = speeed1;
+
 
 }
