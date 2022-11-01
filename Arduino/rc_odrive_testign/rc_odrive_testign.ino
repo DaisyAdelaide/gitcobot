@@ -90,13 +90,6 @@ void loop() {
   if (SWITCH_VALUE > 1800)
   {
    
-    /*for (int axis = 0; axis < 2; ++axis) 
-    {
-      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 20.0f << '\n';
-      odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 30.0f << '\n';
-      // This ends up writing something like "w axis0.motor.config.current_lim 10.0\n"
-    }*/
-
     for (int axis = 0; axis < 2; ++axis) 
     {
       odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 40.0f << '\n';
@@ -177,14 +170,6 @@ void loop() {
   odrive.SetVelocity(1, LEFT_SPEED);
   odrive.SetVelocity(0, -RIGHT_SPEED);
   //delay(5);
-
-  /*speeed1 = odrive.GetPosition(1);
-  if (speeed1 > speed1){
-    if (STATE = "DRIVING"){
-      rot_tally += 1;
-    }
-  }
-  speed1 = speeed1;*/
 
   if (STATE == "STOP" && (DRIVING == 1))
   {
