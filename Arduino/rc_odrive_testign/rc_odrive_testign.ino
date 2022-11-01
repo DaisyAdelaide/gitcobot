@@ -36,6 +36,8 @@ int speeed1 = 0;
 int rot_tally = 0;
 
 String STATE = "STOP";
+int encoder_position = 0;
+int encoder_position1 = 0;
 
 SoftwareSerial odrive_serial(8, 9);
 ODriveArduino odrive(odrive_serial);
@@ -176,19 +178,25 @@ void loop() {
   odrive.SetVelocity(0, -RIGHT_SPEED);
   //delay(5);
 
-  speeed1 = odrive.GetPosition(1);
+  /*speeed1 = odrive.GetPosition(1);
   if (speeed1 > speed1){
     if (STATE = "DRIVING"){
       rot_tally += 1;
     }
   }
-  speed1 = speeed1;
+  speed1 = speeed1;*/
 
   if (STATE == "STOP" && (DRIVING == 1))
   {
+    encoder_position1 = odrive.GetPosition(1);
+    rot_tally = encoder_position1 - encoder_position;
+    if (rot_tally < 0)
+    {
+      rot_tally = rot_tally * (-1);
+    }
     Serial.println(rot_tally);
     DRIVING = 0;
-    rot_tally = 0;
+    encoder_position = encoder_position1;
   }
 
 
