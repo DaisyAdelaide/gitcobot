@@ -270,11 +270,6 @@ def maths_game():
 
                 ask = 1
 
-                with open ("SpeechData.csv","a",encoding='UTF8') as file:
-                    writer = csv.writer(file)
-                    writer.writerow(new_problem)
-                    writer.writerow('')
-
         screen.fill(blue)
         color_picked = blue
         font = pygame.font.Font('freesansbold.ttf', 180)
@@ -365,6 +360,11 @@ def maths_game():
                                 scores[i] += points 
                             i += 1
             problem, answer, points, first_number, second_number, operand = summ()
+
+            with open ("SpeechData.csv","a",encoding='UTF8') as file:
+                    writer = csv.writer(file)
+                    writer.writerow([problem])
+                    writer.writerow('')
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file)
