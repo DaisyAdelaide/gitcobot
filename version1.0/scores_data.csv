@@ -746,3 +746,17 @@ character said: snail
 character chosen: snail
 "[1, 4, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
 
+
+maths answer given: 12
+maths answer found: 12
+character said: cell
+character chosen: snail
+"[1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 11
+maths answer found: 11
+character said: fish
+character chosen: fish
+"[1, 2, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
