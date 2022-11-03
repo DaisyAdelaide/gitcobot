@@ -718,3 +718,31 @@ character said: Dumbledore duck
 character chosen: duck
 "[1, 1, 1, 1, 6, 0, 0, 0, 0, 0, 0]"
 
+
+maths answer given: 21
+maths answer found: 21
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 4
+maths answer found: 4
+character said: snail
+character chosen: snail
+"[1, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: Aladdin
+maths answer found: 11
+character said: fish
+character chosen: fish
+"[1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: snail
+character chosen: snail
+"[1, 4, 1, 2, 1, 0, 0, 0, 0, 0, 0]"
+
