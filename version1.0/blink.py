@@ -226,14 +226,17 @@ def maths_game():
     load_animals()
 
     problem, answer, points, first_number, second_number, operand = summ()
-
+    
     right = 0
     ask = 0
 
     with open ("SpeechData.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file)
+        writer.writerow('')
         writer.writerow(['MATHS GAME BEGINNING'])
         writer.writerow('')
+        writer.writerow('')
+        writer.writerow([problem])
 
     #the exit button
     while GPIO.input(button3) == 0:
