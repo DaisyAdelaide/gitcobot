@@ -135,7 +135,7 @@ def chatbot():
 
     with open ("SpeechData.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file)
-        writer.writerow('CHAT BOT BEGINNING')
+        writer.writerow(['CHAT BOT BEGINNING'])
         writer.writerow('')
 
     while GPIO.input(button3) == 0:
@@ -363,8 +363,9 @@ def maths_game():
 
             with open ("SpeechData.csv","a",encoding='UTF8') as file:
                     writer = csv.writer(file)
-                    writer.writerow([problem])
                     writer.writerow('')
+                    writer.writerow([problem])
+                    
 
             with open ("scores_data.csv","a",encoding='UTF8') as file:
                 writer = csv.writer(file)
