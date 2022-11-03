@@ -133,6 +133,11 @@ def chatbot():
     blinktime = 80
     player_surf = blinking[index]
 
+    with open ("SpeechData.csv","a",encoding='UTF8') as file:
+        writer = csv.writer(file)
+        writer.writerow('CHAT BOT BEGINNING')
+        writer.writerow('')
+
     while GPIO.input(button3) == 0:
 
         if GPIO.input(button4) == 1:
@@ -225,6 +230,11 @@ def maths_game():
     right = 0
     ask = 0
 
+    with open ("SpeechData.csv","a",encoding='UTF8') as file:
+        writer = csv.writer(file)
+        writer.writerow('MATHS GAME BEGINNING')
+        writer.writerow('')
+
     #the exit button
     while GPIO.input(button3) == 0:
 
@@ -267,6 +277,11 @@ def maths_game():
         textRect = textSurface.get_rect()
         textRect.center = (400, 150)
         screen.blit(textSurface, textRect)
+
+        with open ("SpeechData.csv","a",encoding='UTF8') as file:
+            writer = csv.writer(file)
+            writer.writerow(problem)
+            writer.writerow('')
 
         #record maths answer
         if GPIO.input(button) == 1 or ask == 1:

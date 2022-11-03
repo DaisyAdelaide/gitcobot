@@ -48,12 +48,9 @@ def voice(audio1):
         writer = csv.writer(file)
         writer.writerow([text1])
     
-    print ("you said: " + text1)
+    #print ("you said: " + text1)
     heard = ("I heard... " + text1)
-    with open ("file1.csv","w",encoding='UTF8') as file:
-        writer = csv.writer(file) 
-        writer.writerow(['command'])
-        writer.writerow([text1])
+
     return str(text1)
     
  
