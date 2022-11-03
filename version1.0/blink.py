@@ -232,7 +232,7 @@ def maths_game():
 
     with open ("SpeechData.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file)
-        writer.writerow('MATHS GAME BEGINNING')
+        writer.writerow(['MATHS GAME BEGINNING'])
         writer.writerow('')
 
     #the exit button
@@ -270,6 +270,11 @@ def maths_game():
 
                 ask = 1
 
+                with open ("SpeechData.csv","a",encoding='UTF8') as file:
+                    writer = csv.writer(file)
+                    writer.writerow(new_problem)
+                    writer.writerow('')
+
         screen.fill(blue)
         color_picked = blue
         font = pygame.font.Font('freesansbold.ttf', 180)
@@ -277,11 +282,6 @@ def maths_game():
         textRect = textSurface.get_rect()
         textRect.center = (400, 150)
         screen.blit(textSurface, textRect)
-
-        with open ("SpeechData.csv","a",encoding='UTF8') as file:
-            writer = csv.writer(file)
-            writer.writerow(problem)
-            writer.writerow('')
 
         #record maths answer
         if GPIO.input(button) == 1 or ask == 1:
