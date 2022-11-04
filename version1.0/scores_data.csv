@@ -809,3 +809,31 @@ character said: fish
 character chosen: fish
 "[1, 2, 3, 3, 1, 0, 0, 0, 0, 0, 0]"
 
+
+maths answer given: 15
+maths answer found: 15
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 14
+maths answer found: 14
+character said: duck
+character chosen: duck
+"[1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 8
+maths answer found: 8
+character said: stop
+character chosen: dog
+"[1, 1, 2, 1, 2, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 12
+maths answer found: 12
+character said: Jack dumelo
+character chosen: duck
+"[1, 1, 2, 1, 5, 0, 0, 0, 0, 0, 0]"
+
