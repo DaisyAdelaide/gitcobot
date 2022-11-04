@@ -10,7 +10,7 @@ pickname_index = 0
 joke_index = 0
 joke_number = 0
 leaving = ('bye', 'I\'m leaving', 'bye-bye', 'see ya later', 'see you later')
-bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus')
+bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus','mean')
 
 numbers = []
 operations = []
@@ -31,8 +31,8 @@ def get_response(text):
 	if name_index == 1 and text != 'I didnt catch that!':
 		return name(text)
 
-	if joke_index == 1 and text != 'I didnt catch that!':
-		return Joke()
+	#if joke_index == 1 and text != 'I didnt catch that!':
+	#	return Joke()
 
 	if pickname_index == 1 and text != 'I didnt catch that!':
 		return DescribeSelf(text)
@@ -68,7 +68,10 @@ def get_intent(text):
 					'Feeling': r'.*\s*feel.*',
 					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
-					'Robot': r'.*\s*robot.*',				
+					'Robot': r'.*\s*robot.*',	
+
+					'You': r'^You are',	
+					'Me': r'^am I',		
 
 					'Home': r'.*\s*where.*',
 					'Home2': r'.*\s*from.*',
@@ -119,12 +122,27 @@ def get_intent(text):
 			return How()
 		if found_match and intent == 'Robot':
 			return Robot()
+		if found_match and intent == 'You':
+			return You(text)
+		if found_match and intent == 'Me':
+			return Me(text)
 		if found_match and intent == 'What':
 			return What(text)
 		if found_match and intent == 'Home':
 			return Home()
 		if found_match and intent == 'Home2':
 			return Home()
+
+def You(text):
+	last_word = text.split()
+	last_word = last_word [-1]
+	return ('Thanks you are {} too !'.format(last_word))
+
+def Me(text):
+	last_word = text.split()
+	last_word = last_word [-1]
+	return ('You are {} !'.format(last_word))
+
 
 def Feeling():
 	responses = ('I do have feelings!', 'I have lots of feelings', 'Im feeling very annoyed right now', 'You dont have feelings!')
@@ -135,8 +153,6 @@ def FortyTwo():
 
 def Favourite(text):
 	thing = text.split()
-	if 'tree' in text:
-		return 'i like trees'
 	if 'colour' in text:
 		return 'Orange ! I like to eat oranges too'
 	if 'animal' in text:
@@ -145,6 +161,8 @@ def Favourite(text):
 		return 'Oranges ! What about you ?'
 	if 'tree' in text:
 		return 'Pine trees!!'
+	if 'toy' in text:
+		return 'Lego is definitly my favourite toy'
 	else:
 		return 'hmm i dont have a favourite ' + thing[-1]
 
@@ -169,7 +187,7 @@ def Age():
 	return (responses)
 
 def BAD():
-	responses = ('Dont use that word.', 'That is very mean', 'Thats not very nice', 'No you are!','I am telling on you','Do you want to get in trouble')
+	responses = ('Dont use that word.', 'That is very mean', 'Thats not very nice', 'No you are!','I am telling on you','Do you want to get in trouble?')
 	return random.choice(responses)
 
 def kill():
@@ -204,34 +222,39 @@ def Joke():
 			'What do you call a robot who likes to row?',
 			'Why did the robot get upset?',
 			'Why did the robot sneeze?',
-			'How did the robot eat his food?',
+			'How did the robot eat its food?',
 			'What is a robots favourite snack?'
 			)
 		joke_index = 1
-		return responses[joke_number]
+		#return responses[joke_number]
 
 	if joke_index == 1:
-		responses = (
+		responses2 = (
 			'They byte!',
 			'They rust in peace.',
-			'The chicken programmed her',
+			'The chicken programmed it',
 			'They just drone on and on',
-			'Because she always bot-tled up her emotions!',
+			'Because it always bot-tled up its emotions!',
 			'A row-bot',
-			'Because everyone was pushing her buttons!',
-			'They had a virus...',
-			'She took a mega-byte',
+			'Because everyone was pushing its buttons!',
+			'It had a virus...',
+			'It took a mega-byte',
 			'Microchips'
 			)
 		joke_number += 1
 		joke_index = 0
 		if joke_number > 9:
 			joke_number = 0
-		return responses[joke_number-1]
+
+		space = '								'
+		full_joke = responses[joke_number-1] + space + responses2[joke_number-1]
+
+		return full_joke
 
 def no_match_intent(text):
 	#responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
 	responses = google.goooogle(text)
+	responses = responses + 'google'
 	return responses
 	#return random.choice(responses)
 
@@ -265,6 +288,7 @@ def How():
 
 def What(text):
 	responses = google.goooogle(text)
+	responses = responses + 'google'
 	return responses
 
 def Robot():
@@ -333,9 +357,9 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('what is your favourite animal')
+printing = get_response('tell me a joke')
 
-
+print(printing)
 
 
 
