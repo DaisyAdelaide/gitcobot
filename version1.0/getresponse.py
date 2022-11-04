@@ -70,7 +70,8 @@ def get_intent(text):
 					'Age': r'.*\s*old.*',
 					'Robot': r'.*\s*robot.*',	
 
-					'You': r'^You are',	
+					'You': r'^you are',	
+					'You2': r'^you look',	
 					'Me': r'^am I',		
 
 					'Home': r'.*\s*where.*',
@@ -124,6 +125,8 @@ def get_intent(text):
 			return Robot()
 		if found_match and intent == 'You':
 			return You(text)
+		if found_match and intent == 'You2':
+			return You(text)
 		if found_match and intent == 'Me':
 			return Me(text)
 		if found_match and intent == 'What':
@@ -135,6 +138,9 @@ def get_intent(text):
 
 def You(text):
 	last_word = text.split()
+	if last_word[1] == 'look':
+		return ('You look {} too !'.format(last_word[-1]))
+
 	last_word = last_word [-1]
 	return ('Thanks you are {} too !'.format(last_word))
 
@@ -357,7 +363,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('tell me a joke')
+printing = get_response('you are smart ')
 
 print(printing)
 
