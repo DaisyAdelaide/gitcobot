@@ -92,31 +92,31 @@ void loop() {
    
     for (int axis = 0; axis < 2; ++axis) 
     {
-      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 40.0f << '\n';
+      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 5000.0f << '\n';
       odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 30.0f << '\n';
       // This ends up writing something like "w axis0.motor.config.current_lim 10.0\n"
     }
     
-    delay(2000);
+    delay(1000);
     char c = '0';
     int motornum = c-'0';
     int requested_state;
-    delay(2000);
+    delay(500);
     
     requested_state = AXIS_STATE_MOTOR_CALIBRATION;
     //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, true)) return;
-    delay(3000);
+    delay(2000);
     
     requested_state = AXIS_STATE_ENCODER_OFFSET_CALIBRATION;
    // Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, true, 25.0f)) return;
-    delay(2000);
+    delay(1000);
   
     requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL;
     //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, false /*don't wait*/)) return;
-    delay(2000);
+    delay(1000);
   
     c = '1';
     motornum = c-'0';
@@ -124,17 +124,17 @@ void loop() {
     requested_state = AXIS_STATE_MOTOR_CALIBRATION;
     //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, true)) return;
-    delay(3000);
+    delay(2000);
   
     requested_state = AXIS_STATE_ENCODER_OFFSET_CALIBRATION;
     //Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, true, 25.0f)) return;
-    delay(2000);
+    delay(1000);
   
     requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL;
    // Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
     if(!odrive.run_state(motornum, requested_state, false /*don't wait*/)) return;  
-    delay(2000);    
+    delay(1000);    
   }
 
 
