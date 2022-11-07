@@ -65,7 +65,7 @@ def goooogle(question):
 			answer = answer [0]
 			typee = 'four'
 		except:
-			answer = 'I dont know! google'
+			answer = 'I dont know!'
 
 	return answer
 

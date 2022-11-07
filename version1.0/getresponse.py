@@ -68,7 +68,8 @@ def get_intent(text):
 					'Feeling': r'.*\s*feel.*',
 					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
-					'Robot': r'.*\s*robot.*',	
+					'Robot': r'.*\s*robot.*',
+					'Friends': r'.*\s*friend.*',	
 
 					'You': r'^you are',	
 					'You2': r'^you look',	
@@ -123,6 +124,8 @@ def get_intent(text):
 			return How()
 		if found_match and intent == 'Robot':
 			return Robot()
+		if found_match and intent == 'Friends':
+			return Friends()
 		if found_match and intent == 'You':
 			return You(text)
 		if found_match and intent == 'You2':
@@ -135,6 +138,10 @@ def get_intent(text):
 			return Home()
 		if found_match and intent == 'Home2':
 			return Home()
+
+def Friends():
+	return ('Lets be friends!')
+
 
 def You(text):
 	last_word = text.split()
@@ -260,7 +267,7 @@ def Joke():
 def no_match_intent(text):
 	#responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
 	responses = google.goooogle(text)
-	responses = responses + 'google'
+	responses = responses 
 	return responses
 	#return random.choice(responses)
 
@@ -294,7 +301,7 @@ def How():
 
 def What(text):
 	responses = google.goooogle(text)
-	responses = responses + 'google'
+	responses = responses 
 	return responses
 
 def Robot():
@@ -363,9 +370,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('how old are you ')
-
-print(printing)
+printing = get_response('what age are you')
 
 
 
