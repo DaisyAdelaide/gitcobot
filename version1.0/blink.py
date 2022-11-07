@@ -164,7 +164,7 @@ def chatbot():
                 time.sleep(0.5)
 
             if line == 'Speak':
-                simon_says = ['move forward','turn green','turn yellow', 'move backwards', 'Spin']
+                simon_says = ['move forward','turn green','turn yellow', 'move backwards', 'Turn Around']
                 action = random.randint(1,3)
                 pick = random.randint(0,4)
                 if action % 2 == 0:
