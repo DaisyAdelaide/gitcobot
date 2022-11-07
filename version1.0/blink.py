@@ -179,7 +179,6 @@ def chatbot():
                 opening = say
                 engine.say(opening)
                 engine.runAndWait()
-                time.sleep(0.5)
 
         if start == 0:
             text = 'Press blue to talk to me !'
