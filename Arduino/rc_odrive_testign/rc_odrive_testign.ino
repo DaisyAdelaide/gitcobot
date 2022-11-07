@@ -75,7 +75,7 @@ void loop() {
     STATE = "STOP";
   }
 
-  if((SPEAK_VALUE > 1800) && (SPEAKING == 0))
+  if((SPEAK_VALUE > 1700) && (SPEAKING == 0))
   {
     Serial.println("Speak");
     SPEAKING = 1;

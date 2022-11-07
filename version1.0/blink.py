@@ -168,13 +168,13 @@ def chatbot():
                 action = random.randint(1,3)
                 pick = random.randint(0,4)
                 if action % 2 == 0:
-                    say = simon_says[pick]
+                    say = '     ' + simon_says[pick]
                 else:
-                    say = 'Simon Says ' + simon_says[pick]
+                    say = '     Simon Says ' + simon_says[pick]
 
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
-                engine.setProperty('rate', 125)
+                engine.setProperty('rate', 100)
                 engine.setProperty('voice', 'English-UK')
                 opening = say
                 engine.say(opening)
