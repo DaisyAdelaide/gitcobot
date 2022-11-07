@@ -32,7 +32,7 @@ def listen1():
         r = sr.Recognizer()
         r.adjust_for_ambient_noise(source)
         led3.on()
-        audio = r.record(source=mic, duration=5)
+        audio = r.record(source=mic, duration=4)
         led3.off()
     return audio    
     
