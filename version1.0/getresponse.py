@@ -370,7 +370,8 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('what age are you')
+printing = get_response('whats 5 + 5')
+print(printing)
 
 
 

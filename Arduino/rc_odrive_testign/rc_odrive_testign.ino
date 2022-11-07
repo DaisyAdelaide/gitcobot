@@ -92,7 +92,7 @@ void loop() {
    
     for (int axis = 0; axis < 2; ++axis) 
     {
-      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 5000.0f << '\n';
+      odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 10000.0f << '\n';
       odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 30.0f << '\n';
       // This ends up writing something like "w axis0.motor.config.current_lim 10.0\n"
     }

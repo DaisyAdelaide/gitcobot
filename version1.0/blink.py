@@ -164,10 +164,22 @@ def chatbot():
                 time.sleep(0.5)
 
             if line == 'Speak':
-                et_sound = mixer.Sound('ET.wav')
-                et_sound.play()
+                simon_says = ['move forward','turn green','turn yellow', 'move backwards', 'Spin']
+                action = random.randint(1,3)
+                pick = random.randint(0,4)
+                if action % 2 == 0:
+                    say = simon_says[pick]
+                else:
+                    say = 'Simon Says ' + simon_says[pick]
 
-
+                engine = pyttsx3.init()
+                voices = engine.getProperty('voices')
+                engine.setProperty('rate', 125)
+                engine.setProperty('voice', 'English-UK')
+                opening = say
+                engine.say(opening)
+                engine.runAndWait()
+                time.sleep(0.5)
 
         if start == 0:
             text = 'Press blue to talk to me !'
