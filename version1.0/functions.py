@@ -27,13 +27,12 @@ def arm():
     sendmessage.arm()
     
 def listen1():
-    with sr.Microphone(device_index = 1) as source:
+    mic = sr.Microphone(device_index = 1)
+    with mic as source:
         r = sr.Recognizer()
         r.adjust_for_ambient_noise(source)
-        print("Say Something")
         led3.on()
-        audio = r.listen(source)
-        print("got it")
+        audio = r.record(source=mic, duration=5)
         led3.off()
     return audio    
     

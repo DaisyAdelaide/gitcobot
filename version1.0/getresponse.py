@@ -363,7 +363,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('you are smart ')
+printing = get_response('how old are you ')
 
 print(printing)
 
