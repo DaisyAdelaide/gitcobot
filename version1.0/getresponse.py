@@ -407,8 +407,8 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('joke')
-print(printing)
+#printing = get_response('joke')
+#print(printing)
 
 
 
