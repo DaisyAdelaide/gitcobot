@@ -31,8 +31,8 @@ def get_response(text):
 	if name_index == 1 and text != 'I didnt catch that!':
 		return name(text)
 
-	#if joke_index == 1 and text != 'I didnt catch that!':
-	#	return Joke()
+	if joke_index > 0 and text != 'I didnt catch that!':
+		return Joke()
 
 	if pickname_index == 1 and text != 'I didnt catch that!':
 		return DescribeSelf(text)
@@ -70,6 +70,7 @@ def get_intent(text):
 					'Age': r'.*\s*old.*',
 					'Robot': r'.*\s*robot.*',
 					'Friends': r'.*\s*friend.*',	
+					'Love': r'.*\s*I love you.*',
 
 					'You': r'^you are',	
 					'You2': r'^you look',	
@@ -110,6 +111,8 @@ def get_intent(text):
 			return Time()
 		if found_match and intent == '42':
 			return FortyTwo()
+		if found_match and intent == 'Love':
+			return Love()
 		if found_match and intent == 'Age2':
 			return Age()
 		if found_match and intent == 'Greeting':
@@ -141,6 +144,9 @@ def get_intent(text):
 
 def Friends():
 	return ('Lets be friends!')
+
+def Love():
+	return('I love you too !!')
 
 
 def You(text):
@@ -223,7 +229,7 @@ def name(text):
 		name_index = 0
 		return responses
 
-def Joke():
+def Joke1():
 	global joke_index, joke_number
 	if joke_index == 0:
 		responses = (
@@ -263,6 +269,34 @@ def Joke():
 		full_joke = responses[joke_number-1] + space + responses2[joke_number-1]
 
 		return full_joke
+
+def Joke():
+	global joke_index, joke_number	
+	if joke_index == 0:
+		return '		Knock Knock'
+		joke_index = 1
+
+	if joke_index == 1:
+		responses = (
+			'			Who',
+			'		Oink Oink'
+
+			)
+		joke_index = 2
+		return	responses[joke_number]
+
+	if joke_index == 2:
+		responses = (
+			'		Are you an owl ?',
+			'		Are you a pig or an owl ?'
+
+
+			)
+		joke_index = 0
+		return	responses[joke_number]
+
+	joke_number	+= 1
+
 
 def no_match_intent(text):
 	#responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
@@ -370,7 +404,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('whats 5 + 5')
+printing = get_response('I love you')
 print(printing)
 
 
