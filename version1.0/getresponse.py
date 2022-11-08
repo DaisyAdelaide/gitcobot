@@ -65,6 +65,7 @@ def get_intent(text):
 					'42': r'(?=.*meaning)(?=.*life)',
 
 					'DescribeSelf': r'.*\s*your name.*',
+					'myname': r'.*\s*my name.*',
 					'Feeling': r'.*\s*feel.*',
 					'Age2': r'.*\s*age.*',
 					'Age': r'.*\s*old.*',
@@ -99,10 +100,13 @@ def get_intent(text):
 
 		if found_match and intent == 'Favourite':
 			return Favourite(text)
+		if found_match and intent == 'myname':
+			return myname(text)
 		if found_match and intent == 'Joke':
 			return Joke()
 		if found_match and intent == 'no_match_intent':
-			return no_match_intent(text)
+			#return no_match_intent(text)
+			return Joke1()
 		if found_match and intent == 'Age':
 			return Age()
 		if found_match and intent == 'Day':
@@ -147,6 +151,10 @@ def Friends():
 
 def Love():
 	return('I love you too !!')
+
+def myname(text):
+	words = text.split()
+	return 'Hello ' + words[-1]
 
 
 def You(text):
@@ -279,7 +287,11 @@ def Joke():
 	if joke_index == 1:
 		responses = (
 			'			Who',
-			'		Oink Oink'
+			'		Oink Oink',
+			'		Wooden Shoe',
+			'		BB eight',
+			'		A broken pencil',
+			'		Owls say'
 
 			)
 		joke_index = 2
@@ -288,24 +300,25 @@ def Joke():
 	if joke_index == 2:
 		responses = (
 			'		Are you an owl ?',
-			'		Are you a pig or an owl ?'
-
+			'		Are you a pig or an owl ?',
+			'		Wooden Shoe like to know',
+			'		Nobody I hope !',
+			'		Nevermind, its pointless',
+			'		Yes they do'
 
 			)
 		joke_index = 0
 		joke_number	+= 1
-		if joke_number	== 2:
+		if joke_number	== 6:
 			joke_number	= 0
 		return	responses[joke_number-1]
 
-	
-
 
 def no_match_intent(text):
-	#responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
-	responses = google.goooogle(text)
-	responses = responses 
-	return responses
+	responses = ('Please tell me more.','Tell me more!','“Why do you say that?','I see. Can you elaborate?','Interesting. Can you tell me more?','I see. How do you think?','Why?','How do you think I feel when you say that?')
+	#responses = google.goooogle(text)
+	#responses = responses 
+	return random.choice(responses)
 	#return random.choice(responses)
 
 def Greet():
@@ -337,12 +350,13 @@ def How():
 	return random.choice(responses)
 
 def What(text):
-	responses = google.goooogle(text)
-	responses = responses 
+	#responses = google.goooogle(text)
+	#responses = responses 
+	responses = 'I dont know'
 	return responses
 
 def Robot():
-	responses = ('I am not a robot!', 'I like to think I am a person', 'Personally, I consider myself a human','shhhhhh it is a secret')
+	responses = ('I am not a robot!', 'I like to think I am a person', 'Personally, I consider myself a human')
 	return random.choice(responses)
 
 def Home():
@@ -407,8 +421,8 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-#printing = get_response('joke')
-#print(printing)
+printing = get_response('jhswdahjsjhsad')
+print(printing)
 
 
 
