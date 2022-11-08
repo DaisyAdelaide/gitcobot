@@ -273,9 +273,9 @@ def Joke1():
 def Joke():
 	global joke_index, joke_number	
 	if joke_index == 0:
-		return '		Knock Knock'
 		joke_index = 1
-
+		return '		Knock Knock'
+		
 	if joke_index == 1:
 		responses = (
 			'			Who',
@@ -293,9 +293,10 @@ def Joke():
 
 			)
 		joke_index = 0
+		joke_number	+= 1
 		return	responses[joke_number]
 
-	joke_number	+= 1
+	
 
 
 def no_match_intent(text):
@@ -404,7 +405,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('I love you')
+printing = get_response('joke')
 print(printing)
 
 
