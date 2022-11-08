@@ -31,11 +31,8 @@ def get_response(text):
 	if name_index == 1 and text != 'I didnt catch that!':
 		return name(text)
 
-	if joke_index > 0 and text != 'I didnt catch that!':
+	if joke_index > 0:
 		return Joke()
-
-	if joke_index > 0 :
-		return 'hihi'
 
 	if pickname_index == 1 and text != 'I didnt catch that!':
 		return DescribeSelf(text)
