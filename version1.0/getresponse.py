@@ -294,6 +294,8 @@ def Joke():
 			)
 		joke_index = 0
 		joke_number	+= 1
+		if joke_number	== 2:
+			joke_number	= 0
 		return	responses[joke_number]
 
 	
