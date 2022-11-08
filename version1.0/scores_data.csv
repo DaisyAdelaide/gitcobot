@@ -837,3 +837,24 @@ character said: Jack dumelo
 character chosen: duck
 "[1, 1, 2, 1, 5, 0, 0, 0, 0, 0, 0]"
 
+
+maths answer given: 17
+maths answer found: 17
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: answers to
+maths answer found: 2
+character said: dog
+character chosen: dog
+"[1, 1, 4, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 28
+maths answer found: 28
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 4, 1, 1, 0, 0, 0, 0, 0, 0]"
+
