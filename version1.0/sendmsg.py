@@ -11,7 +11,7 @@ def send_text_alert():
     message = client.messages.create(
         to=TWILIO_PHONE_RECIPIENT,
         from_=TWILIO_PHONE_SENDER,
-        body="Your text message here")
+        body="hi from clover")
     print(message.sid)
 
 send_text_alert()
