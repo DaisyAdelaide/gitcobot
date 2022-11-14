@@ -10,7 +10,7 @@ pickname_index = 0
 joke_index = 0
 joke_number = 0
 leaving = ('bye', 'I\'m leaving', 'bye-bye', 'see ya later', 'see you later')
-bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus','mean')
+bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus')
 
 numbers = []
 operations = []
@@ -190,6 +190,8 @@ def Favourite(text):
 		return 'Pine trees!!'
 	if 'toy' in text:
 		return 'Lego is definitly my favourite toy'
+	if 'robot' in text:
+		return 'I am my favourite robot !!'
 	else:
 		return 'hmm i dont have a favourite ' + thing[-1]
 
@@ -421,7 +423,7 @@ def check_if_maths(text):
         operations.clear()
         numbers.clear()
     
-printing = get_response('jhswdahjsjhsad')
+printing = get_response('meaning life')
 print(printing)
 
 
