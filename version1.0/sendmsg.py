@@ -10,5 +10,5 @@ client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 message = client.messages.create(
     to=TWILIO_PHONE_RECIPIENT,
     from_=TWILIO_PHONE_SENDER,
-    body="hi from clover"
+    body="hi from clover")
 print(message.sid)
