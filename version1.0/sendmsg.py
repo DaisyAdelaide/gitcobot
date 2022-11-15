@@ -5,13 +5,13 @@ TWILIO_AUTH_TOKEN = '6f3528ebbd747c9a2c292a7aebe29cb5' # replace with your Auth 
 TWILIO_PHONE_SENDER = "+15097785509" # replace with the phone number you registered in twilio
 TWILIO_PHONE_RECIPIENT = "+12365917334" # replace with your phone number
 
-def send_text_alert():
+def send_text_alert('message'):
     """Sends an SMS text alert."""
     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
     message = client.messages.create(
         to=TWILIO_PHONE_RECIPIENT,
         from_=TWILIO_PHONE_SENDER,
-        body="hi from clover")
+        body=message)
     print(message.sid)
 
-send_text_alert()
+send_text_alert('adam is absent')
