@@ -16,4 +16,4 @@ def send_text_alert(message):
         body=message)
     print(message.sid)
 
-send_text_alert('adam is absent')
+send_text_alert('mary is absent')
