@@ -39,6 +39,22 @@ String STATE = "STOP";
 int encoder_position = 0;
 int encoder_position1 = 0;
 
+const int FORWARD_BUTTON = 2;
+int FORWARD_BUTTON_STATE = 0;
+int FORWARD_PRESSED = 0;
+
+const int LEFT_BUTTON = 3;
+int LEFT_BUTTON_STATE = 0;
+int LEFT_PRESSED = 0;
+
+const int RIGHT_BUTTON = 4;
+int RIGHT_BUTTON_STATE = 0;
+int RIGHT_PRESSED = 0;
+
+const int BACK_BUTTON = 5;
+int BACK_BUTTON_STATE = 0;
+int BACK_PRESSED = 0;
+
 SoftwareSerial odrive_serial(8, 9);
 ODriveArduino odrive(odrive_serial);
 
@@ -49,6 +65,8 @@ void setup() {
   //while (!Serial) ; // wait for Arduino Serial Monitor to open
 
  // Serial.println("ODriveArduino");
+
+ pinMode(FORWARD_BUTTON, INPUT);
   
 }
 
@@ -184,4 +202,69 @@ void loop() {
     encoder_position = encoder_position1;
   }
 
+ while (SWITCH_VALUE < 1000)
+ {
+    FORWARD_BUTTON_STATE = digitalRead(FORWARD_BUTTON);
+    LEFT_BUTTON_STATE = digitalRead(LEFT_BUTTON);
+    RIGHT_BUTTON_STATE = digitalRead(RIGHT_BUTTON);
+    BACK_BUTTON_STATE = digitalRead(BACK_BUTTON);
+    
+    if ((FORWARD_BUTTON_STATE == HIGH) && (FORWARD_PRESSED == 0))
+    {
+      odrive.SetVelocity(1, 5);
+      odrive.SetVelocity(0, -5);
+      delay(2000);
+      odrive.SetVelocity(1, 0);
+      odrive.SetVelocity(0, 0);
+      FORWARD_PRESSED = 1;
+    }
+    if (FORWARD_BUTTON_STATE == LOW)
+    {
+      FORWARD_PRESSED = 0;
+    }
+
+    if ((LEFT_BUTTON_STATE == HIGH) && (LEFT_PRESSED == 0))
+    {
+      odrive.SetVelocity(1, 5);
+      odrive.SetVelocity(0, 0);
+      delay(1000);
+      odrive.SetVelocity(1, 0);
+      odrive.SetVelocity(0, 0);
+      LEFT_PRESSED = 1;
+    }
+    if (LEFT_BUTTON_STATE == LOW)
+    {
+      LEFT_PRESSED = 0;
+    }
+
+    if ((RIGHT_BUTTON_STATE == HIGH) && (RIGHT_PRESSED == 0))
+    {
+      odrive.SetVelocity(1, 0);
+      odrive.SetVelocity(0, 5);
+      delay(1000);
+      odrive.SetVelocity(1, 0);
+      odrive.SetVelocity(0, 0);
+      RIGHT_PRESSED = 1;
+    }
+    if (RIGHT_BUTTON_STATE == LOW)
+    {
+      RIGHT_PRESSED = 0;
+    }
+
+    if ((BACK_BUTTON_STATE == HIGH) && (BACK_PRESSED == 0))
+    {
+      odrive.SetVelocity(1, -5);
+      odrive.SetVelocity(0, 5);
+      delay(2000);
+      odrive.SetVelocity(1, 0);
+      odrive.SetVelocity(0, 0);
+      BACK_PRESSED = 1;
+    }
+    if (BACK_BUTTON_STATE == LOW)
+    {
+      BACK_PRESSED = 0;
+    }
+    
+    delay(5);
+ }
 }

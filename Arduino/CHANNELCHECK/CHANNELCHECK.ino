@@ -1,4 +1,4 @@
-const int TURNING_STICK = 7;
+const int TURNING_STICK = 12;
 int REVERSE_VALUE = 0;
 
 
