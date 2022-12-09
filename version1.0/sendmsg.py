@@ -1,3 +1,4 @@
+#send envirnoment variables before use
 import os
 from twilio.rest import Client
 

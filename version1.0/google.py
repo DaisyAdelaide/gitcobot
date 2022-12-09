@@ -69,7 +69,7 @@ def goooogle(question):
 
 	return answer
 
-#print(goooogle('tell me a joke'))
+print(goooogle('what comes after five'))
 
 
 #can do what,how,where

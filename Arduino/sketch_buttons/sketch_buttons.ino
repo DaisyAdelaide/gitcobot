@@ -67,6 +67,9 @@ void setup() {
  // Serial.println("ODriveArduino");
 
  pinMode(FORWARD_BUTTON, INPUT);
+ pinMode(LEFT_BUTTON, INPUT);
+ pinMode(RIGHT_BUTTON, INPUT);
+ pinMode(BACK_BUTTON, INPUT);
   
 }
 

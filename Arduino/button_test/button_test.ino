@@ -14,6 +14,13 @@ const int BACK_BUTTON = 5;
 int BACK_BUTTON_STATE = 0;
 int BACK_PRESSED = 0;
 
+
+//int FORWARD_BUTTON_STATE;            
+int LAST_FORWARD_BUTTON_STATE = LOW; 
+
+unsigned long foward_lastDebounceTime = 0;  
+unsigned long debounceDelay = 50;   
+
 void setup()
 {
   Serial.begin(9600);
@@ -26,36 +33,36 @@ void setup()
 
 void loop()
 {
-    FORWARD_BUTTON_STATE = digitalRead(FORWARD_BUTTON);
+    int forward_reading = digitalRead(FORWARD_BUTTON);
     LEFT_BUTTON_STATE = digitalRead(LEFT_BUTTON);
     RIGHT_BUTTON_STATE = digitalRead(RIGHT_BUTTON);
     BACK_BUTTON_STATE = digitalRead(BACK_BUTTON);
-    
-    if (FORWARD_BUTTON_STATE == HIGH && FORWARD_PRESSED == 0)
+
+    if (forward_reading != LAST_FORWARD_BUTTON_STATE) 
     {
-      FORWARD_PRESSED += 1;
-      Serial.println("forward");
-      delay(200);
-      return;
+      foward_lastDebounceTime = millis();
     }
+    
+    if ((millis() - foward_lastDebounceTime) > debounceDelay) 
+    {    
+      if (forward_reading != FORWARD_BUTTON_STATE) 
+      {
+        FORWARD_BUTTON_STATE = forward_reading;
+
+        if (FORWARD_BUTTON_STATE == HIGH) 
+        {
+          Serial.println("forward");
+        }
+      }
+    }
+    
     else if ((FORWARD_BUTTON_STATE == LOW)&& (FORWARD_PRESSED == 1))
     {
       FORWARD_PRESSED = 0;
+      Serial.println("stop");
     }
-
-    if (LEFT_BUTTON_STATE == HIGH && LEFT_PRESSED == 0)
-    {
-      LEFT_PRESSED += 1;
-      Serial.println("LEFT");
-      delay(200);
-      return;
-    }
-    else if ((LEFT_BUTTON_STATE == LOW)&& (LEFT_PRESSED == 1))
-    {
-      LEFT_PRESSED = 0;
-    }
-
     
+    LAST_FORWARD_BUTTON_STATE = forward_reading;
     delay(5);
 
  }
