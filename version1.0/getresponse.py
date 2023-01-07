@@ -105,8 +105,8 @@ def get_intent(text):
 		if found_match and intent == 'Joke':
 			return Joke()
 		if found_match and intent == 'no_match_intent':
-			#return no_match_intent(text)
-			return Joke1()
+			return no_match_intent(text)
+			#return Joke1()
 		if found_match and intent == 'Age':
 			return Age()
 		if found_match and intent == 'Day':
@@ -289,11 +289,12 @@ def Joke():
 	if joke_index == 1:
 		responses = (
 			'			Who',
-			'		Oink Oink',
 			'		Wooden Shoe',
+			'		Oink Oink',
 			'		BB eight',
 			'		A broken pencil',
-			'		Owls say'
+			'		Owls say',
+			'		Boo'
 
 			)
 		joke_index = 2
@@ -301,17 +302,18 @@ def Joke():
 
 	if joke_index == 2:
 		responses = (
-			'		Are you an owl ?',
-			'		Are you a pig or an owl ?',
+			'		Are you an owl ?',		
 			'		Wooden Shoe like to know',
+			'		Are you a pig or an owl ?',
 			'		Nobody I hope !',
 			'		Nevermind, its pointless',
-			'		Yes they do'
+			'		Yes they do',
+			'		Why are you crying ?'
 
 			)
 		joke_index = 0
 		joke_number	+= 1
-		if joke_number	== 6:
+		if joke_number	== 7:
 			joke_number	= 0
 		return	responses[joke_number-1]
 
