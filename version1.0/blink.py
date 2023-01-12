@@ -181,7 +181,7 @@ def chatbot():
                 engine.runAndWait()
 
         if start == 0:
-            text = 'Press blue to talk to me !'
+            text = 'Press record to talk to me !'
 
         if GPIO.input(button4) == 1:
             print('pressed')
