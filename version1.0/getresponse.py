@@ -107,8 +107,10 @@ def get_intent(text):
 			return myname(text)
 		if found_match and intent == 'Joke':
 			if joke_decider % 2:
+				joke_decider += 1
 				return Joke()
 			else:
+				joke_decider += 1
 				return Joke1()
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent(text)
