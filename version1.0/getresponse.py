@@ -9,6 +9,9 @@ name_index = 0
 pickname_index = 0
 joke_index = 0
 joke_number = 0
+joke_index1 = 0
+joke_number1 = 0
+joke_decider = 0
 leaving = ('bye', 'I\'m leaving', 'bye-bye', 'see ya later', 'see you later')
 bad_words = ('idiot', 'stupid', 'dumb', 'suss','sus')
 
@@ -103,7 +106,10 @@ def get_intent(text):
 		if found_match and intent == 'myname':
 			return myname(text)
 		if found_match and intent == 'Joke':
-			return Joke()
+			if joke_decider % 2:
+				return Joke()
+			else:
+				return Joke1()
 		if found_match and intent == 'no_match_intent':
 			return no_match_intent(text)
 			#return Joke1()
@@ -240,8 +246,8 @@ def name(text):
 		return responses
 
 def Joke1():
-	global joke_index, joke_number
-	if joke_index == 0:
+	global joke_index1, joke_number1
+	if joke_index1 == 0:
 		responses = (
 			'What do dog robots do?', 
 			'What happens when a robot dies?', 
@@ -254,10 +260,10 @@ def Joke1():
 			'How did the robot eat its food?',
 			'What is a robots favourite snack?'
 			)
-		joke_index = 1
+		joke_index1 = 1
 		#return responses[joke_number]
 
-	if joke_index == 1:
+	if joke_index1 == 1:
 		responses2 = (
 			'They byte!',
 			'They rust in peace.',
@@ -270,13 +276,13 @@ def Joke1():
 			'It took a mega-byte',
 			'Microchips'
 			)
-		joke_number += 1
-		joke_index = 0
-		if joke_number > 9:
-			joke_number = 0
+		joke_number1 += 1
+		joke_index1 = 0
+		if joke_number1 > 9:
+			joke_number1 = 0
 
 		space = '								'
-		full_joke = responses[joke_number-1] + space + responses2[joke_number-1]
+		full_joke = responses[joke_number1-1] + space + responses2[joke_number1-1]
 
 		return full_joke
 
