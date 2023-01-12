@@ -140,9 +140,9 @@ def chatbot():
 
     while GPIO.input(button3) == 0:
 
-        if GPIO.input(button4) == 1:
-            pygame.quit()
-            sys.exit()
+        #if GPIO.input(button4) == 1:
+        #    pygame.quit()
+        #    sys.exit()
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
@@ -183,7 +183,7 @@ def chatbot():
         if start == 0:
             text = 'Press blue to talk to me !'
 
-        if GPIO.input(button2) == 1:
+        if GPIO.input(button4) == 1:
             print('pressed')
             text = functions.record()
             text = str(text)
@@ -253,9 +253,9 @@ def maths_game():
     while GPIO.input(button3) == 0:
 
         #emergency exit
-        if GPIO.input(button4) == 1:
-                pygame.quit()
-                sys.exit()
+        #if GPIO.input(button4) == 1:
+        #        pygame.quit()
+        #        sys.exit()
 
         if ser.in_waiting > 0:
             line = ser.readline().decode('latin-1').rstrip()    
@@ -293,7 +293,7 @@ def maths_game():
         screen.blit(textSurface, textRect)
 
         #record maths answer
-        if GPIO.input(button) == 1 or ask == 1:
+        if GPIO.input(button4) == 1 or ask == 1:
                 ask = 0
                 audio = functions.listen1()
                 response = functions.voice(audio)
@@ -496,6 +496,10 @@ button4 = 10
 
 GPIO.setmode(GPIO.BCM)
 
+#button = pink
+#button2 = blue
+#button3 = green
+#button4 = Big Red button
 GPIO.setup(button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
@@ -562,9 +566,9 @@ while True:
         count +=1
         chatbot()
 
-    if GPIO.input(button4) == 1:
-        pygame.quit()
-        sys.exit()
+#    if GPIO.input(button4) == 1:
+#        pygame.quit()
+#        sys.exit()
 ##################################
     if GPIO.input(button2) == 1:
         maths_game()
