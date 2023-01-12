@@ -50,6 +50,7 @@ def get_response(text):
 def get_intent(text):
 	global leaving
 	global bad_words
+	global joke_decider
 
 	for word in bad_words:
 		if any(word in part for part in text.split()):
