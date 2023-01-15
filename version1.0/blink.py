@@ -163,7 +163,7 @@ def chatbot():
                 engine.runAndWait()
                 time.sleep(0.5)
 
-            if line == 'Speak':
+            if line == 'Speakk':
                 simon_says = ['move forward','turn green','turn yellow', 'move backwards', 'Turn Around', 'do a dance', 'Jump !']
                 action = random.randint(1,3)
                 pick = random.randint(0,6)
@@ -172,6 +172,16 @@ def chatbot():
                 else:
                     say = '     Simon Says ' + simon_says[pick]
 
+                engine = pyttsx3.init()
+                voices = engine.getProperty('voices')
+                engine.setProperty('rate', 100)
+                engine.setProperty('voice', 'English-UK')
+                opening = say
+                engine.say(opening)
+                engine.runAndWait()
+
+            if line =='Speak':
+                say = 'Welcome to Zen Maker Lab'
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 100)
