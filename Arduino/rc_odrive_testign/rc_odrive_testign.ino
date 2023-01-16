@@ -1,4 +1,4 @@
-//The speeds for the motors have been adjusted to compemsate for mechanical faults
+//Troubleshooting, PWM signals can be changed on RC, use CHANNELCHECK and ensure signals are within range first
 #include <HardwareSerial.h>
 #include <SoftwareSerial.h>
 #include <ODriveArduino.h>
