@@ -1,3 +1,4 @@
+//The speeds for the motors have been adjusted to compemsate for mechanical faults
 #include <HardwareSerial.h>
 #include <SoftwareSerial.h>
 #include <ODriveArduino.h>
@@ -58,7 +59,7 @@ void loop() {
   THROTTLE_BINARY = map(THROTTLE_STICK_VALUE, 1000, 2000, 0, 10);
 
   TURNING_STICK_VALUE = pulseIn(TURNING_STICK, HIGH, 25000);
-  TURNING_BINARY = map(TURNING_STICK_VALUE, 1150, 1700, 0, 100);
+  TURNING_BINARY = map(TURNING_STICK_VALUE, 1900, 960, 0, 100);
 
   SPEAK_VALUE = pulseIn(SPEAK, HIGH, 25000);
 
@@ -167,8 +168,8 @@ void loop() {
   //Serial.println(LEFT_SPEED);
   //Serial.println(-RIGHT_SPEED);
   
-  odrive.SetVelocity(1, LEFT_SPEED);
-  odrive.SetVelocity(0, -RIGHT_SPEED);
+  odrive.SetVelocity(1, LEFT_SPEED*1);
+  odrive.SetVelocity(0, -RIGHT_SPEED*1);
   //delay(5);
 
   if (STATE == "STOP" && (DRIVING == 1))
