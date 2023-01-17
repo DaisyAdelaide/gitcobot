@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 #hi there testing git
 import pygame
 import sys
