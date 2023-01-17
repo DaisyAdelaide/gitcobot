@@ -181,7 +181,7 @@ def chatbot():
                 engine.say(opening)
                 engine.runAndWait()
 
-            if line =='Speakk':
+            if line =='Speak':
                 say = 'Welcome to Zen Maker Lab'
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
