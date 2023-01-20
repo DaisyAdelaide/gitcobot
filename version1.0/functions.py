@@ -117,6 +117,26 @@ def record():
         writer.writerow(' ')
     return(response)
 
+def record_QUIZ():
+    
+    audio = listen1()
+
+    text123 = voice(audio)
+    
+    answer = google.goooogle(text123)
+
+    if answer == 'I didnt catch that, try again!':
+        response = 'I didnt catch that, try again!'
+    else:
+        response = answer
+#        response = 'I heard ' + text123 + ', ' + answer
+
+    with open ("Quiz_Me_Data.csv","a",encoding='UTF8') as file:
+        writer = csv.writer(file)
+        writer.writerow([response])
+        writer.writerow(' ')
+    return(response)
+
     
 def initial():
     #for final product, when starting pi only once for use, dont need at the moment
