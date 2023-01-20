@@ -40,7 +40,7 @@ while True:
 		writer.writerow(['STARTING SESSION'])
 		writer.writerow('')
 
-    if GPIO.input(button4) == 1:
+	if GPIO.input(button4) == 1:
 			print('pressed')
 			text = functions.record_QUIZ()
 			text = str(text)
