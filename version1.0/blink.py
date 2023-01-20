@@ -577,9 +577,7 @@ while True:
         count +=1
         chatbot()
 
-    if GPIO.input(button3) == 1:
-        pygame.quit()
-        sys.exit()
+
 ##################################
     if GPIO.input(button2) == 1:
         maths_game()
@@ -650,6 +648,10 @@ while True:
     pygame.display.update()
     clock.tick(20)
     seconds += 1
+
+    if GPIO.input(button3) == 1:
+        pygame.quit()
+        sys.exit()
 
     if seconds == blinktime2:
         seconds = 0 
