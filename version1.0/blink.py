@@ -438,7 +438,7 @@ def maths_game():
 
         pygame.display.update()
         clock.tick(10)
-        
+
     end = time.time()
 
 def select_character():
@@ -659,7 +659,7 @@ while True:
     if GPIO.input(button3) == 1:
         ts = time.time()
         print (ts, end)
-        if (ts - end) > 3:
+        if (ts - end) > 2:
             pygame.quit()
             sys.exit()
             print (ts, end)
