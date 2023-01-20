@@ -655,9 +655,10 @@ while True:
 
     if GPIO.input(button3) == 1:
         ts = time.time()
-        if (end - ts) > 2 or (end - ts) < 0:
+        if (end - ts) > 5 or (end - ts) < 0:
             pygame.quit()
             sys.exit()
+            print ts, end
 
 
     if seconds == blinktime2:
