@@ -577,9 +577,9 @@ while True:
         count +=1
         chatbot()
 
-#    if GPIO.input(button4) == 1:
-#        pygame.quit()
-#        sys.exit()
+    if GPIO.input(button3) == 1:
+        pygame.quit()
+        sys.exit()
 ##################################
     if GPIO.input(button2) == 1:
         maths_game()

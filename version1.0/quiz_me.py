@@ -33,6 +33,10 @@ while True:
 				pygame.quit()
 				sys.exit()
 
+	if GPIO.input(button3) == 1:
+	    pygame.quit()
+	    sys.exit()
+
 #blit - image, co-ordinates
 	screen.blit(background, (0,0))
 	pygame.display.update()
