@@ -69,7 +69,7 @@ def goooogle(question):
 
 	return answer
 
-print(goooogle('what colour is salmon'))
+print(goooogle('what is the capital of canada'))
 
 
 #can do what,how,where
