@@ -12,8 +12,8 @@ button4 = 10
 GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
-screen = pygame.display.set_mode((800,480))
-#screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
+#screen = pygame.display.set_mode((800,480))
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 
 clock = pygame.time.Clock()
 
