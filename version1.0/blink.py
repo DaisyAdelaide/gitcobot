@@ -551,9 +551,9 @@ player_surf = blinking[index]
 ser = serial.Serial("/dev/ttyACM0", 115200, timeout=1)
 ser.flush()
 
-f = open("SpeedData.csv", "w")
-f.truncate()
-f.close()
+#f = open("SpeedData.csv", "w")
+#f.truncate()
+#f.close()
 
 count = 0
 blinktime2 = 80

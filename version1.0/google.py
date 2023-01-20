@@ -69,7 +69,7 @@ def goooogle(question):
 
 	return answer
 
-print(goooogle('what comes after five'))
+print(goooogle('what colour is salmon'))
 
 
 #can do what,how,where
