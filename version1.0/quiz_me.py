@@ -18,7 +18,7 @@ screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 
 background = pygame.image.load('quiz_me.jpg').convert_alpha()
-background = pygame.transform.scale(background,(548,380))
+background = pygame.transform.scale(background,(600,400))
 
 while True:
 	for event in pygame.event.get():
