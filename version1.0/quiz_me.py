@@ -52,3 +52,4 @@ while True:
             new_text = '   ' + text 
             engine.say(new_text)
             engine.runAndWait()
+ 
