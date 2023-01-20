@@ -13,12 +13,12 @@ GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
 #screen = pygame.display.set_mode((800,480))
-screen = pygame.display.set_mode((1000,600), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 
 clock = pygame.time.Clock()
 
 background = pygame.image.load('quiz_me.jpg').convert_alpha()
-background = pygame.transform.scale(background,(600,400))
+background = pygame.transform.scale(background,(548,380))
 
 while True:
 	for event in pygame.event.get():
@@ -30,6 +30,6 @@ while True:
 				pygame.quit()
 				sys.exit()
 
-	screen.blit(background, (126,0))
+	screen.blit(background, (240,0))
 	pygame.display.update()
 	clock.tick(20)
