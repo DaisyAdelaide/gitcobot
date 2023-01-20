@@ -658,7 +658,7 @@ while True:
         if (end - ts) > 5 or (end - ts) < 0:
             pygame.quit()
             sys.exit()
-            print ts, end
+            print (ts, end)
 
 
     if seconds == blinktime2:
