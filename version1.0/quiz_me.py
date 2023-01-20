@@ -17,6 +17,9 @@ screen = pygame.display.set_mode((800,480))
 
 clock = pygame.time.Clock()
 
+background = pygame.image.load('quiz_me.jpg').convert_alpha()
+background = pygame.transform.scale(background,(548,380))
+
 while True:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -27,6 +30,6 @@ while True:
 				pygame.quit()
 				sys.exit()
 
-	screen.blit(quiz_me.jpg)
+	screen.blit(background)
 	pygame.display.update()
 	clock.tick(20)
