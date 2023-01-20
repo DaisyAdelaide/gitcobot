@@ -655,6 +655,7 @@ while True:
 
     if GPIO.input(button3) == 1:
         ts = time.time()
+        print (ts, end)
         if (end - ts) > 5 or (end - ts) < 0:
             pygame.quit()
             sys.exit()
