@@ -36,20 +36,20 @@ while True:
 	clock.tick(20)
 
 	with open ("Quiz_Me_Data.csv","a",encoding='UTF8') as file:
-        writer = csv.writer(file)
-        writer.writerow(['STARTING SESSION'])
-        writer.writerow('')
+		writer = csv.writer(file)
+		writer.writerow(['STARTING SESSION'])
+		writer.writerow('')
 
     if GPIO.input(button4) == 1:
-            print('pressed')
-            text = functions.record_QUIZ()
-            text = str(text)
-            start = 1
-            engine = pyttsx3.init()
-            voices = engine.getProperty('voices')
-            engine.setProperty('rate', 125)
-            engine.setProperty('voice', 'English-UK')
-            new_text = '   ' + text 
-            engine.say(new_text)
-            engine.runAndWait()
+			print('pressed')
+			text = functions.record_QUIZ()
+			text = str(text)
+			start = 1
+			engine = pyttsx3.init()
+			voices = engine.getProperty('voices')
+			engine.setProperty('rate', 125)
+			engine.setProperty('voice', 'English-UK')
+			new_text = '   ' + text 
+			engine.say(new_text)
+			engine.runAndWait() 
  
