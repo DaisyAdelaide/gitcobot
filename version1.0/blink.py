@@ -133,6 +133,7 @@ def chatbot():
     index = 0
     blinktime = 80
     player_surf = blinking[index]
+    global end 
 
     with open ("SpeechData.csv","a",encoding='UTF8') as file:
         writer = csv.writer(file)
@@ -229,6 +230,8 @@ def chatbot():
         if seconds2 == blinktime:
             seconds2 = 0 
             blinktime = random.randint(35,100)
+
+    end = time.time()
 
 ##########
 def maths_game():
@@ -537,6 +540,7 @@ shrink_index = 0
 seconds = 0
 seconds2 = 0
 shrinking = 0
+end = 0
 
 driving_index = 0
 
@@ -650,8 +654,11 @@ while True:
     seconds += 1
 
     if GPIO.input(button3) == 1:
-        pygame.quit()
-        sys.exit()
+        ts = time.time()
+        if (end - ts) > 2 or (end - ts) < 0:
+            pygame.quit()
+            sys.exit()
+
 
     if seconds == blinktime2:
         seconds = 0 
