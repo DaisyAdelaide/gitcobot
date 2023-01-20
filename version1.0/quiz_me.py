@@ -30,6 +30,6 @@ while True:
 				pygame.quit()
 				sys.exit()
 
-	screen.blit(background, (126,0))
+	screen.blit(background, (0,0))
 	pygame.display.update()
 	clock.tick(20)
