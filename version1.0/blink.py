@@ -235,6 +235,7 @@ def chatbot():
 
 ##########
 def maths_game():
+    global end 
     #animals = ['cat','snail','dog', 'fish', 'duck', 'frog', 'lion', 'cow',  'sheep', 'moose','Leprechaun']
     animals = ['cat','snail','dog', 'fish', 'duck', 'frog', 'lion', 'cow',  'sheep', 'moose','Leprechaun']
     scores = [1,1,1,1,1,0,0,0,0,0,0]
@@ -437,6 +438,8 @@ def maths_game():
 
         pygame.display.update()
         clock.tick(10)
+        
+    end = time.time()
 
 def select_character():
     character_sound = mixer.Sound('character.wav')
@@ -656,7 +659,7 @@ while True:
     if GPIO.input(button3) == 1:
         ts = time.time()
         print (ts, end)
-        if (ts - end) > 5:
+        if (ts - end) > 3:
             pygame.quit()
             sys.exit()
             print (ts, end)

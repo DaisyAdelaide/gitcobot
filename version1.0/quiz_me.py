@@ -12,6 +12,8 @@ import pyttsx3, time
 from pygame import mixer
 
 button4 = 10
+button3 = 22
+GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
