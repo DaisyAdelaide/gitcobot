@@ -1,5 +1,7 @@
 #! /usr/bin/python3
 #hi there testing git
+#permission in WD
+#sudo chmod +x file.py
 import pygame
 import sys
 import gpiozero
@@ -165,7 +167,7 @@ def chatbot():
                 engine.runAndWait()
                 time.sleep(0.5)
 
-            if line == 'Speakkk':
+            if line == 'Speak':
                 simon_says = ['move forward','turn green','turn yellow', 'move backwards', 'Turn Around', 'do a dance', 'Jump !']
                 action = random.randint(1,3)
                 pick = random.randint(0,6)
@@ -182,7 +184,7 @@ def chatbot():
                 engine.say(opening)
                 engine.runAndWait()
 
-            if line =='Speak':
+            if line =='Speakkk':
                 say = 'Welcome to Zen Maker Lab'
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
