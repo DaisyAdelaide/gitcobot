@@ -130,9 +130,9 @@ while True:
 
 	screen.fill((152,251,152))
 
-	x = 150
+	x = 100
 	for element in all_choice:
-		screen.blit(electronic_images[element], (0+x,250))
+		screen.blit(electronic_images[element], (0+x,300))
 		x += 200
 
 	if buttonOne.draw():
