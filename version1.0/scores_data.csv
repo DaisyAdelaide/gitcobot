@@ -942,3 +942,45 @@ character said: I didnt catch that!
 character chosen: I didnt catch that!
 "[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
 
+
+maths answer given: the answer is 10
+maths answer found: 10
+character said: sale
+character chosen: snail
+"[1, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: the answer is 40
+maths answer found: 40
+character said: the duck
+character chosen: duck
+"[1, 4, 1, 1, 4, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 11
+maths answer found: 11
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 16
+maths answer found: 16
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 12
+maths answer found: 12
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
+
+maths answer given: 32
+maths answer found: 32
+character said: I didnt catch that!
+character chosen: I didnt catch that!
+"[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]"
+
