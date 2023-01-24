@@ -5,6 +5,7 @@ import random
 import gpiozero
 import RPi.GPIO as GPIO
 import functions
+import time
 
 button3 = 22
 GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
@@ -39,6 +40,7 @@ clock = pygame.time.Clock()
 x = 0
 picked = 0
 question = 0
+delay = 0
 
 white = (255, 255, 255)
 red = (255, 51, 58)
@@ -118,7 +120,11 @@ while True:
 			if element == picked:
 				buttonNumber = index
 			index += 1
+		delay = 1
 
+	if delay == 1:
+		time.sleep(1)
+		delay = 0
 
 	textSurface = font.render(electronics[picked], True, white, (9, 77, 28))
 	textRect = textSurface.get_rect()
