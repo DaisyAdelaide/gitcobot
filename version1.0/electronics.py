@@ -123,12 +123,12 @@ while True:
 			index += 1
 
 
-	textSurface = font.render(electronics[picked], True, white, (9, 77, 28))
+	textSurface = font.render(electronics[picked], True, white, (152,251,152))
 	textRect = textSurface.get_rect()
 	textRect.center = (400, 100)
 
 
-	screen.fill((9, 77, 28))
+	screen.fill((152,251,152))
 
 	x = 150
 	for element in all_choice:
