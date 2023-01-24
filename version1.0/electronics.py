@@ -6,8 +6,8 @@ import gpiozero
 import RPi.GPIO as GPIO
 import functions
 
-button4 = 10
-GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+button3 = 22
+GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 def load_symbols():
 	global electronic_images
