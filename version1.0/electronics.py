@@ -133,7 +133,7 @@ while True:
 	x = 100
 	for element in all_choice:
 		screen.blit(electronic_images[element], (0+x,250))
-		x += 300
+		x += 250
 
 	if buttonOne.draw():
 		ts = time.time()
