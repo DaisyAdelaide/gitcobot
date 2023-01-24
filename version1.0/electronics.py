@@ -2,6 +2,11 @@
 
 import pygame
 import random
+import gpiozero
+import RPi.GPIO as GPIO
+
+button4 = 10
+GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 def load_symbols():
 	global electronic_images
@@ -26,7 +31,8 @@ def load_symbols():
 
 
 pygame.init()
-screen = pygame.display.set_mode((800,480))
+#screen = pygame.display.set_mode((800,480))
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 
 x = 0
@@ -91,6 +97,10 @@ while True:
 	        if event.key == pygame.K_ESCAPE:
 	            pygame.quit()
 	            sys.exit()
+
+	if GPIO.input(button3) == 1:
+	    pygame.quit()
+	    sys.exit()
 
 	if question == 0:
 		picked = random.randint(0,7)
