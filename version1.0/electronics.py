@@ -4,6 +4,7 @@ import pygame
 import random
 import gpiozero
 import RPi.GPIO as GPIO
+import functions
 
 button4 = 10
 GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
