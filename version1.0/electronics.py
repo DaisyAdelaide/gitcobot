@@ -47,7 +47,9 @@ button1Color = (4, 99, 7)
 button2Color = (106, 207, 101)
 button3Color = (61, 236, 85)
 
-
+global end, ts
+end = 0 
+ts = 0
 
 font = pygame.font.Font('freesansbold.ttf', 100)
 gui_font = pygame.font.Font(None,30)
@@ -134,25 +136,34 @@ while True:
 		x += 200
 
 	if buttonOne.draw():
-		if buttonNumber == 0:
-			question = 0
-			buttonColors()
-		else:
-			button1Color = (255,0,0)
+		ts = time.time()
+		if (ts - end) > 1:
+			if buttonNumber == 0:
+				question = 0
+				buttonColors()
+				end = time.time()
+			else:
+				button1Color = (255,0,0)
 	    
 	if buttonTwo.draw():
-	    if buttonNumber == 1:
-	        question = 0
-	        buttonColors()
-	    else:
-	    	button2Color = (255,0,0)
+		ts = time.time()
+		if (ts - end) > 1:
+		    if buttonNumber == 1:
+		        question = 0
+		        buttonColors()
+		        end = time.time()
+		    else:
+		    	button2Color = (255,0,0)
 
 	if buttonThree.draw():
-	    if buttonNumber == 2:
-	        question = 0
-	        buttonColors()
-	    else:
-	    	button3Color = (255,0,0)
+		ts = time.time()
+		if (ts - end) > 1:
+		    if buttonNumber == 2:
+		        question = 0
+		        buttonColors()
+		        end = time.time()
+		    else:
+		    	button3Color = (255,0,0)
 
 	screen.blit(textSurface, textRect)
 	pygame.display.update()
