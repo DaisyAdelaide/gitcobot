@@ -123,7 +123,7 @@ while True:
 			index += 1
 
 
-	textSurface = font.render(electronics[picked], True, white, (152,251,152))
+	textSurface = font.render(electronics[picked], True, (32,178,170), (152,251,152))
 	textRect = textSurface.get_rect()
 	textRect.center = (400, 100)
 
