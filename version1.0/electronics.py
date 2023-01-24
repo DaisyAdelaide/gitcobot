@@ -89,9 +89,9 @@ class Button:
 
 while True:
 
-	buttonOne = Button('', 275, 480, (0,0), button1Color)
-	buttonTwo = Button('', 250, 480, (275,0), button2Color)
-	buttonThree = Button('',275, 480, (525, 0), button3Color)
+	buttonOne = Button('', 270, 480, (0,0), button1Color)
+	buttonTwo = Button('', 245, 480, (285,0), button2Color)
+	buttonThree = Button('',270, 480, (535, 0), button3Color)
 
 	for event in pygame.event.get():
 	    if event.type == pygame.QUIT:
