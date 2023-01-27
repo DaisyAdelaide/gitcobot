@@ -69,7 +69,7 @@ def goooogle(question):
 
 	return answer
 
-print(goooogle('what is the fastest animal?'))
+#print(goooogle('what is the fastest animal?'))
 
 
 #can do what,how,where
