@@ -3,10 +3,12 @@
 import pygame
 import random
 import time
+from pygame import mixer
 
 pygame.init()
 
-screen = pygame.display.set_mode((800,480))
+#screen = pygame.display.set_mode((800,480))
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 
 numbers = [*range(1,21,1)]
@@ -107,6 +109,10 @@ while True:
 	if buttonOne.draw():
 		ts = time.time()
 		if (ts - end) > 0.5:
+			wrong_sound = mixer.Sound('bingo.MP3')
+			wrong_sound.play()
+			time.sleep(2.3)
+			wrong_sound.stop()
 			question = 0
 			end = time.time()
 

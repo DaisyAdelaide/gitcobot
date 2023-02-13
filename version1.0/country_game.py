@@ -12,29 +12,29 @@ GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 def load_symbols():
 	global electronic_images
-	dc = pygame.image.load('dc.png').convert_alpha()
+	dc = pygame.image.load('france.jpg').convert_alpha()
 	dc = pygame.transform.scale(dc,(100,100))
-	ac = pygame.image.load('ac.png').convert_alpha()
+	ac = pygame.image.load('ireland.png').convert_alpha()
 	ac = pygame.transform.scale(ac,(100,100))
-	resistor = pygame.image.load('resistor.png').convert_alpha()
+	resistor = pygame.image.load('canada.jpg').convert_alpha()
 	resistor = pygame.transform.scale(resistor,(100,100))
-	inductor = pygame.image.load('inductor.png').convert_alpha()
+	inductor = pygame.image.load('china.png').convert_alpha()
 	inductor = pygame.transform.scale(inductor,(100,100))
-	battery = pygame.image.load('battery.png').convert_alpha()
+	battery = pygame.image.load('argentina.png').convert_alpha()
 	battery = pygame.transform.scale(battery,(100,100))
-	wire = pygame.image.load('wire.png').convert_alpha()
+	wire = pygame.image.load('mexico.png').convert_alpha()
 	wire = pygame.transform.scale(wire,(100,100))
-	switch = pygame.image.load('switch.png').convert_alpha()
+	switch = pygame.image.load('spain.png').convert_alpha()
 	switch = pygame.transform.scale(switch,(100,100))
-	led = pygame.image.load('led.png').convert_alpha()
+	led = pygame.image.load('andorra.png').convert_alpha()
 	led = pygame.transform.scale(led,(100,100))
-	diode = pygame.image.load('diode.png').convert_alpha()
+	diode = pygame.image.load('congo.png').convert_alpha()
 	diode = pygame.transform.scale(diode,(100,100))
-	ground = pygame.image.load('ground.png').convert_alpha()
+	ground = pygame.image.load('greece.png').convert_alpha()
 	ground = pygame.transform.scale(ground,(100,100))
-	volt = pygame.image.load('volt.png').convert_alpha()
+	volt = pygame.image.load('japan.png').convert_alpha()
 	volt = pygame.transform.scale(volt,(100,100))
-	amp = pygame.image.load('amp.png').convert_alpha()
+	amp = pygame.image.load('brazil.png').convert_alpha()
 	amp = pygame.transform.scale(amp,(100,100))
 
 	electronic_images = [dc, 
@@ -61,9 +61,9 @@ question = 0
 
 white = (255, 255, 255)
 red = (255, 51, 58)
-button1Color = (4, 99, 7)
-button2Color = (106, 207, 101)
-button3Color = (61, 236, 85)
+button1Color = (0,191,255)
+button2Color = (30,144,255)
+button3Color = (65,105,225)
 
 global end, ts
 end = 0 
@@ -72,26 +72,26 @@ ts = 0
 font = pygame.font.Font('freesansbold.ttf', 100)
 gui_font = pygame.font.Font(None,30)
 
-electronics = ['DC source', 
-				'AC source', 
-				'Resistor', 
-				'Inductor', 
-				'Battery', 
-				'Wire', 
-				'Switch',
-				'LED',
-				'Diode',
-				'Ground',
-				'Voltmeter'
-				'Ammeter']
+electronics = ['France', 
+				'Ireland', 
+				'Canada', 
+				'China', 
+				'Argentina', 
+				'Mexico', 
+				'Spain',
+				'Andorra',
+				'Congo',
+				'Greece',
+				'Japan'
+				'Brazil']
 
 buttonNumber = 0
 
 def buttonColors():
 	global button1Color, button2Color, button3Color
-	button1Color = (4, 99, 7)
-	button2Color = (106, 207, 101)
-	button3Color = (61, 236, 85)
+	button1Color = (0,191,255)
+	button2Color = (30,144,255)
+	button3Color = (65,105,225)
 
 load_symbols()
 
