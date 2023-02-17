@@ -82,7 +82,7 @@ electronics = ['DC source',
 				'LED',
 				'Diode',
 				'Ground',
-				'Voltmeter'
+				'Voltmeter',
 				'Ammeter']
 
 buttonNumber = 0

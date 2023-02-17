@@ -82,7 +82,7 @@ electronics = ['France',
 				'Andorra',
 				'Congo',
 				'Greece',
-				'Japan'
+				'Japan',
 				'Brazil']
 
 buttonNumber = 0

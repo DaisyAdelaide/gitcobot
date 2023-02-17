@@ -1,7 +1,6 @@
 import pygame as pg
 import math
 
-
 class Cardioid:
     def __init__(self, app):
         self.app = app
