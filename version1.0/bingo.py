@@ -109,7 +109,7 @@ while True:
 	if buttonOne.draw():
 		ts = time.time()
 		if (ts - end) > 0.5:
-			wrong_sound = mixer.Sound('bingo.mp3')
+			wrong_sound = mixer.Sound('bingo_balls.wav')
 			wrong_sound.play()
 			time.sleep(2.3)
 			wrong_sound.stop()
