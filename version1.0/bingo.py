@@ -8,6 +8,9 @@ import RPi.GPIO as GPIO
 
 pygame.init()
 
+button3 = 22
+GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
 #screen = pygame.display.set_mode((800,480))
 screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
@@ -68,6 +71,10 @@ while True:
 	        if event.key == pygame.K_ESCAPE:
 	            pygame.quit()
 	            sys.exit()
+
+	    if GPIO.input(button3) == 1:
+	        pygame.quit()
+	        sys.exit()
 
 	if question == 0:
 		picked = random.choice(numbers)
