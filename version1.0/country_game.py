@@ -3,12 +3,12 @@
 import pygame
 import random
 import gpiozero
-import RPi.GPIO as GPIO
-import functions
+#import RPi.GPIO as GPIO
+#import functions
 import time
 
 button3 = 22
-GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+#GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 def load_symbols():
 	global electronic_images
@@ -36,6 +36,26 @@ def load_symbols():
 	volt = pygame.transform.scale(volt,(100,100))
 	amp = pygame.image.load('brazil.png').convert_alpha()
 	amp = pygame.transform.scale(amp,(100,100))
+	portugal = pygame.image.load('portugal.png').convert_alpha()
+	portugal = pygame.transform.scale(portugal,(100,100))
+	scotland = pygame.image.load('scotland.png').convert_alpha()
+	scotland = pygame.transform.scale(scotland,(100,100))
+	ukraine = pygame.image.load('ukraine.png').convert_alpha()
+	ukraine = pygame.transform.scale(ukraine,(100,100))
+	ven = pygame.image.load('ven.png').convert_alpha()
+	ven = pygame.transform.scale(ven,(100,100))
+	hungary = pygame.image.load('hungary.png').convert_alpha()
+	hungary = pygame.transform.scale(hungary,(100,100))
+	aus = pygame.image.load('aus.png').convert_alpha()
+	aus = pygame.transform.scale(aus,(100,100))
+	italy = pygame.image.load('italy.png').convert_alpha()
+	italy = pygame.transform.scale(italy,(100,100))
+	iceland = pygame.image.load('iceland.png').convert_alpha()
+	iceland = pygame.transform.scale(iceland,(100,100))
+	zambia = pygame.image.load('zambia.png').convert_alpha()
+	zambia = pygame.transform.scale(zambia,(100,100))
+	madagascar = pygame.image.load('madagascar.png').convert_alpha()
+	madagascar = pygame.transform.scale(madagascar,(100,100))
 
 	electronic_images = [dc, 
 						ac, 
@@ -48,11 +68,21 @@ def load_symbols():
 						diode, 
 						ground,
 						volt,
-						amp]
+						amp,
+						portugal,
+						scotland,
+						ukraine,
+						ven,
+						hungary,
+						aus,
+						italy,
+						iceland,
+						zambia,
+						madagascar]
 
 pygame.init()
-#screen = pygame.display.set_mode((800,480))
-screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((800,480))
+#screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 
 x = 0
@@ -83,7 +113,18 @@ electronics = ['France',
 				'Congo',
 				'Greece',
 				'Japan',
-				'Brazil']
+				'Brazil',
+				'Portugal',
+				'Scotland',
+				'Ukraine',
+				'Venezuela',
+				'Hungary',
+				'Australia',
+				'Italy',
+				'Iceland',
+				'Zambia',
+				'madagascar'
+				]
 
 buttonNumber = 0
 
@@ -131,13 +172,13 @@ while True:
 	            pygame.quit()
 	            sys.exit()
 
-	if GPIO.input(button3) == 1:
-	    pygame.quit()
-	    sys.exit()
+	#if GPIO.input(button3) == 1:
+	#    pygame.quit()
+	#    sys.exit()
 
 	if question == 0:
-		picked = random.randint(0,11)
-		numbers = [0,1,2,3,4,5,6,7,8,9,10,11]
+		picked = random.randint(0,21)
+		numbers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
 		numbers.remove(picked)
 		second = random.choice(numbers)
 		numbers.remove(second)
@@ -152,12 +193,12 @@ while True:
 			index += 1
 
 
-	textSurface = font.render(electronics[picked], True, (32,178,170), (152,251,152))
+	textSurface = font.render(electronics[picked], True, (32,178,170),(173, 216, 230))
 	textRect = textSurface.get_rect()
 	textRect.center = (400, 100)
 
 
-	screen.fill((152,251,152))
+	screen.fill((173, 216, 230))
 
 	x = 100
 	for element in all_choice:
