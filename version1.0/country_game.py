@@ -3,12 +3,12 @@
 import pygame
 import random
 import gpiozero
-#import RPi.GPIO as GPIO
-#import functions
+import RPi.GPIO as GPIO
+import functions
 import time
 
 button3 = 22
-#GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 def load_symbols():
 	global electronic_images
@@ -81,8 +81,8 @@ def load_symbols():
 						madagascar]
 
 pygame.init()
-screen = pygame.display.set_mode((800,480))
-#screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
+#screen = pygame.display.set_mode((800,480))
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 
 x = 0
@@ -172,9 +172,9 @@ while True:
 	            pygame.quit()
 	            sys.exit()
 
-	#if GPIO.input(button3) == 1:
-	#    pygame.quit()
-	#    sys.exit()
+	if GPIO.input(button3) == 1:
+	    pygame.quit()
+	    sys.exit()
 
 	if question == 0:
 		picked = random.randint(0,21)
