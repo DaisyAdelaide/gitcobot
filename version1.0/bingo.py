@@ -4,6 +4,7 @@ import pygame
 import random
 import time
 from pygame import mixer
+import gpiozero
 import RPi.GPIO as GPIO
 
 pygame.init()
