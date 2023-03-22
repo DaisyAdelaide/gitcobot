@@ -26,7 +26,7 @@ template<>        inline Print& operator <<(Print &obj, float arg) { obj.print(a
 // pin 19: RX - connect to ODrive TX
 // pin 18: TX - connect to ODrive RX
 // See https://www.arduino.cc/reference/en/language/functions/communication/serial/ for other options
-// HardwareSerial& odrive_serial = Serial1;
+//HardwareSerial& odrive_serial = Serial1;
 
 // Arduino without spare serial ports (such as Arduino UNO) have to use software serial.
 // Note that this is implemented poorly and can lead to wrong data sent or read.
@@ -54,7 +54,7 @@ void setup() {
   // See the documentation or play around in odrivetool to see the available parameters
   for (int axis = 0; axis < 2; ++axis) {
     odrive_serial << "w axis" << axis << ".controller.config.vel_limit " << 10.0f << '\n';
-    odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 11.0f << '\n';
+    odrive_serial << "w axis" << axis << ".motor.config.current_lim " << 40.0f << '\n';
     // This ends up writing something like "w axis0.motor.config.current_lim 10.0\n"
   }
 
@@ -78,7 +78,7 @@ void loop() {
       int motornum = c-'0';
       int requested_state;
 
-      requested_state 0= AXIS_STATE_MOTOR_CALIBRATION;
+      requested_state = AXIS_STATE_MOTOR_CALIBRATION;
       Serial << "Axis" << c << ": Requesting state " << requested_state << '\n';
       if(!odrive.run_state(motornum, requested_state, true)) return;
 
