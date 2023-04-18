@@ -162,9 +162,9 @@ while True:
 	            pygame.quit()
 	            sys.exit()
 
-	#if GPIO.input(button3) == 1:
-	 #   pygame.quit()
-	  #  sys.exit()
+	if GPIO.input(button3) == 1:
+	    pygame.quit()
+	    sys.exit()
 
 	if question == 0:
 		countries = len(electronics)-1
