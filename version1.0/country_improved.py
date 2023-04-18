@@ -47,8 +47,8 @@ class Button:
         return action
 
 pygame.init()
-screen = pygame.display.set_mode((800,480))
-#screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
+#screen = pygame.display.set_mode((800,480))
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 
 x = 0
