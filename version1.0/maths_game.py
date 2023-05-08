@@ -3,6 +3,24 @@ import csv
 #import RPi.GPIO as GPIO
 import random
 
+import pygame
+import sys
+import gpiozero
+import serial
+import pandas as pd
+import csv 
+import functions
+import RPi.GPIO as GPIO
+import random
+import time
+import lev_distance
+import lev_animal
+from word2number import w2n
+from pygame import mixer
+from collections import OrderedDict
+import operator
+import pyttsx3, time 
+
 button = 17
 button2 = 27
 button3 = 22
