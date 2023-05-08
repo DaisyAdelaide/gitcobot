@@ -21,24 +21,8 @@ from collections import OrderedDict
 import operator
 import pyttsx3, time 
 
-button = 17
-button2 = 27
-button3 = 22
-button4 = 10
 
-GPIO.setmode(GPIO.BCM)
 
-#button = pink
-#button2 = blue
-#button3 = green
-#button4 = Big Red button
-GPIO.setup(button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-
-pygame.init()
-screen = pygame.display.set_mode((800,480))
 
 def load_animals():
     global animal_images
@@ -315,4 +299,31 @@ def summ():
         return problem, str(answer), points, first_number, second_number, operand
 
 
+button = 17
+button2 = 27
+button3 = 22
+button4 = 10
+
+GPIO.setmode(GPIO.BCM)
+
+#button = pink
+#button2 = blue
+#button3 = green
+#button4 = Big Red button
+GPIO.setup(button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
+pygame.init()
+screen = pygame.display.set_mode((800,480))
+
+
+try:
+    ser = serial.Serial("/dev/ttyACM0", 115200, timeout=1)
+except:
+    try:
+        ser = serial.Serial("/dev/ttyACM1", 115200, timeout=1)
+    except:
+        ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
 maths_game()
