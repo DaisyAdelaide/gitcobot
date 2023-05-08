@@ -1,8 +1,23 @@
 import pygame
 import csv 
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import random
 
+button = 17
+button2 = 27
+button3 = 22
+button4 = 10
+
+GPIO.setmode(GPIO.BCM)
+
+#button = pink
+#button2 = blue
+#button3 = green
+#button4 = Big Red button
+GPIO.setup(button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
 screen = pygame.display.set_mode((800,480))
