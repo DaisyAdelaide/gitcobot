@@ -28,7 +28,7 @@ def arm():
     sendmessage.arm()
     
 def listen1():
-    mic = sr.Microphone(device_index = 3)
+    mic = sr.Microphone(device_index = 4)
     with mic as source:
         r = sr.Recognizer()
         r.adjust_for_ambient_noise(source)
