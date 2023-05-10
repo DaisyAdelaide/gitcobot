@@ -564,7 +564,10 @@ except:
     try:
         ser = serial.Serial("/dev/ttyACM1", 115200, timeout=1)
     except:
-        ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
+        try:
+            ser = serial.Serial("/dev/ttyAMA0", 115200, timeout=1)
+        except:
+            ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
 
 
 ser.flush()
