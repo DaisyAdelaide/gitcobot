@@ -281,4 +281,5 @@ blinktime2 = 80
 line = ''
 
 while True:
-	chatbot()
+	while GPIO.input(button3) == 0:
+		chatbot()
