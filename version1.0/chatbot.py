@@ -216,6 +216,18 @@ button2 = 27
 button3 = 22
 button4 = 10
 
+mouth = smile
+blinking = [one,two,three,four,five,six,seven,eight]
+shrink = [shrink1, shrink2, shrink3, shrink4]
+shrink_blink = 0
+index = 0
+blink = 0
+shrink_index = 0
+seconds = 0
+seconds2 = 0
+shrinking = 0
+end = 0
+
 GPIO.setmode(GPIO.BCM)
 
 #button = pink
