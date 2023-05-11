@@ -216,6 +216,8 @@ button2 = 27
 button3 = 22
 button4 = 10
 
+define()
+
 mouth = smile
 blinking = [one,two,three,four,five,six,seven,eight]
 shrink = [shrink1, shrink2, shrink3, shrink4]
