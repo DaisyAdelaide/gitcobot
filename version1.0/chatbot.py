@@ -107,9 +107,9 @@ def chatbot():
 
     while GPIO.input(button3) == 0:
 
-        if GPIO.input(button3) == 1:
-            pygame.quit()
-            sys.exit()
+       # if GPIO.input(button3) == 1:
+        #    pygame.quit()
+         #   sys.exit()
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
@@ -196,7 +196,10 @@ def chatbot():
             seconds2 = 0 
             blinktime = random.randint(35,100)
 
+    
     end = time.time()
+    pygame.quit()
+    sys.exit()
 
 def getText(start):
     if start == 0:
