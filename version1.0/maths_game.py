@@ -317,7 +317,8 @@ GPIO.setup(button3, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(button4, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 pygame.init()
-screen = pygame.display.set_mode((800,480))
+#screen = pygame.display.set_mode((800,480))
+screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 
 
 try:
