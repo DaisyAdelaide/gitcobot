@@ -55,148 +55,148 @@ def define():
     shock = pygame.image.load('OO.jpg').convert_alpha()
     shock = pygame.transform.scale(shock,(217, 150))
 
-    def shrinkfunc():
-        global player_surf, shrink_index, shrink_blink, mouth
+def shrinkfunc():
+    global player_surf, shrink_index, shrink_blink, mouth
 
-        mouth = shock
+    mouth = shock
 
-        if shrink_index < 3 and shrink_blink == 0:
-            shrink_index += 1
+    if shrink_index < 3 and shrink_blink == 0:
+        shrink_index += 1
 
-        if shrink_index > 0 and shrink_blink ==1:
-            shrink_index -= 1
+    if shrink_index > 0 and shrink_blink ==1:
+        shrink_index -= 1
 
-        if shrink_index == 0:
-            shrink_blink = 0
+    if shrink_index == 0:
+        shrink_blink = 0
 
-        if shrink_index == 3:
-            shrink_blink = 1
+    if shrink_index == 3:
+        shrink_blink = 1
 
-        player_surf = shrink[shrink_index]
+    player_surf = shrink[shrink_index]
 
-    def blink_func():
-        global player_surf, index, blink
+def blink_func():
+    global player_surf, index, blink
 
-        if index < 7 and blink == 0:
-            index += 1
+    if index < 7 and blink == 0:
+        index += 1
 
-        if index > 0 and blink ==1:
-            index -= 1
+    if index > 0 and blink ==1:
+        index -= 1
 
-        if index == 0:
-            blink = 0
+    if index == 0:
+        blink = 0
 
-        if index == 7:
-            blink = 1
+    if index == 7:
+        blink = 1
 
-        player_surf = blinking[index]
+    player_surf = blinking[index]
 
-    def chatbot():
-        global seconds2, index, player_surf
-        seconds2 = 30
-        start = 0
-        index = 0
-        blinktime = 80
-        player_surf = blinking[index]
-        global end 
+def chatbot():
+    global seconds2, index, player_surf
+    seconds2 = 30
+    start = 0
+    index = 0
+    blinktime = 80
+    player_surf = blinking[index]
+    global end 
 
-        with open ("SpeechData.csv","a",encoding='UTF8') as file:
-            writer = csv.writer(file)
-            writer.writerow(['CHAT BOT BEGINNING'])
-            writer.writerow('')
+    with open ("SpeechData.csv","a",encoding='UTF8') as file:
+        writer = csv.writer(file)
+        writer.writerow(['CHAT BOT BEGINNING'])
+        writer.writerow('')
 
-        while GPIO.input(button3) == 0:
+    while GPIO.input(button3) == 0:
 
-            #if GPIO.input(button4) == 1:
-            #    pygame.quit()
-            #    sys.exit()
-                       
-            black = (0, 0, 0)
-            white = (255, 255, 255)
-            orange = (255, 127, 39)
-            font = pygame.font.Font('freesansbold.ttf', 20)
-            #text = getText(start)
+        #if GPIO.input(button4) == 1:
+        #    pygame.quit()
+        #    sys.exit()
+                   
+        black = (0, 0, 0)
+        white = (255, 255, 255)
+        orange = (255, 127, 39)
+        font = pygame.font.Font('freesansbold.ttf', 20)
+        #text = getText(start)
 
-            if ser.in_waiting > 0:
-                line = ser.readline().decode('latin-1').rstrip()    
+        if ser.in_waiting > 0:
+            line = ser.readline().decode('latin-1').rstrip()    
 
-                if line == 'Speakkk':
-                    engine = pyttsx3.init()
-                    voices = engine.getProperty('voices')
-                    engine.setProperty('rate', 125)
-                    engine.setProperty('voice', 'English-UK')
-                    opening = '  Hello there how are you ?'
-                    engine.say(opening)
-                    engine.runAndWait()
-                    time.sleep(0.5)
-
-                if line == 'Speak':
-                    simon_says = ['move forward','turn green','turn yellow', 'move backwards', 'Turn Around', 'do a dance', 'Jump !']
-                    action = random.randint(1,3)
-                    pick = random.randint(0,6)
-                    if action % 2 == 0:
-                        say = '     ' + simon_says[pick]
-                    else:
-                        say = '     Simon Says ' + simon_says[pick]
-
-                    engine = pyttsx3.init()
-                    voices = engine.getProperty('voices')
-                    engine.setProperty('rate', 100)
-                    engine.setProperty('voice', 'English-UK')
-                    opening = say
-                    engine.say(opening)
-                    engine.runAndWait()
-
-                if line =='Speakkk':
-                    say = 'Welcome to Zen Maker Lab'
-                    engine = pyttsx3.init()
-                    voices = engine.getProperty('voices')
-                    engine.setProperty('rate', 100)
-                    engine.setProperty('voice', 'English-UK')
-                    opening = say
-                    engine.say(opening)
-                    engine.runAndWait()
-
-            if start == 0:
-                text = 'Press record to talk to me !'
-
-            if GPIO.input(button4) == 1:
-                print('pressed')
-                text = functions.record()
-                text = str(text)
-                start = 1
+            if line == 'Speakkk':
                 engine = pyttsx3.init()
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 125)
                 engine.setProperty('voice', 'English-UK')
-                new_text = '   ' + text 
-                engine.say(new_text)
+                opening = '  Hello there how are you ?'
+                engine.say(opening)
                 engine.runAndWait()
+                time.sleep(0.5)
+
+            if line == 'Speak':
+                simon_says = ['move forward','turn green','turn yellow', 'move backwards', 'Turn Around', 'do a dance', 'Jump !']
+                action = random.randint(1,3)
+                pick = random.randint(0,6)
+                if action % 2 == 0:
+                    say = '     ' + simon_says[pick]
+                else:
+                    say = '     Simon Says ' + simon_says[pick]
+
+                engine = pyttsx3.init()
+                voices = engine.getProperty('voices')
+                engine.setProperty('rate', 100)
+                engine.setProperty('voice', 'English-UK')
+                opening = say
+                engine.say(opening)
+                engine.runAndWait()
+
+            if line =='Speakkk':
+                say = 'Welcome to Zen Maker Lab'
+                engine = pyttsx3.init()
+                voices = engine.getProperty('voices')
+                engine.setProperty('rate', 100)
+                engine.setProperty('voice', 'English-UK')
+                opening = say
+                engine.say(opening)
+                engine.runAndWait()
+
+        if start == 0:
+            text = 'Press record to talk to me !'
+
+        if GPIO.input(button4) == 1:
+            print('pressed')
+            text = functions.record()
+            text = str(text)
+            start = 1
+            engine = pyttsx3.init()
+            voices = engine.getProperty('voices')
+            engine.setProperty('rate', 125)
+            engine.setProperty('voice', 'English-UK')
+            new_text = '   ' + text 
+            engine.say(new_text)
+            engine.runAndWait()
+    
+        if seconds2 < 14:
+            blink_func()
         
-            if seconds2 < 14:
-                blink_func()
-            
-            screen.fill(orange)
-            screen.blit(mouth, (286,300))
-            screen.blit(player_surf, (126,0))
+        screen.fill(orange)
+        screen.blit(mouth, (286,300))
+        screen.blit(player_surf, (126,0))
 
-            textSurface = font.render(text, True, white, orange)
-            textRect = textSurface.get_rect()
-            textRect.center = (400, 450)
-            
-            #screen.fill(black)
-            pygame.draw.rect(screen, orange, pygame.Rect(0, 440, 800, 200))
-            screen.blit(textSurface, textRect)
-            pygame.display.update()
-            clock.tick(20)
+        textSurface = font.render(text, True, white, orange)
+        textRect = textSurface.get_rect()
+        textRect.center = (400, 450)
+        
+        #screen.fill(black)
+        pygame.draw.rect(screen, orange, pygame.Rect(0, 440, 800, 200))
+        screen.blit(textSurface, textRect)
+        pygame.display.update()
+        clock.tick(20)
 
-            seconds2 += 1
+        seconds2 += 1
 
-            if seconds2 == blinktime:
-                seconds2 = 0 
-                blinktime = random.randint(35,100)
+        if seconds2 == blinktime:
+            seconds2 = 0 
+            blinktime = random.randint(35,100)
 
-        end = time.time()
+    end = time.time()
 
 def getText(start):
     if start == 0:
