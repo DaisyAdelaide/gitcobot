@@ -254,10 +254,6 @@ driving_index = 0
 
 gui_font = pygame.font.Font(None,30)
 
-record_button = Button('Record', 100, 30, (0,0))
-drive_button = Button('STOP', 100, 30, (620,200))
-arm_button = Button('Arm', 100, 30, (620,300))
-
 player_surf = blinking[index]
 
 
