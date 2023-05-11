@@ -216,20 +216,6 @@ button2 = 27
 button3 = 22
 button4 = 10
 
-define()
-
-mouth = smile
-blinking = [one,two,three,four,five,six,seven,eight]
-shrink = [shrink1, shrink2, shrink3, shrink4]
-shrink_blink = 0
-index = 0
-blink = 0
-shrink_index = 0
-seconds = 0
-seconds2 = 0
-shrinking = 0
-end = 0
-
 GPIO.setmode(GPIO.BCM)
 
 #button = pink
@@ -245,6 +231,35 @@ pygame.init()
 #screen = pygame.display.set_mode((800,480))
 screen = pygame.display.set_mode((800,480), pygame.FULLSCREEN)
 
+color = (255, 255, 255)
+orange = (255, 127, 39)
+
+clock = pygame.time.Clock()
+
+define()
+
+mouth = smile
+blinking = [one,two,three,four,five,six,seven,eight]
+shrink = [shrink1, shrink2, shrink3, shrink4]
+shrink_blink = 0
+index = 0
+blink = 0
+shrink_index = 0
+seconds = 0
+seconds2 = 0
+shrinking = 0
+end = 0
+
+driving_index = 0
+
+gui_font = pygame.font.Font(None,30)
+
+record_button = Button('Record', 100, 30, (0,0))
+drive_button = Button('STOP', 100, 30, (620,200))
+arm_button = Button('Arm', 100, 30, (620,300))
+
+player_surf = blinking[index]
+
 
 try:
     ser = serial.Serial("/dev/ttyACM0", 115200, timeout=1)
@@ -252,9 +267,22 @@ except:
     try:
         ser = serial.Serial("/dev/ttyACM1", 115200, timeout=1)
     except:
-        ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
+        try:
+            ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
+        except:
+            ser = 0
 
 
-clock = pygame.time.Clock()
+ser.flush()
 
-chatbot()
+#f = open("SpeedData.csv", "w")
+#f.truncate()
+#f.close()
+
+count = 0
+blinktime2 = 80
+
+line = ''
+
+while True:
+	chatbot()
