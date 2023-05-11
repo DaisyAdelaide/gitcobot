@@ -107,9 +107,9 @@ def chatbot():
 
     while GPIO.input(button3) == 0:
 
-        #if GPIO.input(button4) == 1:
-        #    pygame.quit()
-        #    sys.exit()
+        if GPIO.input(button3) == 1:
+            pygame.quit()
+            sys.exit()
                    
         black = (0, 0, 0)
         white = (255, 255, 255)
