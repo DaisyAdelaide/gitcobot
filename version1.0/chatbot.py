@@ -143,7 +143,7 @@ def chatbot():
                 voices = engine.getProperty('voices')
                 engine.setProperty('rate', 100)
                 engine.setProperty('voice', 'English-UK')
-                opening = say
+                opening = sayomg !!
                 engine.say(opening)
                 engine.runAndWait()
 

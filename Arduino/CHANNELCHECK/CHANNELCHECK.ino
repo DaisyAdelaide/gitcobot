@@ -1,6 +1,9 @@
-const int TURNING_STICK = A0;
+const int TURNING_STICK = A1;
 int REVERSE_VALUE = 0;
-
+//A3 reverse
+//A2 calibrate switch
+//A1 throttle
+//A0 turning
 
 void setup() {
   Serial.begin(9600);
