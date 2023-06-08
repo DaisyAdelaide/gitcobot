@@ -61,6 +61,15 @@ void loop() {
     odrive.SetVelocity(1, 0);
     odrive.SetVelocity(0, 0);
 
+    //not uploaded to nano , might not be a good idea 
+    THROTTLE_STICK_VALUE = pulseIn(THROTTLE_STICK, HIGH, 25000);
+    THROTTLE_MAX = THROTTLE_STICK_VALUE + 900;
+    THROTTLE_MIN = THROTTLE_STICK_VALUE;
+
+    TURNING_STICK_VALUE = pulseIn(TURNING_STICK, HIGH, 25000);
+    TURNING_MAX = TURNING_STICK_VALUE + 480;
+    TURNING_MIN = TURNING_STICK_VALUE - 480;
+
     char c = '0';
     int motornum = c-'0';
     int requested_state;
