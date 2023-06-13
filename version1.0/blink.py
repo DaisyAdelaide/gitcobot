@@ -566,8 +566,6 @@ except:
     except:
         try:
             ser = serial.Serial("/dev/ttyUSB0", 115200, timeout=1)
-        except:
-            ser = 0
 
 
 ser.flush()
