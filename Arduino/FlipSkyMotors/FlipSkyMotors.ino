@@ -121,7 +121,7 @@ void loop() {
 if (TURNING_BINARY < 40)
    {
     TURNING_MAGNITUDE = map(TURNING_BINARY, 0, 40, 10, 90);
-    RIGHT_SPEED = THROTTLE_BINARY;
+    RIGHT_SPEED = THROTTLE_BINARY;  
     LEFT_SPEED = THROTTLE_BINARY * TURNING_MAGNITUDE/100;    
    }
  else if (TURNING_BINARY > 60)
@@ -144,17 +144,21 @@ if (TURNING_BINARY < 40)
   }
 
   REVERSE_VALUE = pulseIn(REVERSE, HIGH, 25000);
+  Serial.println(REVERSE_VALUE);
   if (REVERSE_VALUE > 2000) 
   {
    RIGHT_SPEED = -RIGHT_SPEED;
    LEFT_SPEED = -LEFT_SPEED;
   }
 
-  Serial.println(RIGHT_SPEED);
-  Serial.println(LEFT_SPEED);
+  //Serial.println(RIGHT_SPEED);
+  //Serial.println(LEFT_SPEED);
 
   odrive.SetVelocity(1, LEFT_SPEED*1);
   odrive.SetVelocity(0, -RIGHT_SPEED*1);
+
+ // Serial.println(RIGHT_SPEED);
+  //Serial.println(LEFT_SPEED);
   delay(5);
 
 
