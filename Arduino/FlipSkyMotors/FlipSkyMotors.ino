@@ -2,15 +2,18 @@
 #include <SoftwareSerial.h>
 #include <ODriveArduino.h>
 
+//setting the classes that the odrive will use
 template<class T> inline Print& operator <<(Print &obj,     T arg) { obj.print(arg);    return obj; }
 template<>        inline Print& operator <<(Print &obj, float arg) { obj.print(arg, 4); return obj; }
 
+//defining the Throttle stick variables
 const int THROTTLE_STICK = A1;
 int THROTTLE_STICK_VALUE = 0;
 int THROTTLE_MAX = 0;
 int THROTTLE_MIN = 0;
 int THROTTLE_BINARY = 0;
 
+//defining the Turning stick variables
 const int TURNING_STICK = A0;
 int TURNING_STICK_VALUE = 0;
 int TURNING_MAX = 0;
@@ -19,23 +22,30 @@ int TURNING_BINARY = 0;
 
 int TURNING_MAGNITUDE;
 
+//defining the speed variables
 int RIGHT_SPEED;
 int LEFT_SPEED;
 
+//defining the switch used for calibration variables
 const int SWITCH = A2; 
 int SWITCH_VALUE = 1400;
 
+//defining the reverse stick variables
 const int REVERSE = A3;
 int REVERSE_VALUE = 1500;
 
+//setting up software serial. The hardware micro usb serial is used for communication with the pi
 SoftwareSerial odrive_serial(8,9);
 ODriveArduino odrive(odrive_serial);
 
 void setup() {
   // put your setup code here, to run once:
+  //setting the bits per second (baud) rate. This is the reccomended speed for the odrive.
   odrive_serial.begin(115200);
   Serial.begin(115200);
 
+  //reading in the initial throttle and turning magnitude figures.
+  //we assume 0 speed and 0 turning mag, and set the range. This ensures calibrated results at each start up
   THROTTLE_STICK_VALUE = pulseIn(THROTTLE_STICK, HIGH, 25000);
   THROTTLE_MAX = THROTTLE_STICK_VALUE + 900;
   THROTTLE_MIN = THROTTLE_STICK_VALUE;
@@ -48,6 +58,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  //reading the values from the receiver and mapping them to the desired ranges for use
   THROTTLE_STICK_VALUE = pulseIn(THROTTLE_STICK, HIGH, 25000);
   THROTTLE_BINARY = map(THROTTLE_STICK_VALUE, THROTTLE_MIN, THROTTLE_MAX, 0, 12);
 
@@ -56,12 +67,15 @@ void loop() {
 
   SWITCH_VALUE = pulseIn(SWITCH, HIGH, 25000);
 
+  //flipping the switch will initiate the calibration sequence
+  //this calibration sequence has been tested throughly and unless there is a hardware change i do not 
+  //recommed changing it
   if (SWITCH_VALUE > 1800)
   { 
     odrive.SetVelocity(1, 0);
     odrive.SetVelocity(0, 0);
 
-    //not uploaded to nano , might not be a good idea 
+    //recalibrating throttle and turning mag, useful if a PWM modifier switch on the remote is pressed
     THROTTLE_STICK_VALUE = pulseIn(THROTTLE_STICK, HIGH, 25000);
     THROTTLE_MAX = THROTTLE_STICK_VALUE + 900;
     THROTTLE_MIN = THROTTLE_STICK_VALUE;
